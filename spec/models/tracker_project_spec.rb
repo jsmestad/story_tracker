@@ -9,5 +9,6 @@ RSpec.describe TrackerProject do
   it 'has a default project, if none specified' do
     project = described_class.new
     expect(project.project_id).to eql(ENV['DEFAULT_TRACKER_PROJECT'])
+    expect(project.project_id).to_not be_empty
   end
 end
