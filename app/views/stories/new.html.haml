@@ -1,0 +1,10 @@
+%h1 Propose Additional Story
+
+%p You are proposing an story to be slated as part of the #{@iteration.number} iteration after story &ldquo;#{@last_story.name}&rdquo;.
+
+= simple_form_for :story, url: iteration_stories_path(@iteration), method: :post do |f|
+  = f.hidden_field :after_id, value: @last_story.id
+  = f.input :name
+  -# = f.input :description, as: :text
+  = f.button :submit
+

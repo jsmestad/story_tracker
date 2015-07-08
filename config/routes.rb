@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  get '/iterations', to: 'iterations#index'
-  root to: 'stories#index'
+  resources :iterations, only: [:index] do
+    resources :stories, only: [:new, :create]
+  end
+
+  root to: 'iterations#index'
 end

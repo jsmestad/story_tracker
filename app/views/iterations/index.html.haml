@@ -6,4 +6,4 @@
 
   %ul
     - iteration.stories.each do |story|
-      %li= story.name
+      %li #{story.name} (#{link_to 'propose additional story', new_iteration_story_path(iteration)})
