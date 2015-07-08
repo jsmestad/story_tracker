@@ -1,0 +1,9 @@
+- @iterations.each do |iteration|
+  %h2 Iteration #{iteration.number}
+  %div Started on #{iteration.start.strftime('%b %d')}
+  %div Finished on #{iteration.finish.strftime('%b %d')}
+  %div Stream strength is planned on #{(iteration.team_strength * 100).to_i}%
+
+  %ul
+    - iteration.stories.each do |story|
+      %li= story.name
