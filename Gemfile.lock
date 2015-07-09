@@ -59,6 +59,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bourbon (4.2.3)
+      sass (~> 3.4)
+      thor
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -125,6 +128,9 @@ GEM
     minitest (5.7.0)
     multi_json (1.11.2)
     multipart-post (2.0.0)
+    neat (1.7.2)
+      bourbon (>= 4.0)
+      sass (>= 3.3)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     oj (2.12.9)
@@ -164,7 +170,6 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
-    rdoc (4.2.0)
     representable (2.2.3)
       multi_json
       nokogiri
@@ -195,9 +200,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
-    sdoc (0.4.1)
-      json (~> 1.7, >= 1.7.7)
-      rdoc (~> 4.0)
     sexp_processor (4.6.0)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
@@ -236,6 +238,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourbon
   byebug
   coffee-rails (~> 4.1.0)
   database_cleaner
@@ -243,13 +246,13 @@ DEPENDENCIES
   factory_girl_rails
   haml-rails
   jquery-rails
-  pg
+  neat
+  pg (>= 0.18)
   quiet_assets
   rails (= 4.2.3)
   rails_12factor
   rspec-rails
   sass-rails (~> 5.0)
-  sdoc (~> 0.4.0)
   shoulda-matchers
   simple_form
   tracker_api (~> 0.2.10)!
