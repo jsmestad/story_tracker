@@ -24,7 +24,7 @@ gem 'turbolinks'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'tracker_api', '~> 0.2.10'
+gem 'tracker_api', '~> 0.2.10', github: 'jsmestad/tracker_api', branch: 'verify-object-ext-is-needed'
 gem 'haml-rails'
 gem 'simple_form'
 
@@ -40,6 +40,10 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'dotenv-rails'
+end
+
+group :test do
+  gem 'shoulda-matchers'
 end
 
 group :production do

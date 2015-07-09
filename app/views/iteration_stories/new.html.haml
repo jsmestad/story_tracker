@@ -2,9 +2,12 @@
 
 %p You are proposing an story to be slated as part of the #{@iteration.number} iteration after story &ldquo;#{@last_story.name}&rdquo;.
 
-= simple_form_for :story, url: iteration_stories_path(@iteration), method: :post do |f|
+= simple_form_for @story, as: :story, url: iteration_stories_path(@iteration), method: :post do |f|
   = f.hidden_field :after_id, value: @last_story.id
-  = f.input :name
+  = f.input :stakeholder
+  = f.input :the_ask
+  = f.input :reasoning
+  -# = f.input :details
   -# = f.input :description, as: :text
   = f.button :submit
 
