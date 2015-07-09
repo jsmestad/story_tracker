@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+  helpers:
+    submit:
+      story:
+        create: 'Propose Story'
