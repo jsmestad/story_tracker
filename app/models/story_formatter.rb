@@ -12,7 +12,7 @@ class StoryFormatter
   end
 
   def name
-    "#{the_ask}"
+    "As a #{stakeholder}, I want #{the_ask}"
   end
 
   def body
