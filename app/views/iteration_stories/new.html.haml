@@ -4,23 +4,7 @@
 
 %section.add-story
   = form_for @story, as: :story, url: iteration_stories_path(@iteration), method: :post, html: { class: 'new_story fill_in' } do |f|
-    = f.hidden_field :after_id, value: @last_story.id
-    .story-content
-      As an
-      #{f.text_field :stakeholder, placeholder: 'e.g. accountant'},
-      I want
-      #{f.text_field :the_ask, placeholder: 'e.g. slack integration'},
-      %br
-      so that
-      #{f.text_field :reasoning, placeholder: 'e.g. I can stop importing invoices manually', class: 'reasoning'}.
-
-    .acceptance-criteria
-      The way I want to test this is by
-      %br
-      #{f.text_field :confirmation_flow, placeholder: 'e.g. posting content to slack and seeing it show up in the invoice', class: 'full-width'}.
-      %br
-      When an error occurrs,
-      %br
-      #{f.text_field :error_expectation, placeholder: 'e.g. I expect to see a MissingIntegrationException returned', class: 'full-width'}.
-    = f.button
+  = f.hidden_field :after_id, value: @last_story.id
+  = render partial: 'shared/story_fields', locals: {form: f}
+  = f.button
 

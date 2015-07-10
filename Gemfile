@@ -31,7 +31,10 @@ group :development, :test do
 end
 
 group :test do
+  gem 'capybara'
+  gem 'launchy'
   gem 'shoulda-matchers'
+  gem 'vcr'
 end
 
 group :production do
