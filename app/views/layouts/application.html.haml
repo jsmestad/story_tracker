@@ -7,4 +7,7 @@
     = csrf_meta_tags
   %body
     .main
+      - flash.each do |type, msg|
+        .flash{class: type}
+          %span= raw(msg)
       = yield

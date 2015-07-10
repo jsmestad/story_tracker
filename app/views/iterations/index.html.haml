@@ -1,5 +1,6 @@
-= link_to 'Propose Story', new_story_path
+= link_to 'Propose Story', new_story_path, class: 'button'
 
+%hr/
 - @iterations.each do |iteration|
   %h2 Iteration #{iteration.number}
   - if iteration.is_current?
@@ -14,4 +15,5 @@
 
   %ul
     - iteration.stories.each do |story|
-      %li #{story.name} (#{link_to 'propose additional story', new_iteration_story_path(iteration)})
+      %li #{story.name}
+      -# (#{link_to 'propose additional story', new_iteration_story_path(iteration)})
