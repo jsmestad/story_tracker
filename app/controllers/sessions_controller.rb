@@ -9,15 +9,18 @@ class SessionsController < ApplicationController
     user = User.find_with_omniauth(auth) || User.create_with_omniauth(auth)
     reset_session
     session[:user_id] = user.id
-    redirect_to root_path, success: "Logged In!"
+    flash[:success] = "Logged In!"
+    redirect_to iterations_path
   end
 
   def failure
-    redirect_to root_url, alert: "Authentication error: #{params[:message].humanize}"
+    flash[:alert] = "Authentication error: #{params[:message].humanize}"
+    redirect_to root_url
   end
 
   def destroy
-    reset_session
-    redirect_to root_url, notice: "Logged out!"
+    logout!
+    flash[:notice] = "Logged out!"
+    redirect_to root_url
   end
 end
