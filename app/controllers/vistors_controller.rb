@@ -1,0 +1,3 @@
+class VistorsController < ApplicationController
+
+end
