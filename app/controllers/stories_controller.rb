@@ -1,4 +1,6 @@
 class StoriesController < ApplicationController
+  before_filter :authenticate_user!
+
   def new
     @story = StoryFormatter.new
     render

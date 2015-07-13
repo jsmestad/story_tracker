@@ -18,6 +18,9 @@ gem 'simple_form'
 gem 'neat'
 gem 'bourbon'
 
+gem 'omniauth-github', '~> 1.1.2'
+gem 'octokit'
+
 group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
@@ -35,6 +38,7 @@ group :test do
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'vcr'
+  gem 'webmock'
 end
 
 group :production do
