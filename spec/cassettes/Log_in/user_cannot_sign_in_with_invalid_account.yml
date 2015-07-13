@@ -1,0 +1,385 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/1383802
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - 9ff67b815874f8a4afbb933a615a5a74
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 200 OK
+      X-Tracker-Project-Version:
+      - '34'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"778146ef97390b9ef7919545d4916065"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7b3bc4a0d7fb48acd985f75b8d43daf8
+      X-Runtime:
+      - '0.041280'
+      Date:
+      - Mon, 13 Jul 2015 21:31:56 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.41
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
+      X-Tracker-Client-Pinger-Interval:
+      - '12'
+    body:
+      encoding: UTF-8
+      string: '{"id":1383802,"kind":"project","name":"My Sample Project","version":34,"iteration_length":1,"week_start_day":"Monday","point_scale":"0,1,2,3","point_scale_is_custom":false,"bugs_and_chores_are_estimatable":false,"automatic_planning":true,"enable_tasks":true,"time_zone":{"kind":"time_zone","olson_name":"Etc/UTC","offset":"+00:00"},"velocity_averaged_over":3,"number_of_done_iterations_to_show":12,"has_google_domain":false,"profile_content":"This
+        is a demo project, created by Tracker, with example stories for a simple shopping
+        web site.","enable_incoming_emails":true,"initial_velocity":10,"public":false,"atom_enabled":false,"project_type":"demo","start_time":"2015-06-22T00:00:00Z","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T19:01:19Z","account_id":774272,"current_iteration_number":4,"enable_following":true}'
+    http_version: 
+  recorded_at: Mon, 13 Jul 2015 21:31:56 GMT
+- request:
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/1383802/iterations?scope=current_backlog
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - 9ff67b815874f8a4afbb933a615a5a74
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 200 OK
+      X-Tracker-Project-Version:
+      - '34'
+      X-Tracker-Pagination-Total:
+      - '7'
+      X-Tracker-Pagination-Offset:
+      - '0'
+      X-Tracker-Pagination-Limit:
+      - '10'
+      X-Tracker-Pagination-Returned:
+      - '7'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"e3b344f0a063765a180ad76e2c24b46b"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 22c138d575c6dca34650a5650c71b91b
+      X-Runtime:
+      - '0.044675'
+      Date:
+      - Mon, 13 Jul 2015 21:31:56 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.41
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
+      X-Tracker-Client-Pinger-Interval:
+      - '12'
+    body:
+      encoding: UTF-8
+      string: '[{"kind":"iteration","number":4,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677104,"project_id":1383802,"name":"Shopper
+        should be able to view contents of shopping cart","description":"Cart icon
+        in top right corner, with a number indicating how many items in cart","story_type":"feature","current_state":"delivered","estimate":2,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166940,"project_id":1383802,"name":"cart","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:11Z","url":"https://www.pivotaltracker.com/story/show/98677104"},{"kind":"story","id":98677106,"project_id":1383802,"name":"Shopper
+        should be able to remove product from shopping cart","story_type":"feature","current_state":"delivered","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166940,"project_id":1383802,"name":"cart","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:11Z","url":"https://www.pivotaltracker.com/story/show/98677106"},{"kind":"story","id":98677108,"project_id":1383802,"name":"Cart
+        manipulation should be AJAXy","story_type":"feature","current_state":"finished","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166940,"project_id":1383802,"name":"cart","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677108"},{"kind":"story","id":98677110,"project_id":1383802,"name":"Some
+        product photos not scaled properly when browsing products","story_type":"bug","current_state":"started","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677110"},{"kind":"story","id":98677112,"project_id":1383802,"name":"Shopper
+        should be able to recommend a product to a friend","description":"Prompt for
+        email address and personalized message, send email with product details and
+        message","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677112"},{"kind":"story","id":98677114,"project_id":1383802,"name":"configure
+        solr for full text searching","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166942,"project_id":1383802,"name":"search","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677114"},{"kind":"story","id":98688698,"project_id":1383802,"name":"trying
+        to insert after configure solr","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-07-08T21:01:30Z","updated_at":"2015-07-08T21:01:30Z","url":"https://www.pivotaltracker.com/story/show/98688698"}],"start":"2015-07-13T00:00:00Z","finish":"2015-07-20T00:00:00Z"},{"kind":"iteration","number":5,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677116,"project_id":1383802,"name":"Shopper
+        should be able to search for product","description":"One search field, search
+        should look through product name, description, and SKU","story_type":"feature","current_state":"unstarted","estimate":3,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166942,"project_id":1383802,"name":"search","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677116"},{"kind":"story","id":98677118,"project_id":1383802,"name":"Initial
+        demo to investors","story_type":"release","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677118"},{"kind":"story","id":98677120,"project_id":1383802,"name":"Shopper
+        should be able to enter credit card information and shipping address","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166944,"project_id":1383802,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677120"},{"kind":"story","id":98677122,"project_id":1383802,"name":"Integrate
+        with payment gateway","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166944,"project_id":1383802,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677122"},{"kind":"story","id":98677124,"project_id":1383802,"name":"When
+        shopper submits order, authorize total product amount from payment gateway","story_type":"feature","current_state":"unstarted","estimate":3,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166944,"project_id":1383802,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166946,"project_id":1383802,"name":"needs
+        discussion","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677124"}],"start":"2015-07-20T00:00:00Z","finish":"2015-07-27T00:00:00Z"},{"kind":"iteration","number":6,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677126,"project_id":1383802,"name":"If
+        system fails to authorize payment amount, display error message to shopper","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166944,"project_id":1383802,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677126"},{"kind":"story","id":98677128,"project_id":1383802,"name":"If
+        authorization is successful, show order number and confirmation message to
+        shopper","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166944,"project_id":1383802,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677128"},{"kind":"story","id":98688754,"project_id":1383802,"name":"Foo
+        Bar 2","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-07-08T21:02:19Z","updated_at":"2015-07-08T21:02:19Z","url":"https://www.pivotaltracker.com/story/show/98688754"},{"kind":"story","id":98677130,"project_id":1383802,"name":"Send
+        notification email of order placement to admin","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166944,"project_id":1383802,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677130"},{"kind":"story","id":98677132,"project_id":1383802,"name":"Shopper
+        should be able to check status of order by entering name and order number","story_type":"feature","current_state":"unstarted","estimate":2,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166948,"project_id":1383802,"name":"orders","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677132"},{"kind":"story","id":98677134,"project_id":1383802,"name":"Shopper
+        should be able to ask question about order","description":"When checking status
+        of order, shopper should have the option to ask a question. This should send
+        email to admin.","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166948,"project_id":1383802,"name":"orders","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677134"}],"start":"2015-07-27T00:00:00Z","finish":"2015-08-03T00:00:00Z"},{"kind":"iteration","number":7,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677136,"project_id":1383802,"name":"Admin
+        can review all order questions and send responses to shoppers","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166948,"project_id":1383802,"name":"orders","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677136"},{"kind":"story","id":98677138,"project_id":1383802,"name":"Set
+        up Engine Yard production environment","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166932,"project_id":1383802,"name":"deployment","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677138"},{"kind":"story","id":98677140,"project_id":1383802,"name":"Beta
+        launch","story_type":"release","current_state":"unstarted","deadline":"2015-07-27T00:00:00Z","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677140"},{"kind":"story","id":98677142,"project_id":1383802,"name":"Shopper
+        should be able to sign up for an account with email address","story_type":"feature","current_state":"unstarted","estimate":2,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166950,"project_id":1383802,"name":"signup
+        / signin","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677142"},{"kind":"story","id":98677144,"project_id":1383802,"name":"Shopper
+        should be able to reset forgotten password","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166950,"project_id":1383802,"name":"signup
+        / signin","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677144"},{"kind":"story","id":98677146,"project_id":1383802,"name":"Shopper
+        should be able to log out","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166950,"project_id":1383802,"name":"signup
+        / signin","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677146"},{"kind":"story","id":98677148,"project_id":1383802,"name":"When
+        checking out, shopper should have the option to sign in to their account","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166950,"project_id":1383802,"name":"signup
+        / signin","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677148"}],"start":"2015-08-03T00:00:00Z","finish":"2015-08-10T00:00:00Z"},{"kind":"iteration","number":8,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677150,"project_id":1383802,"name":"Signed
+        in shopper should be able to review order history","description":"Show orders
+        in last 60 days, with link to show older orders","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166952,"project_id":1383802,"name":"shopper
+        accounts","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677150"},{"kind":"story","id":98677152,"project_id":1383802,"name":"Signed
+        in shopper should be able to save credit card and address information used
+        in checkout","description":"Credit card numbers should be stored encrypted","story_type":"feature","current_state":"unstarted","estimate":2,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166952,"project_id":1383802,"name":"shopper
+        accounts","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677152"},{"kind":"story","id":98677154,"project_id":1383802,"name":"Signed
+        in shopper should be able to save product to favorites","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166952,"project_id":1383802,"name":"shopper
+        accounts","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677154"},{"kind":"story","id":98677156,"project_id":1383802,"name":"Signed
+        in shopper should be able to review and remove product from favorites","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166952,"project_id":1383802,"name":"shopper
+        accounts","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677156"},{"kind":"story","id":98677158,"project_id":1383802,"name":"Provide
+        feedback to designer about look/feel of site","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166954,"project_id":1383802,"name":"design","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677158"}],"start":"2015-08-10T00:00:00Z","finish":"2015-08-17T00:00:00Z"},{"kind":"iteration","number":9,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677160,"project_id":1383802,"name":"Apply
+        styling to all shopper facing parts of the site, based on assets from designer","story_type":"feature","current_state":"unstarted","estimate":3,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166954,"project_id":1383802,"name":"design","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677160"},{"kind":"story","id":98677162,"project_id":1383802,"name":"Signed
+        in shopper should be able to post product reviews","story_type":"feature","current_state":"unstarted","estimate":2,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166956,"project_id":1383802,"name":"user
+        generated content","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677162"},{"kind":"story","id":98677164,"project_id":1383802,"name":"Signed
+        in shopper should be able to rate product, by choosing 1-5 stars","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166956,"project_id":1383802,"name":"user
+        generated content","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677164"},{"kind":"story","id":98677166,"project_id":1383802,"name":"When
+        shopper is browsing products, show average product rating and number of reviews
+        next to each product","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166956,"project_id":1383802,"name":"user
+        generated content","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677166"}],"start":"2015-08-17T00:00:00Z","finish":"2015-08-24T00:00:00Z"},{"kind":"iteration","number":10,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677168,"project_id":1383802,"name":"Shopper
+        should be able to read reviews for a product","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166956,"project_id":1383802,"name":"user
+        generated content","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677168"},{"kind":"story","id":98677170,"project_id":1383802,"name":"Admin
+        should be able to mark a product as featured","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166958,"project_id":1383802,"name":"featured
+        products","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677170"},{"kind":"story","id":98677172,"project_id":1383802,"name":"Featured
+        products should appear on the site landing page","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166958,"project_id":1383802,"name":"featured
+        products","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677172"},{"kind":"story","id":98677174,"project_id":1383802,"name":"Admin
+        should be able to create and edit blog articles","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166960,"project_id":1383802,"name":"blog","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677174"},{"kind":"story","id":98677176,"project_id":1383802,"name":"Admin
+        should be able to save blog articles in draft mode","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166960,"project_id":1383802,"name":"blog","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677176"},{"kind":"story","id":98677178,"project_id":1383802,"name":"Published
+        blog articles should appear on the site","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166960,"project_id":1383802,"name":"blog","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677178"},{"kind":"story","id":98677180,"project_id":1383802,"name":"People
+        should be able to subscribe to blog via RSS and Atom","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166960,"project_id":1383802,"name":"blog","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677180"},{"kind":"story","id":98677182,"project_id":1383802,"name":"Admin
+        should be able to view monthly sales report","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166962,"project_id":1383802,"name":"reporting","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677182"},{"kind":"story","id":98677184,"project_id":1383802,"name":"Admin
+        should be able to export orders as CSV file, based on date range and order
+        status","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166962,"project_id":1383802,"name":"reporting","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677184"},{"kind":"story","id":98677186,"project_id":1383802,"name":"Request
+        higher number of production slices, for scaling","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166932,"project_id":1383802,"name":"deployment","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677186"},{"kind":"story","id":98677188,"project_id":1383802,"name":"Full
+        production launch","story_type":"release","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677188"}],"start":"2015-08-24T00:00:00Z","finish":"2015-08-31T00:00:00Z"}]'
+    http_version: 
+  recorded_at: Mon, 13 Jul 2015 21:31:56 GMT
+- request:
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/1383802
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - 9ff67b815874f8a4afbb933a615a5a74
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 200 OK
+      X-Tracker-Project-Version:
+      - '34'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"778146ef97390b9ef7919545d4916065"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 10aa7152c79cf9bbc6820858a8d3b001
+      X-Runtime:
+      - '0.042122'
+      Date:
+      - Mon, 13 Jul 2015 21:31:57 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.41
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
+      X-Tracker-Client-Pinger-Interval:
+      - '12'
+    body:
+      encoding: UTF-8
+      string: '{"id":1383802,"kind":"project","name":"My Sample Project","version":34,"iteration_length":1,"week_start_day":"Monday","point_scale":"0,1,2,3","point_scale_is_custom":false,"bugs_and_chores_are_estimatable":false,"automatic_planning":true,"enable_tasks":true,"time_zone":{"kind":"time_zone","olson_name":"Etc/UTC","offset":"+00:00"},"velocity_averaged_over":3,"number_of_done_iterations_to_show":12,"has_google_domain":false,"profile_content":"This
+        is a demo project, created by Tracker, with example stories for a simple shopping
+        web site.","enable_incoming_emails":true,"initial_velocity":10,"public":false,"atom_enabled":false,"project_type":"demo","start_time":"2015-06-22T00:00:00Z","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T19:01:19Z","account_id":774272,"current_iteration_number":4,"enable_following":true}'
+    http_version: 
+  recorded_at: Mon, 13 Jul 2015 21:31:57 GMT
+- request:
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/1383802/iterations?scope=current_backlog
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - 9ff67b815874f8a4afbb933a615a5a74
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 200 OK
+      X-Tracker-Project-Version:
+      - '34'
+      X-Tracker-Pagination-Total:
+      - '7'
+      X-Tracker-Pagination-Offset:
+      - '0'
+      X-Tracker-Pagination-Limit:
+      - '10'
+      X-Tracker-Pagination-Returned:
+      - '7'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"e3b344f0a063765a180ad76e2c24b46b"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 751cbe0fae93fdb4ae7853fd594bb02f
+      X-Runtime:
+      - '0.038250'
+      Date:
+      - Mon, 13 Jul 2015 21:31:57 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.41
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
+      X-Tracker-Client-Pinger-Interval:
+      - '12'
+    body:
+      encoding: UTF-8
+      string: '[{"kind":"iteration","number":4,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677104,"project_id":1383802,"name":"Shopper
+        should be able to view contents of shopping cart","description":"Cart icon
+        in top right corner, with a number indicating how many items in cart","story_type":"feature","current_state":"delivered","estimate":2,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166940,"project_id":1383802,"name":"cart","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:11Z","url":"https://www.pivotaltracker.com/story/show/98677104"},{"kind":"story","id":98677106,"project_id":1383802,"name":"Shopper
+        should be able to remove product from shopping cart","story_type":"feature","current_state":"delivered","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166940,"project_id":1383802,"name":"cart","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:11Z","url":"https://www.pivotaltracker.com/story/show/98677106"},{"kind":"story","id":98677108,"project_id":1383802,"name":"Cart
+        manipulation should be AJAXy","story_type":"feature","current_state":"finished","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166940,"project_id":1383802,"name":"cart","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677108"},{"kind":"story","id":98677110,"project_id":1383802,"name":"Some
+        product photos not scaled properly when browsing products","story_type":"bug","current_state":"started","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677110"},{"kind":"story","id":98677112,"project_id":1383802,"name":"Shopper
+        should be able to recommend a product to a friend","description":"Prompt for
+        email address and personalized message, send email with product details and
+        message","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677112"},{"kind":"story","id":98677114,"project_id":1383802,"name":"configure
+        solr for full text searching","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166942,"project_id":1383802,"name":"search","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677114"},{"kind":"story","id":98688698,"project_id":1383802,"name":"trying
+        to insert after configure solr","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-07-08T21:01:30Z","updated_at":"2015-07-08T21:01:30Z","url":"https://www.pivotaltracker.com/story/show/98688698"}],"start":"2015-07-13T00:00:00Z","finish":"2015-07-20T00:00:00Z"},{"kind":"iteration","number":5,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677116,"project_id":1383802,"name":"Shopper
+        should be able to search for product","description":"One search field, search
+        should look through product name, description, and SKU","story_type":"feature","current_state":"unstarted","estimate":3,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166942,"project_id":1383802,"name":"search","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677116"},{"kind":"story","id":98677118,"project_id":1383802,"name":"Initial
+        demo to investors","story_type":"release","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677118"},{"kind":"story","id":98677120,"project_id":1383802,"name":"Shopper
+        should be able to enter credit card information and shipping address","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166944,"project_id":1383802,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677120"},{"kind":"story","id":98677122,"project_id":1383802,"name":"Integrate
+        with payment gateway","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166944,"project_id":1383802,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677122"},{"kind":"story","id":98677124,"project_id":1383802,"name":"When
+        shopper submits order, authorize total product amount from payment gateway","story_type":"feature","current_state":"unstarted","estimate":3,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166944,"project_id":1383802,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166946,"project_id":1383802,"name":"needs
+        discussion","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677124"}],"start":"2015-07-20T00:00:00Z","finish":"2015-07-27T00:00:00Z"},{"kind":"iteration","number":6,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677126,"project_id":1383802,"name":"If
+        system fails to authorize payment amount, display error message to shopper","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166944,"project_id":1383802,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677126"},{"kind":"story","id":98677128,"project_id":1383802,"name":"If
+        authorization is successful, show order number and confirmation message to
+        shopper","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166944,"project_id":1383802,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677128"},{"kind":"story","id":98688754,"project_id":1383802,"name":"Foo
+        Bar 2","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-07-08T21:02:19Z","updated_at":"2015-07-08T21:02:19Z","url":"https://www.pivotaltracker.com/story/show/98688754"},{"kind":"story","id":98677130,"project_id":1383802,"name":"Send
+        notification email of order placement to admin","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166944,"project_id":1383802,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":1383802,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677130"},{"kind":"story","id":98677132,"project_id":1383802,"name":"Shopper
+        should be able to check status of order by entering name and order number","story_type":"feature","current_state":"unstarted","estimate":2,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166948,"project_id":1383802,"name":"orders","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677132"},{"kind":"story","id":98677134,"project_id":1383802,"name":"Shopper
+        should be able to ask question about order","description":"When checking status
+        of order, shopper should have the option to ask a question. This should send
+        email to admin.","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166948,"project_id":1383802,"name":"orders","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677134"}],"start":"2015-07-27T00:00:00Z","finish":"2015-08-03T00:00:00Z"},{"kind":"iteration","number":7,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677136,"project_id":1383802,"name":"Admin
+        can review all order questions and send responses to shoppers","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166948,"project_id":1383802,"name":"orders","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677136"},{"kind":"story","id":98677138,"project_id":1383802,"name":"Set
+        up Engine Yard production environment","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166932,"project_id":1383802,"name":"deployment","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677138"},{"kind":"story","id":98677140,"project_id":1383802,"name":"Beta
+        launch","story_type":"release","current_state":"unstarted","deadline":"2015-07-27T00:00:00Z","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677140"},{"kind":"story","id":98677142,"project_id":1383802,"name":"Shopper
+        should be able to sign up for an account with email address","story_type":"feature","current_state":"unstarted","estimate":2,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166950,"project_id":1383802,"name":"signup
+        / signin","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677142"},{"kind":"story","id":98677144,"project_id":1383802,"name":"Shopper
+        should be able to reset forgotten password","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166950,"project_id":1383802,"name":"signup
+        / signin","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677144"},{"kind":"story","id":98677146,"project_id":1383802,"name":"Shopper
+        should be able to log out","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166950,"project_id":1383802,"name":"signup
+        / signin","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677146"},{"kind":"story","id":98677148,"project_id":1383802,"name":"When
+        checking out, shopper should have the option to sign in to their account","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166950,"project_id":1383802,"name":"signup
+        / signin","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677148"}],"start":"2015-08-03T00:00:00Z","finish":"2015-08-10T00:00:00Z"},{"kind":"iteration","number":8,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677150,"project_id":1383802,"name":"Signed
+        in shopper should be able to review order history","description":"Show orders
+        in last 60 days, with link to show older orders","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166952,"project_id":1383802,"name":"shopper
+        accounts","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677150"},{"kind":"story","id":98677152,"project_id":1383802,"name":"Signed
+        in shopper should be able to save credit card and address information used
+        in checkout","description":"Credit card numbers should be stored encrypted","story_type":"feature","current_state":"unstarted","estimate":2,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166952,"project_id":1383802,"name":"shopper
+        accounts","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677152"},{"kind":"story","id":98677154,"project_id":1383802,"name":"Signed
+        in shopper should be able to save product to favorites","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166952,"project_id":1383802,"name":"shopper
+        accounts","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677154"},{"kind":"story","id":98677156,"project_id":1383802,"name":"Signed
+        in shopper should be able to review and remove product from favorites","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166952,"project_id":1383802,"name":"shopper
+        accounts","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677156"},{"kind":"story","id":98677158,"project_id":1383802,"name":"Provide
+        feedback to designer about look/feel of site","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166954,"project_id":1383802,"name":"design","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677158"}],"start":"2015-08-10T00:00:00Z","finish":"2015-08-17T00:00:00Z"},{"kind":"iteration","number":9,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677160,"project_id":1383802,"name":"Apply
+        styling to all shopper facing parts of the site, based on assets from designer","story_type":"feature","current_state":"unstarted","estimate":3,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166954,"project_id":1383802,"name":"design","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677160"},{"kind":"story","id":98677162,"project_id":1383802,"name":"Signed
+        in shopper should be able to post product reviews","story_type":"feature","current_state":"unstarted","estimate":2,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166956,"project_id":1383802,"name":"user
+        generated content","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677162"},{"kind":"story","id":98677164,"project_id":1383802,"name":"Signed
+        in shopper should be able to rate product, by choosing 1-5 stars","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166956,"project_id":1383802,"name":"user
+        generated content","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677164"},{"kind":"story","id":98677166,"project_id":1383802,"name":"When
+        shopper is browsing products, show average product rating and number of reviews
+        next to each product","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166956,"project_id":1383802,"name":"user
+        generated content","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677166"}],"start":"2015-08-17T00:00:00Z","finish":"2015-08-24T00:00:00Z"},{"kind":"iteration","number":10,"project_id":1383802,"team_strength":1,"stories":[{"kind":"story","id":98677168,"project_id":1383802,"name":"Shopper
+        should be able to read reviews for a product","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166956,"project_id":1383802,"name":"user
+        generated content","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677168"},{"kind":"story","id":98677170,"project_id":1383802,"name":"Admin
+        should be able to mark a product as featured","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166958,"project_id":1383802,"name":"featured
+        products","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677170"},{"kind":"story","id":98677172,"project_id":1383802,"name":"Featured
+        products should appear on the site landing page","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166958,"project_id":1383802,"name":"featured
+        products","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677172"},{"kind":"story","id":98677174,"project_id":1383802,"name":"Admin
+        should be able to create and edit blog articles","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166960,"project_id":1383802,"name":"blog","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677174"},{"kind":"story","id":98677176,"project_id":1383802,"name":"Admin
+        should be able to save blog articles in draft mode","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166960,"project_id":1383802,"name":"blog","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677176"},{"kind":"story","id":98677178,"project_id":1383802,"name":"Published
+        blog articles should appear on the site","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166960,"project_id":1383802,"name":"blog","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677178"},{"kind":"story","id":98677180,"project_id":1383802,"name":"People
+        should be able to subscribe to blog via RSS and Atom","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166960,"project_id":1383802,"name":"blog","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677180"},{"kind":"story","id":98677182,"project_id":1383802,"name":"Admin
+        should be able to view monthly sales report","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166962,"project_id":1383802,"name":"reporting","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677182"},{"kind":"story","id":98677184,"project_id":1383802,"name":"Admin
+        should be able to export orders as CSV file, based on date range and order
+        status","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166934,"project_id":1383802,"name":"admin","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"},{"kind":"label","id":12166962,"project_id":1383802,"name":"reporting","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677184"},{"kind":"story","id":98677186,"project_id":1383802,"name":"Request
+        higher number of production slices, for scaling","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166932,"project_id":1383802,"name":"deployment","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677186"},{"kind":"story","id":98677188,"project_id":1383802,"name":"Full
+        production launch","story_type":"release","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677188"}],"start":"2015-08-24T00:00:00Z","finish":"2015-08-31T00:00:00Z"}]'
+    http_version: 
+  recorded_at: Mon, 13 Jul 2015 21:31:57 GMT
+recorded_with: VCR 2.9.3
