@@ -16,14 +16,14 @@ class StoryFormatter
   end
 
   def body
-    body = <<-BODY
+    body = %Q(
 #{description}
 
 ## Acceptance Criteria
 
 * #{error_expectation}
 * #{confirmation_flow}
-    BODY
+)
   end
 
 
