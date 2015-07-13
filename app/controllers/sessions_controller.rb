@@ -7,10 +7,15 @@ class SessionsController < ApplicationController
   def create
     auth = request.env["omniauth.auth"]
     user = User.find_with_omniauth(auth) || User.create_with_omniauth(auth)
-    reset_session
-    session[:user_id] = user.id
-    flash[:success] = "Logged In!"
-    redirect_to iterations_path
+    if verify_github_org(user, auth)
+      reset_session
+      session[:user_id] = user.id
+      flash[:success] = "Logged In!"
+      redirect_to iterations_path
+    else
+      flash[:alert] = "You do not have sufficient permissions."
+      redirect_to root_url
+    end
   end
 
   def failure
@@ -22,5 +27,19 @@ class SessionsController < ApplicationController
     logout!
     flash[:notice] = "Logged out!"
     redirect_to root_url
+  end
+
+private
+
+  def verify_github_org(user, auth)
+    return true if Rails.env.test? # TODO need a better way to mock this
+
+    client = Octokit::Client.new(access_token: auth['credentials']['token'])
+    # NOTE check TEAM member with client.team_member?(ENV['ADMIN_TEAMID'], client.user.login)
+    if ENV.has_key?('ORG_NAME') && client.org_member?(ENV['ORG_NAME'], client.user.login)
+      true
+    else
+      false
+    end
   end
 end

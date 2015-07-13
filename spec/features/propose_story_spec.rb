@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe "Propose New Story", type: :feature, vcr: {record: :new_episodes} do
 
   before do
+    signin
     visit '/stories/new'
   end
 

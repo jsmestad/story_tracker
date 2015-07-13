@@ -19,6 +19,7 @@ gem 'neat'
 gem 'bourbon'
 
 gem 'omniauth-github', '~> 1.1.2'
+gem 'octokit'
 
 group :development, :test do
   gem 'byebug'
