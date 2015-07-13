@@ -1,5 +1,6 @@
 class IterationStoriesController < ApplicationController
   before_filter :iteration
+  before_filter :authenticate_user!
 
   def new
     @last_story = iteration.stories.last

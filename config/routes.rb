@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resource :user, only: [:show]
 
-  root to: 'iterations#index'
+  root to: 'vistors#index'
 
   get '/auth/:provider/callback' => 'sessions#create'
   get '/login' => 'sessions#new', as: :login

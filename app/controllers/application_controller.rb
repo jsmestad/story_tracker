@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
 
   private
 
+    def logout!
+      reset_session
+      session.destroy
+      @current_user = nil
+    end
+
     def current_user
       begin
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -34,7 +40,7 @@ class ApplicationController < ActionController::Base
 
     def authenticate_user!
       if !current_user
-        redirect_to root_url, :alert => 'You need to sign in for access to this page.'
+        redirect_to login_url, :alert => 'You need to sign in for access to this page.'
       end
     end
 
