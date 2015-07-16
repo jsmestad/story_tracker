@@ -6,14 +6,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %nav
-      %ul
-        %li
-          - if user_signed_in?
-            %a{href: user_path } Account
-            %a{href: logout_path} Log out
-          - else
-            %a{href: login_path} Log in
+    = render partial: 'shared/navigation'
     .main
       - flash.each do |type, msg|
         .flash{class: type}
