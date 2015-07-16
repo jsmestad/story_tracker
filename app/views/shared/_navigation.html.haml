@@ -1,0 +1,19 @@
+%header.navigation{:role => "banner"}
+  .navigation-wrapper
+    %a.logo{href: root_path}
+      Storytracker
+    %a#js-mobile-menu.navigation-menu-button{:href => "javascript:void(0)"} MENU
+    %nav{:role => "navigation"}
+      %ul#js-navigation-menu.navigation-menu.show
+        %li.nav-link
+          %a.button{href: new_story_path} Propose Story
+    .navigation-tools
+      %ul
+        - if !user_signed_in?
+          %li.nav-link
+            %a{href: login_path} Log In
+        - else
+          %li.nav-link
+            %a{href: user_path} Your Requests
+          %li.nav-link
+            %a{href: logout_path} Log Out

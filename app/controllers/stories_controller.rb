@@ -13,6 +13,7 @@ class StoriesController < ApplicationController
       flash[:error] = "Could not save the story."
       render action: 'new'
     else
+      current_user.stories.create!(external_ref: @story.id)
       flash[:success] = "Story has been created with ID <a href='#{@story.url}'>##{@story.id}</a>."
       redirect_to iterations_path
     end
