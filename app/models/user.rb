@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :stories, dependent: :destroy, inverse_of: :user
 
   validates :uid, presence: true, uniqueness: {case_sensitive: false}
   validates :provider, presence: true

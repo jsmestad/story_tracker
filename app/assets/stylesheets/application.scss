@@ -2,8 +2,16 @@
 @import 'base/grid-settings';
 @import 'neat';
 @import 'base/base';
+
 @import 'fill_in_form';
+@import 'navigation';
+
+body,html {
+  padding: 0;
+  margin: 0;
+}
 
 .main {
   @include outer-container;
+  padding-top: 2em;
 }

@@ -1,6 +1,3 @@
-= link_to 'Propose Story', new_story_path, class: 'button'
-
-%hr/
 - @iterations.each do |iteration|
   %h2 Iteration #{iteration.number}
   - if iteration.is_current?

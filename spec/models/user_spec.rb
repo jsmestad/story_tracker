@@ -5,7 +5,9 @@ RSpec.describe User do
 
   subject { user }
 
-  it { should respond_to(:name) }
+  it { is_expected.to have_many(:stories).dependent(:destroy) }
+
+  it { is_expected.to respond_to(:name) }
 
   it { is_expected.to validate_presence_of(:uid) }
   it { is_expected.to validate_presence_of(:provider) }
