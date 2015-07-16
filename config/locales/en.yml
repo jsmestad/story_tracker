@@ -24,4 +24,4 @@ en:
   helpers:
     submit:
       story:
-        create: 'Propose Story'
+        create: 'Submit Story'
