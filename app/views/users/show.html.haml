@@ -1,19 +1,23 @@
-%h2 Sweet #{@user.name}
-
 %h3 Requested Stories
 %table
   %thead
     %tr
-      %th Story ID
-      %th Requested
+      %th Name
+      %th State
+      %th Submitted
+      %th
   %tbody
     - @user.stories.order(created_at: :desc).each do |story|
       %tr
-        %td #{story.external_ref}
+        %td #{story.name}
+        %td #{story.current_state.titleize}
         %td #{time_ago_in_words(story.created_at)} ago
+        %td
+          %a{href: story.url} View in PT
+        -# %td #{story.external_ref}
   %tfoot
     %tr
-      %td{colspan: 2} Total Requested: #{@user.stories.count}
+      %td{colspan: 4} Total Requested: #{@user.stories.count}
 
 
 
