@@ -21,6 +21,11 @@ gem 'bourbon'
 gem 'omniauth-github', '~> 1.1.2'
 gem 'octokit'
 
+group :development do
+  gem 'guard-livereload', '~> 2.4', require: false
+  gem 'guard-pow', require: false
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
