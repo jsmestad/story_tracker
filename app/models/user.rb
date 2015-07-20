@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   validates :uid, presence: true, uniqueness: {case_sensitive: false}
   validates :provider, presence: true
 
+  attr_encrypted_options.merge!(encode: true)
+  attr_encrypted :api_key, key: ENV['USER_APIKEY_KEY']
+
   def self.find_with_omniauth(auth)
     self.where(provider: auth['provider'], uid: auth['uid'].to_s).first
   end

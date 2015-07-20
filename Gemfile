@@ -15,6 +15,8 @@ gem 'tracker_api', '~> 0.2.10', github: 'jsmestad/tracker_api', branch: 'verify-
 gem 'haml-rails'
 gem 'simple_form'
 
+gem 'attr_encrypted'
+
 gem 'neat'
 gem 'bourbon'
 
