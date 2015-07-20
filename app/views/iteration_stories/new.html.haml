@@ -1,10 +1,12 @@
-%h1 Propose Additional Story
+.flash.alert
+  Warning: You are suggesting we add this story to an upcoming iteration and not a general story.
 
-%p You are proposing an story to be slated as part of the #{@iteration.number} iteration after story &ldquo;#{@last_story.name}&rdquo;.
+%h1 Propose addition to upcoming iteration
 
 %section.add-story
   = form_for @story, as: :story, url: iteration_stories_path(@iteration), method: :post, html: { class: 'new_story fill_in' } do |f|
-  = f.hidden_field :after_id, value: @last_story.id
-  = render partial: 'shared/story_fields', locals: {form: f}
-  = f.button
+    = render partial: 'shared/story_fields', locals: {form: f}
+    .line
+      .flash.alert This story will be added directly to the iteration starting <em>#{@iteration.start.strftime('%A %b %d')}</em>.
+      = f.button
 

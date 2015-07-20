@@ -1,18 +1,25 @@
 .story-content
-  As an
-  #{form.text_field :stakeholder, placeholder: 'e.g. accountant', required: true},
-  I want
-  #{form.text_field :the_ask, placeholder: 'e.g. slack integration', required: true},
-  %br
-  so that
-  #{form.text_field :reasoning, placeholder: 'e.g. I can stop importing invoices manually', required: true, class: 'reasoning'}.
+  .line
+    %span As an
+    #{form.text_field :stakeholder, placeholder: 'e.g. accountant', required: true}
+    %span.comma
+    %span I want
+    #{form.text_field :the_ask, placeholder: 'e.g. slack integration', required: true}
+    %span.comma
+  .line
+    %span so that
+    #{form.text_field :reasoning, placeholder: 'e.g. I can stop importing invoices manually', required: true, class: 'reasoning'}
+    %span.period
 
 .acceptance-criteria
-  The way I want to test this is by
-  %br
-  #{form.text_field :confirmation_flow, placeholder: 'e.g. posting content to slack and seeing it show up in the invoice', required: true, class: 'full-width'}.
-  %br
-  When an error occurrs,
-  %br
-  #{form.text_field :error_expectation, placeholder: 'e.g. I expect to see a MissingIntegrationException returned', required: true, class: 'full-width'}.
+  .line
+    %span The way I want to test this is by
+  .line
+    #{form.text_field :confirmation_flow, placeholder: 'e.g. posting content to slack and seeing it show up in the invoice', required: true}
+    %span.period
+  .line
+    %div When an error occurrs,
+  .line
+    #{form.text_field :error_expectation, placeholder: 'e.g. I expect to see a MissingIntegrationException returned', required: true}
+    %span.period
 

@@ -1,6 +1,8 @@
 // Typography
-$base-font-family: $helvetica;
-$heading-font-family: $base-font-family;
+$sans-serif: 'PT Sans', sans-serif;
+$base-font-family: $sans-serif;
+$sans-serif-2: 'Titillium Web', sans-serif;
+$heading-font-family: $sans-serif-2;
 
 // Font Sizes
 $base-font-size: 1em;

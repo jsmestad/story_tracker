@@ -1,16 +1,28 @@
-- @iterations.each do |iteration|
-  %h2 Iteration #{iteration.number}
-  - if iteration.is_current?
-    This is the current iteration
-  - elsif iteration.is_past?
-    This iteration is over
-  - elsif iteration.is_future?
-    This is a future iteration
-  %div Started on #{iteration.start.strftime('%b %d')}
-  %div Finished on #{iteration.finish.strftime('%b %d')}
-  %div Stream strength is planned on #{(iteration.team_strength * 100).to_i}%
+.vertical-tabs-container
+  .vertical-tabs
+    - @iterations.each do |iteration|
+      %a.js-vertical-tab.vertical-tab{:href => "javascript:void(0)", rel: "tab#{iteration.number}"}
+        - if iteration.is_current?
+          Current iteration
+        - else
+          Iteration starting #{iteration.start.strftime('%b %d')}
+  .vertical-tab-content-container
+    - @iterations.each do |iteration|
+      %a.js-vertical-tab-accordion-heading.vertical-tab-accordion-heading{:href => "", :rel => "tab#{iteration.number}"}
+        - if iteration.is_current?
+          Today - #{iteration.finish.strftime('%b %d')}
+        - else
+          #{iteration.start.strftime('%b %d')} - #{iteration.finish.strftime('%b %d')}
+      %div.js-vertical-tab-content.vertical-tab-content{id: "tab#{iteration.number}"}
+        - if iteration.is_future?
+          .suggestion
+            %a{href: new_iteration_story_path(iteration)}
+              %i.fi-plus
+              Suggest Addition
+        = render partial: 'stories/story', collection: iteration.stories
+        - if iteration.team_strength < 1.0
+          %hr
+          .flash.notice Notice: This iteration has an adjusted team strength of #{(iteration.team_strength * 100).to_i}%.
 
-  %ul
-    - iteration.stories.each do |story|
-      %li #{story.name}
-      -# (#{link_to 'propose additional story', new_iteration_story_path(iteration)})
+.disclaimer
+  %p The dates provided above are estimates. They are not provided as a commitment or contract of delivery.

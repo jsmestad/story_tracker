@@ -1,14 +1,44 @@
 form.fill_in {
-  @include span-columns(6);
-  @include shift(3);
+  @include span-columns(8);
+  @include shift(2);
   .story-content, .acceptance-criteria {
     font-weight: 700;
     color: rgba(0,0,0,0.7);
     margin-top: 3.2em;
   }
 
+
+  .acceptance-criteria {
+    margin-bottom: 2em;
+    .line {
+      input { flex: 1; margin-left: 0; }
+    }
+  }
+  .flash {
+    margin-right: 1em;
+  }
   button {
-    margin-top: 3.2em;
+    @include flex-grow(2);
+    /* margin-top: 1em; */
+    /* text-align: right; */
+    /* float: right; */
+  }
+
+  .line {
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    span {
+      padding-right: 0.2em;
+    }
+    input {
+      flex: 2;
+      width: 100%;
+      margin-left: 0.1em;
+      margin-right: 0.1em;
+    }
+    span.comma:after { width: 3px; content: ','; }
+    span.period:after { width: 3px; content: '.'; }
   }
 
   input {
@@ -23,15 +53,6 @@ form.fill_in {
     padding: 0.2em;
     &:focus {
       box-shadow: none;
-    }
-    &.reasoning {
-      width: 469px;
-    }
-    &.full-width {
-      width: 99%;
-    }
-    &#story_the_ask {
-      width: 246px;
     }
   }
 
