@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :stories, only: [:new, :create]
 
-  resource :user, only: [:show]
+  resource :user, only: [:show, :edit, :update]
 
   root to: 'vistors#index'
 

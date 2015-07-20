@@ -10,6 +10,12 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
+    labels:
+      user:
+        api_key: 'Pivotal Tracker API Token'
+    placeholders:
+      user:
+        api_key: 'e.g. 235bfdbddb79a48bad5fb007db87a485'
     # Examples
     # labels:
     #   defaults:

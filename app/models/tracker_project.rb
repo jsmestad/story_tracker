@@ -3,9 +3,16 @@ class TrackerProject
 
   attr_accessor :project_id, :api_token
 
-  def initialize(project_id=nil, api_token=nil)
-    self.api_token = ENV['PIVOTAL_TRACKER_API_TOKEN']
+  def initialize(project_id: nil, api_token: nil)
+    self.api_token = api_token || ENV['PIVOTAL_TRACKER_API_TOKEN']
     self.project_id = project_id || ENV['DEFAULT_TRACKER_PROJECT']
+  end
+
+  def is_properly_configured?
+    project.account_id
+    true
+  rescue TrackerApi::Error
+    false
   end
 
   def method_missing(method, *args, &block)
