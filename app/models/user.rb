@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
   validates :uid, presence: true, uniqueness: {case_sensitive: false}
   validates :provider, presence: true
 
+  attr_encrypted_options.merge!(encode: true)
+  attr_encrypted :api_key, key: ENV['USER_APIKEY_KEY']
+
+  validate :api_key_can_access_project
+
   def self.find_with_omniauth(auth)
     self.where(provider: auth['provider'], uid: auth['uid'].to_s).first
   end
@@ -15,6 +20,19 @@ class User < ActiveRecord::Base
       if auth['info']
         user.name = auth['info']['name'] || ""
       end
+    end
+  end
+
+  def has_api_key?
+    !api_key.blank?
+  end
+
+protected
+
+  def api_key_can_access_project
+    if api_key.present?
+      project = TrackerProject.new(ENV['DEFAULT_TRACKER_PROJECT'], api_key)
+      errors.add(:api_key, 'does not have access to the Pivotal Tracker project.') unless project.is_properly_configured?
     end
   end
 end

@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def project
-    @project ||= TrackerProject.new
+    @project ||= if user_signed_in? && current_user.has_api_key?
+                   TrackerProject.new(api_token: current_user.api_key)
+                 else
+                   TrackerProject.new
+                 end
   end
 
   helper_method :current_user
