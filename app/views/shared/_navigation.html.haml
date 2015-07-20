@@ -1,6 +1,6 @@
 %header.navigation{:role => "banner"}
   .navigation-wrapper
-    %a.logo{href: root_path}
+    %a.logo{href: user_signed_in? ? iterations_path : root_path}
       Storytracker
     %a#js-mobile-menu.navigation-menu-button{:href => "javascript:void(0)"} MENU
     %nav{:role => "navigation"}

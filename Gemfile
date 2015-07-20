@@ -9,7 +9,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
 gem 'jquery-rails'
-gem 'turbolinks'
+# gem 'turbolinks'
 
 gem 'tracker_api', '~> 0.2.10', github: 'jsmestad/tracker_api', branch: 'verify-object-ext-is-needed'
 gem 'haml-rails'
