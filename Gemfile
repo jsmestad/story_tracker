@@ -20,10 +20,12 @@ gem 'bourbon'
 
 gem 'omniauth-github', '~> 1.1.2'
 gem 'octokit'
+gem 'foundation-icons-sass-rails'
 
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false
   gem 'guard-pow', require: false
+  gem 'guard-rails', require: false
 end
 
 group :development, :test do

@@ -3,13 +3,13 @@ class IterationStoriesController < ApplicationController
   before_filter :authenticate_user!
 
   def new
-    @last_story = iteration.stories.last
     @story = StoryFormatter.new
     render
   end
 
   def create
     formatted_story = StoryFormatter.new(story_params)
+    formatted_story.after_id = last_story.to_param
     @story = project.create_story(formatted_story.as_params)
     if @story.id.blank?
       flash[:error] = "Could not save the story."

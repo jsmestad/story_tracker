@@ -3,5 +3,7 @@
 %section.add-story
   = form_for @story, as: :story, url: stories_path, method: :post, html: { class: 'new_story fill_in' } do |f|
     = render partial: 'shared/story_fields', locals: {form: f}
-    = f.button
+    .line
+      .flash.notice This story will be added to the icebox and be discussed in an upcoming Pre-IPM.
+      = f.button
 

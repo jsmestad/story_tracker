@@ -29,3 +29,10 @@ dl {
     margin: 0;
   }
 }
+
+ul.default {
+  list-style-type: disc;
+  margin-bottom: $small-spacing;
+  padding-left: $base-spacing;
+}
+
