@@ -1,0 +1,45 @@
+{
+  "kind": "story_update_activity",
+  "guid": "1383802_51",
+  "project_version": 51,
+  "message": "Justin Smestad estimated this feature as 3 points",
+  "highlight": "estimated",
+  "changes": [
+    {
+      "kind": "story",
+      "change_type": "update",
+      "id": 99380320,
+      "original_values": {
+        "estimate": null,
+        "updated_at": 1437351778000
+      },
+      "new_values": {
+        "estimate": 3,
+        "updated_at": 1437498122000
+      },
+      "name": "As a another customer, I want stuff",
+      "story_type": "feature"
+    }
+  ],
+  "primary_resources": [
+    {
+      "kind": "story",
+      "id": 99380320,
+      "name": "As a another customer, I want stuff",
+      "story_type": "feature",
+      "url": "https://www.pivotaltracker.com/story/show/99380320"
+    }
+  ],
+  "project": {
+    "kind": "project",
+    "id": 1383802,
+    "name": "My Sample Project"
+  },
+  "performed_by": {
+    "kind": "person",
+    "id": 379075,
+    "name": "Justin Smestad",
+    "initials": "JS"
+  },
+  "occurred_at": 1437498122000
+}

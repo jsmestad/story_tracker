@@ -1,0 +1,65 @@
+{
+  "kind": "story_delete_activity",
+  "guid": "1383802_49",
+  "project_version": 49,
+  "message": "Justin Smestad deleted 3 stories",
+  "highlight": "deleted",
+  "changes": [
+    {
+      "kind": "story",
+      "change_type": "delete",
+      "id": 98991768,
+      "name": "As a customer, I want slack integration",
+      "story_type": "feature"
+    },
+    {
+      "kind": "story",
+      "change_type": "delete",
+      "id": 99361994,
+      "name": "As a joint development partner, I want a way to learn about upcoming features",
+      "story_type": "feature"
+    },
+    {
+      "kind": "story",
+      "change_type": "delete",
+      "id": 99380284,
+      "name": "As a foo, I want bar",
+      "story_type": "feature"
+    }
+  ],
+  "primary_resources": [
+    {
+      "kind": "story",
+      "id": 99380284,
+      "name": "As a foo, I want bar",
+      "story_type": "feature",
+      "url": "https://www.pivotaltracker.com/story/show/99380284"
+    },
+    {
+      "kind": "story",
+      "id": 99361994,
+      "name": "As a joint development partner, I want a way to learn about upcoming features",
+      "story_type": "feature",
+      "url": "https://www.pivotaltracker.com/story/show/99361994"
+    },
+    {
+      "kind": "story",
+      "id": 98991768,
+      "name": "As a customer, I want slack integration",
+      "story_type": "feature",
+      "url": "https://www.pivotaltracker.com/story/show/98991768"
+    }
+  ],
+  "project": {
+    "kind": "project",
+    "id": 1383802,
+    "name": "My Sample Project"
+  },
+  "performed_by": {
+    "kind": "person",
+    "id": 379075,
+    "name": "Justin Smestad",
+    "initials": "JS"
+  },
+  "occurred_at": 1437498055000
+}

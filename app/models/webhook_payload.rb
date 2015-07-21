@@ -26,6 +26,22 @@ class WebhookPayload
     payload['highlight']
   end
 
+  def changes
+    payload['changes']
+  end
+
+  def primary_resources
+    payload['primary_resources']
+  end
+
+  def project
+    payload['project']
+  end
+
+  def performed_by
+    payload['performed_by']
+  end
+
   def occurred_at
     Time.at(payload['occurred_at']).to_datetime
   end

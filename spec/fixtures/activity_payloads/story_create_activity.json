@@ -1,0 +1,158 @@
+{
+  "kind": "story_create_activity",
+  "guid": "1383802_47",
+  "project_version": 47,
+  "message": "Justin Smestad added this feature",
+  "highlight": "added",
+  "changes": [
+    {
+      "kind": "story",
+      "change_type": "create",
+      "id": 99533038,
+      "new_values": {
+        "id": 99533038,
+        "project_id": 1383802,
+        "name": "Adding a new story to the list",
+        "description": "This is a new story",
+        "story_type": "feature",
+        "current_state": "unscheduled",
+        "requested_by_id": 379075,
+        "owner_ids": [
+
+        ],
+        "label_ids": [
+          12276718
+        ],
+        "follower_ids": [
+
+        ],
+        "created_at": 1437497977000,
+        "updated_at": 1437497977000,
+        "before_id": 99380284,
+        "after_id": 98677188,
+        "labels": [
+          "with_label"
+        ]
+      },
+      "name": "Adding a new story to the list",
+      "story_type": "feature"
+    },
+    {
+      "kind": "task",
+      "change_type": "create",
+      "id": 34081822,
+      "new_values": {
+        "id": 34081822,
+        "story_id": 99533038,
+        "description": "and a task",
+        "complete": false,
+        "position": 1,
+        "created_at": 1437497977000,
+        "updated_at": 1437497977000
+      }
+    },
+    {
+      "kind": "label",
+      "change_type": "update",
+      "id": 12276718,
+      "original_values": {
+        "counts": {
+          "number_of_zero_point_stories_by_state": {
+            "accepted": 0,
+            "started": 0,
+            "finished": 0,
+            "unstarted": 0,
+            "planned": 0,
+            "delivered": 0,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "sum_of_story_estimates_by_state": {
+            "accepted": 0,
+            "started": 0,
+            "finished": 0,
+            "unstarted": 0,
+            "planned": 0,
+            "delivered": 0,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "number_of_stories_by_state": {
+            "accepted": 0,
+            "started": 0,
+            "finished": 0,
+            "unstarted": 0,
+            "planned": 0,
+            "delivered": 0,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "kind": "story_counts"
+        }
+      },
+      "new_values": {
+        "counts": {
+          "number_of_zero_point_stories_by_state": {
+            "accepted": 0,
+            "started": 0,
+            "finished": 0,
+            "unstarted": 0,
+            "planned": 0,
+            "delivered": 0,
+            "unscheduled": 1,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "sum_of_story_estimates_by_state": {
+            "accepted": 0,
+            "started": 0,
+            "finished": 0,
+            "unstarted": 0,
+            "planned": 0,
+            "delivered": 0,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "number_of_stories_by_state": {
+            "accepted": 0,
+            "started": 0,
+            "finished": 0,
+            "unstarted": 0,
+            "planned": 0,
+            "delivered": 0,
+            "unscheduled": 1,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "kind": "story_counts"
+        }
+      },
+      "name": "with_label"
+    }
+  ],
+  "primary_resources": [
+    {
+      "kind": "story",
+      "id": 99533038,
+      "name": "Adding a new story to the list",
+      "story_type": "feature",
+      "url": "https://www.pivotaltracker.com/story/show/99533038"
+    }
+  ],
+  "project": {
+    "kind": "project",
+    "id": 1383802,
+    "name": "My Sample Project"
+  },
+  "performed_by": {
+    "kind": "person",
+    "id": 379075,
+    "name": "Justin Smestad",
+    "initials": "JS"
+  },
+  "occurred_at": 1437497978000
+}
