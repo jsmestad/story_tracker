@@ -13,20 +13,30 @@ module PivotalTracker
     EVENTS = %w[ story_move_activity ].freeze
 
     def callback
+      if ENV['CALLBACK_TOKEN'] != params[:token]
+        render nothing: true, status: :not_found and return
+      end
+
       payload = WebhookPayload.new(payload_params)
 
       unless EVENTS.include?(payload.kind)
         render nothing: true, status: :not_found and return
       end
 
+      updated = false
       payload.primary_resources.each do |resource|
         next if resource['kind'] != 'story'
         if story = Story.find_by(external_ref: resource['id'])
           story.handle_callback!(resource)
+          updated = true
         end
       end
 
-      head :ok
+      if updated
+        head :created
+      else
+        head :ok
+      end
     end
 
   protected
