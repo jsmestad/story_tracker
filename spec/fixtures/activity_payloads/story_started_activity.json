@@ -1,0 +1,139 @@
+{
+  "kind": "story_update_activity",
+  "guid": "1383802_50",
+  "project_version": 50,
+  "message": "Justin Smestad started this feature",
+  "highlight": "started",
+  "changes": [
+    {
+      "kind": "label",
+      "change_type": "update",
+      "id": 12166936,
+      "original_values": {
+        "counts": {
+          "number_of_zero_point_stories_by_state": {
+            "accepted": 0,
+            "started": 1,
+            "finished": 0,
+            "unstarted": 1,
+            "planned": 0,
+            "delivered": 0,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "sum_of_story_estimates_by_state": {
+            "accepted": 7,
+            "started": 0,
+            "finished": 1,
+            "unstarted": 11,
+            "planned": 0,
+            "delivered": 3,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "number_of_stories_by_state": {
+            "accepted": 5,
+            "started": 1,
+            "finished": 1,
+            "unstarted": 8,
+            "planned": 0,
+            "delivered": 2,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "kind": "story_counts"
+        }
+      },
+      "new_values": {
+        "counts": {
+          "number_of_zero_point_stories_by_state": {
+            "accepted": 0,
+            "started": 1,
+            "finished": 0,
+            "unstarted": 1,
+            "planned": 0,
+            "delivered": 0,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "sum_of_story_estimates_by_state": {
+            "accepted": 7,
+            "started": 1,
+            "finished": 1,
+            "unstarted": 10,
+            "planned": 0,
+            "delivered": 3,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "number_of_stories_by_state": {
+            "accepted": 5,
+            "started": 2,
+            "finished": 1,
+            "unstarted": 7,
+            "planned": 0,
+            "delivered": 2,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "kind": "story_counts"
+        }
+      },
+      "name": "shopping"
+    },
+    {
+      "kind": "story",
+      "change_type": "update",
+      "id": 98677112,
+      "original_values": {
+        "current_state": "unstarted",
+        "owned_by_id": null,
+        "owner_ids": [
+
+        ],
+        "updated_at": 1436381832000,
+        "before_id": 98677114,
+        "after_id": 99380320
+      },
+      "new_values": {
+        "current_state": "started",
+        "owned_by_id": 379075,
+        "owner_ids": [
+          379075
+        ],
+        "updated_at": 1437498089000,
+        "before_id": 99432476,
+        "after_id": 98677110
+      },
+      "name": "Shopper should be able to recommend a product to a friend",
+      "story_type": "feature"
+    }
+  ],
+  "primary_resources": [
+    {
+      "kind": "story",
+      "id": 98677112,
+      "name": "Shopper should be able to recommend a product to a friend",
+      "story_type": "feature",
+      "url": "https://www.pivotaltracker.com/story/show/98677112"
+    }
+  ],
+  "project": {
+    "kind": "project",
+    "id": 1383802,
+    "name": "My Sample Project"
+  },
+  "performed_by": {
+    "kind": "person",
+    "id": 379075,
+    "name": "Justin Smestad",
+    "initials": "JS"
+  },
+  "occurred_at": 1437498089000
+}

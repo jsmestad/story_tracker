@@ -1,0 +1,93 @@
+{
+  "kind": "story_move_activity",
+  "guid": "1383802_48",
+  "project_version": 48,
+  "message": "Justin Smestad moved and scheduled 3 stories to the Backlog",
+  "highlight": "moved and scheduled",
+  "changes": [
+    {
+      "kind": "story",
+      "change_type": "update",
+      "id": 98991768,
+      "original_values": {
+        "current_state": "unscheduled",
+        "updated_at": 1436825115000,
+        "before_id": 98988674
+      },
+      "new_values": {
+        "current_state": "unstarted",
+        "updated_at": 1437498022000,
+        "before_id": 98677112
+      },
+      "name": "As a customer, I want slack integration",
+      "story_type": "feature"
+    },
+    {
+      "kind": "story",
+      "change_type": "update",
+      "id": 99361994,
+      "original_values": {
+        "current_state": "unscheduled",
+        "updated_at": 1437258085000
+      },
+      "new_values": {
+        "current_state": "unstarted",
+        "updated_at": 1437498022000
+      },
+      "name": "As a joint development partner, I want a way to learn about upcoming features",
+      "story_type": "feature"
+    },
+    {
+      "kind": "story",
+      "change_type": "update",
+      "id": 99380284,
+      "original_values": {
+        "current_state": "unscheduled",
+        "updated_at": 1437348985000,
+        "after_id": 99533038
+      },
+      "new_values": {
+        "current_state": "unstarted",
+        "updated_at": 1437498022000,
+        "after_id": 99380320
+      },
+      "name": "As a foo, I want bar",
+      "story_type": "feature"
+    }
+  ],
+  "primary_resources": [
+    {
+      "kind": "story",
+      "id": 99380284,
+      "name": "As a foo, I want bar",
+      "story_type": "feature",
+      "url": "https://www.pivotaltracker.com/story/show/99380284"
+    },
+    {
+      "kind": "story",
+      "id": 99361994,
+      "name": "As a joint development partner, I want a way to learn about upcoming features",
+      "story_type": "feature",
+      "url": "https://www.pivotaltracker.com/story/show/99361994"
+    },
+    {
+      "kind": "story",
+      "id": 98991768,
+      "name": "As a customer, I want slack integration",
+      "story_type": "feature",
+      "url": "https://www.pivotaltracker.com/story/show/98991768"
+    }
+  ],
+  "project": {
+    "kind": "project",
+    "id": 1383802,
+    "name": "My Sample Project"
+  },
+  "performed_by": {
+    "kind": "person",
+    "id": 379075,
+    "name": "Justin Smestad",
+    "initials": "JS"
+  },
+  "occurred_at": 1437498022000
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "story_move_activity",
+  "guid": "1383802_45",
+  "project_version": 45,
+  "message": "Justin Smestad moved and scheduled this story before 'As a another customer, I want stuff'",
+  "highlight": "moved and scheduled",
+  "changes": [
+    {
+      "kind": "story",
+      "change_type": "update",
+      "id": 99432476,
+      "original_values": {
+        "current_state": "unscheduled",
+        "updated_at": 1437409380000,
+        "before_id": 99380284,
+        "after_id": 98677188
+      },
+      "new_values": {
+        "current_state": "unstarted",
+        "updated_at": 1437422934000,
+        "before_id": 99380320,
+        "after_id": 98677110
+      },
+      "name": "As a RMS user, I want everything",
+      "story_type": "feature"
+    }
+  ],
+  "primary_resources": [
+    {
+      "kind": "story",
+      "id": 99432476,
+      "name": "As a RMS user, I want everything",
+      "story_type": "feature",
+      "url": "https://www.pivotaltracker.com/story/show/99432476"
+    }
+  ],
+  "project": {
+    "kind": "project",
+    "id": 1383802,
+    "name": "My Sample Project"
+  },
+  "performed_by": {
+    "kind": "person",
+    "id": 379075,
+    "name": "Justin Smestad",
+    "initials": "JS"
+  },
+  "occurred_at": 1437422934000
+}

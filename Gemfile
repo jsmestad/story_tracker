@@ -45,6 +45,7 @@ end
 group :test do
   gem 'capybara'
   gem 'launchy'
+  gem 'rspec-its'
   gem 'shoulda-matchers'
   gem 'vcr'
   gem 'webmock'
