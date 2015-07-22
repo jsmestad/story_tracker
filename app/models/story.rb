@@ -9,6 +9,10 @@ class Story < ActiveRecord::Base
     # external_story.send(method, *args, &block)
   # end
 
+  def handle_callback!(resource)
+    self.touch(:updated_at)
+  end
+
 private
 
   def external_story
