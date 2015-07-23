@@ -10,7 +10,7 @@ module PivotalTracker
     include ActionController::Head
     include ActionController::Instrumentation
 
-    EVENTS = %w[ story_move_activity ].freeze
+    EVENTS = %w[ story_move_activity story_update_activity ].freeze
 
     def callback
       if ENV['CALLBACK_TOKEN'] != params[:token]
