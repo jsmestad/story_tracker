@@ -13,6 +13,18 @@ class Story < ActiveRecord::Base
     self.touch(:updated_at)
   end
 
+  def is_subscribed?
+    self.subscribe
+  end
+
+  def subscribe!
+    update_attribute(:subscribe, true)
+  end
+
+  def unsubscribe!
+    update_attribute(:subscribe, false)
+  end
+
 private
 
   def external_story
