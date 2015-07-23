@@ -12,17 +12,20 @@ provided values should never be used and are there as contrived examples only.
 
 ## Hosting
 
-This application is built to run on Heroku out of the box. If this is not your
-goal, you can remove a few of the included items.
+This application is built to run on Heroku out of the box with Airbrake
+handling any errors that come up. If your goal is to host elsewhere, you can
+remove a few of the included items:
 
 ```ruby
 # Remove from `Gemfile`
 
 gem 'rails_12factor'
 gem 'puma'
+gem 'airbrake'
 ```
 
-Remove `config/puma.rb` and `Procfile` as they are unnecessary.
+Remove `config/initializers/airbrake.rb`, `config/puma.rb` and `Procfile` as
+they are unnecessary.
 
 ## Security
 

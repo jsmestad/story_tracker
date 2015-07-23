@@ -20,6 +20,7 @@ gem 'attr_encrypted'
 gem 'neat'
 gem 'bourbon'
 
+gem 'airbrake'
 gem 'omniauth-github', '~> 1.1.2'
 gem 'octokit'
 gem 'foundation-icons-sass-rails'
