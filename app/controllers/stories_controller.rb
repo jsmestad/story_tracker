@@ -22,6 +22,6 @@ class StoriesController < ApplicationController
 private
 
   def story_params
-    params.require(:story).permit(:stakeholder, :the_ask, :reasoning, :after_id)
+    params.require(:story).permit(:stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow)
   end
 end

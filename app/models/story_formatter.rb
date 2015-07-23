@@ -1,9 +1,8 @@
 class StoryFormatter
   include ActiveModel::Model
 
-  attr_accessor :stakeholder, :the_ask, :reasoning, :details, :after_id
-
-  attr_accessor :error_expectation, :confirmation_flow
+  attr_accessor :stakeholder, :the_ask, :reasoning, :details, :after_id,
+    :error_expectation, :confirmation_flow
 
   validates_presence_of :stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow
 

@@ -20,6 +20,8 @@ RSpec.describe StoryFormatter do
       obj = described_class.new(error_expectation: 'try again', confirmation_flow: 'see it again')
       expect(obj.body).to match(/\* try again/)
       expect(obj.body).to match(/\* see it again/)
+      expect(obj.as_params[:description]).to match(/\* try again/)
+      expect(obj.as_params[:description]).to match(/\* see it again/)
     end
   end
 
