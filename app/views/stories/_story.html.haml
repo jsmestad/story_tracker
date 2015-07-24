@@ -3,7 +3,7 @@
     = story_type_icon(story.story_type)
   .name
     = story.name
-    - if requested_by_user?(story)
+    -# - if requested_by_user?(story)
       %span story was requested by a fellow user
   .risk= calculate_risk(story.estimate)
   .state{class: story.current_state, title: "Current State: #{story.current_state.titleize}"}

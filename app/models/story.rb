@@ -11,6 +11,9 @@ class Story < ActiveRecord::Base
 
   def handle_callback!(resource)
     self.touch(:updated_at)
+    if user.has_email_address?
+      StoryMailer.updated_story_notification(user.email_address, self, resource.message).deliver_now
+    end
   end
 
   def is_subscribed?

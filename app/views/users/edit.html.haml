@@ -1,6 +1,7 @@
 %h2 Account Settings
 
 = simple_form_for @user do |f|
+  = f.input :email_address
   = f.input :api_key
   = f.button :submit
 

@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   validates :uid, presence: true, uniqueness: {case_sensitive: false}
   validates :provider, presence: true
 
+  validates :email_address, email: {allow_blank: true}
+
   attr_encrypted_options.merge!(encode: true)
   attr_encrypted :api_key, key: ENV['USER_APIKEY_KEY']
 
@@ -23,8 +25,12 @@ class User < ActiveRecord::Base
     end
   end
 
+  def has_email_address?
+    email_address.present?
+  end
+
   def has_api_key?
-    !api_key.blank?
+    api_key.present?
   end
 
 protected
