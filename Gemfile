@@ -16,6 +16,7 @@ gem 'haml-rails'
 gem 'simple_form'
 
 gem 'attr_encrypted'
+gem 'activerecord-session_store'
 
 gem 'neat'
 gem 'bourbon'
