@@ -5,6 +5,7 @@
       %th Name
       %th State
       %th Submitted
+      %th Last Update
       %th
   %tbody
     - @user.stories.order(created_at: :desc).each do |story|
@@ -12,6 +13,7 @@
         %td #{story.name}
         %td #{story.current_state.titleize}
         %td #{time_ago_in_words(story.created_at)} ago
+        %td #{time_ago_in_words(story.updated_at)} ago
         %td
           %a{href: story.url} View in PT
         -# %td #{story.external_ref}
