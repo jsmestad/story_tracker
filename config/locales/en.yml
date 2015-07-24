@@ -21,6 +21,9 @@
 
 en:
   hello: "Hello world"
+  story_mailer:
+    updated_story_notification:
+      subject: "Story Update"
   helpers:
     submit:
       story:

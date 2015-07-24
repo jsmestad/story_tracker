@@ -34,4 +34,15 @@ RSpec.describe User do
 
 
   end
+
+  describe 'email address' do
+    it { is_expected.to allow_value("country-code-tld@sld.rw").for(:email_address) }
+    it { is_expected.to_not allow_value("another-invalid-ip@127.0.0.256").for(:email_address) }
+
+    it 'has a flag that can check for email address' do
+      expect {
+        user.email_address = 'foo@example.com'
+      }.to change(user, :has_email_address?).from(false).to(true)
+    end
+  end
 end

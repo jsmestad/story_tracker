@@ -24,6 +24,22 @@ gem 'puma'
 gem 'airbrake'
 ```
 
+Remove/Modify the `config/environments/production.rb` file's ActionMailer
+settings:
+
+```ruby
+  # Configure SendGrid for use with Heroku
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'heroku.com',
+    :enable_starttls_auto => true
+  }
+```
+
 Remove `config/initializers/airbrake.rb`, `config/puma.rb` and `Procfile` as
 they are unnecessary.
 

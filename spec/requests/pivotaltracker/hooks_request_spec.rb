@@ -21,7 +21,7 @@ RSpec.describe 'Pivotal Tracker webhooks' do
   end
 
   it 'handles a webhook payload' do
-    user = FactoryGirl.create(:user)
+    user = FactoryGirl.create(:user, :with_email)
     FactoryGirl.create(:story, external_ref: 99432476, user: user)
 
     request_headers = {
