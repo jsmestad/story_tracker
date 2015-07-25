@@ -13,6 +13,7 @@
 /tmp
 
 /.env
+/.env.test
 
 config/database.yml
 
