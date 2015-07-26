@@ -8,20 +8,20 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = params[:id] ? User.find(params[:id]) : current_user
     authorize @user
   end
 
   def edit
-    @user = current_user
+    @user = params[:id] ? User.find(params[:id]) : current_user
     authorize @user, :update?
   end
 
   def update
-    @user = current_user
+    @user = params[:id] ? User.find(params[:id]) : current_user
     authorize @user
 
-    if @user.update_attributes(user_params)
+    if @user.update_attributes(permitted_attributes(@user))
       flash[:success] = 'Account updated successfully.'
       redirect_to user_path
     else
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:api_key, :email_address)
+    params.require(:user).permit(policy(@user).permitted_attributes)
   end
 
 end

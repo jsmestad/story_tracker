@@ -2,14 +2,20 @@ require 'rails_helper'
 
 feature 'Managing a User', :omniauth, :vcr do
   let(:tracker_key) { ENV['PIVOTAL_TRACKER_API_TOKEN'] }
+  let(:email) { 'foo@example.local' }
 
-  scenario 'user can set their own API key' do
+  scenario 'user can set their own API key and Email Address' do
     signin
 
-    visit edit_user_path
+    click_on 'Edit Account Settings'
     fill_in 'Pivotal Tracker API Token', with: tracker_key
+    fill_in 'Email Address', with: email
     click_on 'Update User'
     expect(page).to have_content("Account updated")
+
+    click_on 'Edit Account Settings'
+    expect(page).to have_field('Pivotal Tracker API Token', with: tracker_key)
+    expect(page).to have_field('Email Address', with: email)
   end
 
 
@@ -21,13 +27,11 @@ feature 'Managing a User', :omniauth, :vcr do
     signin
 
     expect(page).to have_content('no longer works')
-    expect(current_path).to eql('/user/edit')
 
     fill_in 'Pivotal Tracker API Token', with: tracker_key
     click_on 'Update User'
 
     expect(page).to have_no_content('no longer works')
-    expect(current_path).to_not eql('/user/edit')
   end
 end
 

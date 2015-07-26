@@ -23,4 +23,12 @@ class UserPolicy
     @current_user.admin?
   end
 
+  def permitted_attributes
+    if @current_user.admin? and @current_user != @user
+      [:api_key, :email_address, :role]
+    elsif @current_user == @user
+      [:api_key, :email_address]
+    end
+  end
+
 end

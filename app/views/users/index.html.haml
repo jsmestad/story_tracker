@@ -1,5 +1,5 @@
 %h3 User List
-%table.table-minimal
+%table.table-minimal.users
   %thead
     %tr
       %th ID
@@ -8,12 +8,13 @@
       %th Role
       %th
   %tbody
-    - @users.each do |user|
-      %tr
-        %td #{user.id}
-        %td #{user.name}
-        %td #{time_ago_in_words(user.created_at)} ago
-        %td #{user.role}
+    = render partial: 'user', collection: @users
+    -# - @users.each do |user|
+      -# %tr
+        -# %td #{user.id}
+        -# %td #{user.name}
+        -# %td #{time_ago_in_words(user.created_at)} ago
+        -# %td #{user.role}
   %tfoot
     %tr
       %td{colspan: 5} Total Users: #{@users.count}
