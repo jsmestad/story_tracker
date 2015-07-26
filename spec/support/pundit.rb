@@ -1,0 +1,2 @@
+require 'pundit/rspec'
+

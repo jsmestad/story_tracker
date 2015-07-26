@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   resources :stories, only: [:new, :create]
 
-  resource :user, only: [:show, :edit, :update]
+  # resource :user, only: [:show, :edit, :update]
+  get '/account', to: 'users#show'
+
+  resources :users
 
   root to: 'vistors#index'
 

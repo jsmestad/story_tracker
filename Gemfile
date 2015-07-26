@@ -17,6 +17,7 @@ gem 'simple_form'
 
 gem 'attr_encrypted'
 gem 'activerecord-session_store'
+gem 'pundit', '~> 1.0.1'
 
 gem 'neat'
 gem 'bourbon'

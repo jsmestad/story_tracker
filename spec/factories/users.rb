@@ -9,5 +9,13 @@ FactoryGirl.define do
     trait :with_email do
       email_address 'foo@example.com'
     end
+
+    trait :regular_user do
+      role 'regular_user'
+    end
+
+    trait :admin do
+      role 'admin'
+    end
   end
 end

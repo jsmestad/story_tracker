@@ -21,19 +21,19 @@ http_interactions:
       Status:
       - 200 OK
       X-Tracker-Project-Version:
-      - '55'
+      - '57'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"d5031dec82c8dfaeb3c4e50d6c99ec46"'
+      - '"805ef80b6350c4e8c0aed9c73dcecebd"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1887afda0039fa8a16f959090f39239e
+      - f8644d810351a093c2058419c29b4aa3
       X-Runtime:
-      - '0.054695'
+      - '0.036641'
       Date:
-      - Sat, 25 Jul 2015 22:33:05 GMT
+      - Sun, 26 Jul 2015 02:55:05 GMT
       X-Rack-Cache:
       - miss
       X-Powered-By:
@@ -52,11 +52,11 @@ http_interactions:
       - '12'
     body:
       encoding: UTF-8
-      string: '{"id":<TRACKERPROJECT>,"kind":"project","name":"My Sample Project","version":55,"iteration_length":1,"week_start_day":"Monday","point_scale":"0,1,2,3","point_scale_is_custom":false,"bugs_and_chores_are_estimatable":false,"automatic_planning":true,"enable_tasks":true,"time_zone":{"kind":"time_zone","olson_name":"Etc/UTC","offset":"+00:00"},"velocity_averaged_over":3,"number_of_done_iterations_to_show":12,"has_google_domain":false,"profile_content":"This
+      string: '{"id":<TRACKERPROJECT>,"kind":"project","name":"My Sample Project","version":57,"iteration_length":1,"week_start_day":"Monday","point_scale":"0,1,2,3","point_scale_is_custom":false,"bugs_and_chores_are_estimatable":false,"automatic_planning":true,"enable_tasks":true,"time_zone":{"kind":"time_zone","olson_name":"Etc/UTC","offset":"+00:00"},"velocity_averaged_over":3,"number_of_done_iterations_to_show":12,"has_google_domain":false,"profile_content":"This
         is a demo project, created by Tracker, with example stories for a simple shopping
         web site.","enable_incoming_emails":true,"initial_velocity":10,"public":false,"atom_enabled":false,"project_type":"demo","start_time":"2015-06-22T00:00:00Z","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T19:01:19Z","account_id":774272,"current_iteration_number":5,"enable_following":true}'
     http_version: 
-  recorded_at: Sat, 25 Jul 2015 22:33:05 GMT
+  recorded_at: Sun, 26 Jul 2015 02:55:05 GMT
 - request:
     method: get
     uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/iterations?scope=current_backlog
@@ -78,7 +78,7 @@ http_interactions:
       Status:
       - 200 OK
       X-Tracker-Project-Version:
-      - '55'
+      - '57'
       X-Tracker-Pagination-Total:
       - '11'
       X-Tracker-Pagination-Offset:
@@ -94,11 +94,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cda74fa9a2a7e6ed76b24cc4b855dc14
+      - afea5965f57af97fb60e2df8878a6c85
       X-Runtime:
-      - '0.034632'
+      - '0.031778'
       Date:
-      - Sat, 25 Jul 2015 22:33:05 GMT
+      - Sun, 26 Jul 2015 02:55:05 GMT
       X-Rack-Cache:
       - miss
       X-Powered-By:
@@ -186,7 +186,7 @@ http_interactions:
         next to each product","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166956,"project_id":<TRACKERPROJECT>,"name":"user
         generated content","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677166"}],"start":"2015-09-21T00:00:00Z","finish":"2015-09-28T00:00:00Z"}]'
     http_version: 
-  recorded_at: Sat, 25 Jul 2015 22:33:05 GMT
+  recorded_at: Sun, 26 Jul 2015 02:55:05 GMT
 - request:
     method: get
     uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/iterations?limit=10&offset=10&scope=current_backlog
@@ -208,7 +208,7 @@ http_interactions:
       Status:
       - 200 OK
       X-Tracker-Project-Version:
-      - '55'
+      - '57'
       X-Tracker-Pagination-Total:
       - '11'
       X-Tracker-Pagination-Offset:
@@ -224,11 +224,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2cf33c52736879f00014888d2c69e27e
+      - 165aa93da067721eeabb0145f20443ca
       X-Runtime:
-      - '0.037190'
+      - '0.034920'
       Date:
-      - Sat, 25 Jul 2015 22:33:05 GMT
+      - Sun, 26 Jul 2015 02:55:05 GMT
       X-Rack-Cache:
       - miss
       X-Powered-By:
@@ -264,7 +264,7 @@ http_interactions:
         higher number of production slices, for scaling","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166932,"project_id":<TRACKERPROJECT>,"name":"deployment","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677186"},{"kind":"story","id":98677188,"project_id":<TRACKERPROJECT>,"name":"Full
         production launch","story_type":"release","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677188"}],"start":"2015-09-28T00:00:00Z","finish":"2015-10-05T00:00:00Z"}]'
     http_version: 
-  recorded_at: Sat, 25 Jul 2015 22:33:05 GMT
+  recorded_at: Sun, 26 Jul 2015 02:55:05 GMT
 - request:
     method: get
     uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>
@@ -286,19 +286,19 @@ http_interactions:
       Status:
       - 200 OK
       X-Tracker-Project-Version:
-      - '55'
+      - '57'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"d5031dec82c8dfaeb3c4e50d6c99ec46"'
+      - '"805ef80b6350c4e8c0aed9c73dcecebd"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a894a323ecd48af2aaca3a4d6eaec4f6
+      - b3c8d6eea8df9f2d4a47522a3317eae2
       X-Runtime:
-      - '0.038679'
+      - '0.044941'
       Date:
-      - Sat, 25 Jul 2015 22:33:06 GMT
+      - Sun, 26 Jul 2015 02:55:06 GMT
       X-Rack-Cache:
       - miss
       X-Powered-By:
@@ -317,26 +317,22 @@ http_interactions:
       - '12'
     body:
       encoding: UTF-8
-      string: '{"id":<TRACKERPROJECT>,"kind":"project","name":"My Sample Project","version":55,"iteration_length":1,"week_start_day":"Monday","point_scale":"0,1,2,3","point_scale_is_custom":false,"bugs_and_chores_are_estimatable":false,"automatic_planning":true,"enable_tasks":true,"time_zone":{"kind":"time_zone","olson_name":"Etc/UTC","offset":"+00:00"},"velocity_averaged_over":3,"number_of_done_iterations_to_show":12,"has_google_domain":false,"profile_content":"This
+      string: '{"id":<TRACKERPROJECT>,"kind":"project","name":"My Sample Project","version":57,"iteration_length":1,"week_start_day":"Monday","point_scale":"0,1,2,3","point_scale_is_custom":false,"bugs_and_chores_are_estimatable":false,"automatic_planning":true,"enable_tasks":true,"time_zone":{"kind":"time_zone","olson_name":"Etc/UTC","offset":"+00:00"},"velocity_averaged_over":3,"number_of_done_iterations_to_show":12,"has_google_domain":false,"profile_content":"This
         is a demo project, created by Tracker, with example stories for a simple shopping
         web site.","enable_incoming_emails":true,"initial_velocity":10,"public":false,"atom_enabled":false,"project_type":"demo","start_time":"2015-06-22T00:00:00Z","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T19:01:19Z","account_id":774272,"current_iteration_number":5,"enable_following":true}'
     http_version: 
-  recorded_at: Sat, 25 Jul 2015 22:33:06 GMT
+  recorded_at: Sun, 26 Jul 2015 02:55:06 GMT
 - request:
-    method: post
-    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/stories
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/iterations?limit=1&offset=5
     body:
-      encoding: UTF-8
-      string: '{"description":"\nAs an customer, I want slack integration, so that
-        I can stop importing invoices manually.\n\n## Acceptance Criteria\n\n* \n*
-        \n","name":"As a customer, I want slack integration"}'
+      encoding: US-ASCII
+      string: ''
     headers:
       User-Agent:
       - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
       X-Trackertoken:
       - "<TRACKERAPITOKEN>"
-      Content-Type:
-      - application/json
   response:
     status:
       code: 200
@@ -347,21 +343,29 @@ http_interactions:
       Status:
       - 200 OK
       X-Tracker-Project-Version:
-      - '56'
+      - '57'
+      X-Tracker-Pagination-Total:
+      - '15'
+      X-Tracker-Pagination-Offset:
+      - '5'
+      X-Tracker-Pagination-Limit:
+      - '1'
+      X-Tracker-Pagination-Returned:
+      - '1'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"57622966927a949accdeda54c78454a6"'
+      - '"fb4be2fd78b1e647aab769322c48303d"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 87c9b303fc8a806f2466e211a7910f57
+      - 652a84aec61262e029e3f786b162c587
       X-Runtime:
-      - '0.214544'
+      - '0.031623'
       Date:
-      - Sat, 25 Jul 2015 22:33:06 GMT
+      - Sun, 26 Jul 2015 02:55:06 GMT
       X-Rack-Cache:
-      - invalidate, pass
+      - miss
       X-Powered-By:
       - Phusion Passenger 4.0.41
       Server:
@@ -378,12 +382,20 @@ http_interactions:
       - '12'
     body:
       encoding: UTF-8
-      string: '{"kind":"story","id":99850784,"project_id":<TRACKERPROJECT>,"name":"As
+      string: '[{"kind":"iteration","number":6,"project_id":<TRACKERPROJECT>,"team_strength":1,"stories":[{"kind":"story","id":98988674,"project_id":<TRACKERPROJECT>,"name":"As
         a customer, I want slack integration","description":"\nAs an customer, I want
         slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
-        Criteria\n\n* \n* \n","story_type":"feature","current_state":"unscheduled","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-07-25T22:33:06Z","updated_at":"2015-07-25T22:33:06Z","url":"https://www.pivotaltracker.com/story/show/99850784"}'
+        Criteria\n\n* \n* \n","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-07-13T21:28:52Z","updated_at":"2015-07-22T23:10:14Z","url":"https://www.pivotaltracker.com/story/show/98988674"},{"kind":"story","id":99533038,"project_id":<TRACKERPROJECT>,"name":"Adding
+        a new story to the list","description":"This is a new story","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12276718,"project_id":<TRACKERPROJECT>,"name":"with_label","created_at":"2015-07-21T16:59:37Z","updated_at":"2015-07-21T16:59:37Z"}],"created_at":"2015-07-21T16:59:37Z","updated_at":"2015-07-22T23:06:53Z","url":"https://www.pivotaltracker.com/story/show/99533038"},{"kind":"story","id":99432476,"project_id":<TRACKERPROJECT>,"name":"As
+        a RMS user, I want everything","description":"\nAs an RMS user, I want everything,
+        so that make money.\n\n## Acceptance Criteria\n\n* \n* \n","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-07-20T16:23:00Z","updated_at":"2015-07-20T20:08:54Z","url":"https://www.pivotaltracker.com/story/show/99432476"},{"kind":"story","id":99380320,"project_id":<TRACKERPROJECT>,"name":"As
+        a another customer, I want stuff","description":"\nAs an another customer,
+        I want stuff, so that its very important.\n\n## Acceptance Criteria\n\n* \n*
+        \n","story_type":"feature","current_state":"unstarted","estimate":3,"requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-07-19T23:38:54Z","updated_at":"2015-07-21T17:02:02Z","url":"https://www.pivotaltracker.com/story/show/99380320"},{"kind":"story","id":98677114,"project_id":<TRACKERPROJECT>,"name":"configure
+        solr for full text searching","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166942,"project_id":<TRACKERPROJECT>,"name":"search","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677114"},{"kind":"story","id":98688698,"project_id":<TRACKERPROJECT>,"name":"trying
+        to insert after configure solr","story_type":"feature","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-07-08T21:01:30Z","updated_at":"2015-07-08T21:01:30Z","url":"https://www.pivotaltracker.com/story/show/98688698"}],"start":"2015-07-27T00:00:00Z","finish":"2015-08-03T00:00:00Z"}]'
     http_version: 
-  recorded_at: Sat, 25 Jul 2015 22:33:06 GMT
+  recorded_at: Sun, 26 Jul 2015 02:55:06 GMT
 - request:
     method: get
     uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>
@@ -405,19 +417,19 @@ http_interactions:
       Status:
       - 200 OK
       X-Tracker-Project-Version:
-      - '56'
+      - '57'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"1c072448816cebe76c48553816a68ae4"'
+      - '"805ef80b6350c4e8c0aed9c73dcecebd"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - fdd587647487f17c660cbf4ad798a1bf
+      - 035db80eca402682770a8af2bcd307a4
       X-Runtime:
-      - '0.047455'
+      - '0.041444'
       Date:
-      - Sat, 25 Jul 2015 22:33:07 GMT
+      - Sun, 26 Jul 2015 02:55:06 GMT
       X-Rack-Cache:
       - miss
       X-Powered-By:
@@ -436,11 +448,11 @@ http_interactions:
       - '12'
     body:
       encoding: UTF-8
-      string: '{"id":<TRACKERPROJECT>,"kind":"project","name":"My Sample Project","version":56,"iteration_length":1,"week_start_day":"Monday","point_scale":"0,1,2,3","point_scale_is_custom":false,"bugs_and_chores_are_estimatable":false,"automatic_planning":true,"enable_tasks":true,"time_zone":{"kind":"time_zone","olson_name":"Etc/UTC","offset":"+00:00"},"velocity_averaged_over":3,"number_of_done_iterations_to_show":12,"has_google_domain":false,"profile_content":"This
+      string: '{"id":<TRACKERPROJECT>,"kind":"project","name":"My Sample Project","version":57,"iteration_length":1,"week_start_day":"Monday","point_scale":"0,1,2,3","point_scale_is_custom":false,"bugs_and_chores_are_estimatable":false,"automatic_planning":true,"enable_tasks":true,"time_zone":{"kind":"time_zone","olson_name":"Etc/UTC","offset":"+00:00"},"velocity_averaged_over":3,"number_of_done_iterations_to_show":12,"has_google_domain":false,"profile_content":"This
         is a demo project, created by Tracker, with example stories for a simple shopping
         web site.","enable_incoming_emails":true,"initial_velocity":10,"public":false,"atom_enabled":false,"project_type":"demo","start_time":"2015-06-22T00:00:00Z","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T19:01:19Z","account_id":774272,"current_iteration_number":5,"enable_following":true}'
     http_version: 
-  recorded_at: Sat, 25 Jul 2015 22:33:07 GMT
+  recorded_at: Sun, 26 Jul 2015 02:55:06 GMT
 - request:
     method: get
     uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/iterations?scope=current_backlog
@@ -462,7 +474,7 @@ http_interactions:
       Status:
       - 200 OK
       X-Tracker-Project-Version:
-      - '56'
+      - '57'
       X-Tracker-Pagination-Total:
       - '11'
       X-Tracker-Pagination-Offset:
@@ -478,11 +490,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 148dd0888c84d1ab7445f1700c17ebf8
+      - e8e8dbd0c48b36628045a08cc2f779fd
       X-Runtime:
-      - '0.339980'
+      - '0.036233'
       Date:
-      - Sat, 25 Jul 2015 22:33:07 GMT
+      - Sun, 26 Jul 2015 02:55:06 GMT
       X-Rack-Cache:
       - miss
       X-Powered-By:
@@ -570,7 +582,7 @@ http_interactions:
         next to each product","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166956,"project_id":<TRACKERPROJECT>,"name":"user
         generated content","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677166"}],"start":"2015-09-21T00:00:00Z","finish":"2015-09-28T00:00:00Z"}]'
     http_version: 
-  recorded_at: Sat, 25 Jul 2015 22:33:07 GMT
+  recorded_at: Sun, 26 Jul 2015 02:55:07 GMT
 - request:
     method: get
     uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/iterations?limit=10&offset=10&scope=current_backlog
@@ -592,7 +604,7 @@ http_interactions:
       Status:
       - 200 OK
       X-Tracker-Project-Version:
-      - '56'
+      - '57'
       X-Tracker-Pagination-Total:
       - '11'
       X-Tracker-Pagination-Offset:
@@ -608,11 +620,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0cecfb68f339a23da4d1a585fcc1cebd
+      - 23e58b24cfc6cb279d8ae44360246e13
       X-Runtime:
-      - '0.188059'
+      - '0.037385'
       Date:
-      - Sat, 25 Jul 2015 22:33:08 GMT
+      - Sun, 26 Jul 2015 02:55:07 GMT
       X-Rack-Cache:
       - miss
       X-Powered-By:
@@ -648,294 +660,5 @@ http_interactions:
         higher number of production slices, for scaling","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166932,"project_id":<TRACKERPROJECT>,"name":"deployment","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677186"},{"kind":"story","id":98677188,"project_id":<TRACKERPROJECT>,"name":"Full
         production launch","story_type":"release","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677188"}],"start":"2015-09-28T00:00:00Z","finish":"2015-10-05T00:00:00Z"}]'
     http_version: 
-  recorded_at: Sat, 25 Jul 2015 22:33:08 GMT
-- request:
-    method: get
-    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
-      X-Trackertoken:
-      - "<TRACKERAPITOKEN>"
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Status:
-      - 200 OK
-      X-Tracker-Project-Version:
-      - '56'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"1c072448816cebe76c48553816a68ae4"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 4d9849fc8843895fa89017678be79bef
-      X-Runtime:
-      - '0.039814'
-      Date:
-      - Sat, 25 Jul 2015 22:33:08 GMT
-      X-Rack-Cache:
-      - miss
-      X-Powered-By:
-      - Phusion Passenger 4.0.41
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.41
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Credentials:
-      - 'false'
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, DELETE, OPTIONS
-      Access-Control-Allow-Headers:
-      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
-      X-Tracker-Client-Pinger-Interval:
-      - '12'
-    body:
-      encoding: UTF-8
-      string: '{"id":<TRACKERPROJECT>,"kind":"project","name":"My Sample Project","version":56,"iteration_length":1,"week_start_day":"Monday","point_scale":"0,1,2,3","point_scale_is_custom":false,"bugs_and_chores_are_estimatable":false,"automatic_planning":true,"enable_tasks":true,"time_zone":{"kind":"time_zone","olson_name":"Etc/UTC","offset":"+00:00"},"velocity_averaged_over":3,"number_of_done_iterations_to_show":12,"has_google_domain":false,"profile_content":"This
-        is a demo project, created by Tracker, with example stories for a simple shopping
-        web site.","enable_incoming_emails":true,"initial_velocity":10,"public":false,"atom_enabled":false,"project_type":"demo","start_time":"2015-06-22T00:00:00Z","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T19:01:19Z","account_id":774272,"current_iteration_number":5,"enable_following":true}'
-    http_version: 
-  recorded_at: Sat, 25 Jul 2015 22:33:08 GMT
-- request:
-    method: get
-    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/stories/99850784
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
-      X-Trackertoken:
-      - "<TRACKERAPITOKEN>"
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Status:
-      - 200 OK
-      X-Tracker-Project-Version:
-      - '56'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"03be92a29a4369c191f86b05b53025f0"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 5a290079f9ad0636751827f03fd51979
-      X-Runtime:
-      - '0.052585'
-      Date:
-      - Sat, 25 Jul 2015 22:33:08 GMT
-      X-Rack-Cache:
-      - miss
-      X-Powered-By:
-      - Phusion Passenger 4.0.41
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.41
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Credentials:
-      - 'false'
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, DELETE, OPTIONS
-      Access-Control-Allow-Headers:
-      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
-      X-Tracker-Client-Pinger-Interval:
-      - '12'
-    body:
-      encoding: UTF-8
-      string: '{"kind":"story","id":99850784,"created_at":"2015-07-25T22:33:06Z","updated_at":"2015-07-25T22:33:06Z","story_type":"feature","name":"As
-        a customer, I want slack integration","description":"\nAs an customer, I want
-        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
-        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/99850784","owner_ids":[],"labels":[]}'
-    http_version: 
-  recorded_at: Sat, 25 Jul 2015 22:33:08 GMT
-- request:
-    method: get
-    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/stories/99850784
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
-      X-Trackertoken:
-      - "<TRACKERAPITOKEN>"
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Status:
-      - 200 OK
-      X-Tracker-Project-Version:
-      - '56'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"03be92a29a4369c191f86b05b53025f0"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 4d0ccbcc78f084cc5becbd345837cd4e
-      X-Runtime:
-      - '0.038178'
-      Date:
-      - Sat, 25 Jul 2015 22:33:09 GMT
-      X-Rack-Cache:
-      - miss
-      X-Powered-By:
-      - Phusion Passenger 4.0.41
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.41
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Credentials:
-      - 'false'
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, DELETE, OPTIONS
-      Access-Control-Allow-Headers:
-      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
-      X-Tracker-Client-Pinger-Interval:
-      - '12'
-    body:
-      encoding: UTF-8
-      string: '{"kind":"story","id":99850784,"created_at":"2015-07-25T22:33:06Z","updated_at":"2015-07-25T22:33:06Z","story_type":"feature","name":"As
-        a customer, I want slack integration","description":"\nAs an customer, I want
-        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
-        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/99850784","owner_ids":[],"labels":[]}'
-    http_version: 
-  recorded_at: Sat, 25 Jul 2015 22:33:09 GMT
-- request:
-    method: get
-    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/stories/99850784
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
-      X-Trackertoken:
-      - "<TRACKERAPITOKEN>"
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Status:
-      - 200 OK
-      X-Tracker-Project-Version:
-      - '56'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"03be92a29a4369c191f86b05b53025f0"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - eff0e07b61b4fa5520e4858e7fc654fa
-      X-Runtime:
-      - '0.034980'
-      Date:
-      - Sat, 25 Jul 2015 22:33:09 GMT
-      X-Rack-Cache:
-      - miss
-      X-Powered-By:
-      - Phusion Passenger 4.0.41
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.41
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Credentials:
-      - 'false'
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, DELETE, OPTIONS
-      Access-Control-Allow-Headers:
-      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
-      X-Tracker-Client-Pinger-Interval:
-      - '12'
-    body:
-      encoding: UTF-8
-      string: '{"kind":"story","id":99850784,"created_at":"2015-07-25T22:33:06Z","updated_at":"2015-07-25T22:33:06Z","story_type":"feature","name":"As
-        a customer, I want slack integration","description":"\nAs an customer, I want
-        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
-        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/99850784","owner_ids":[],"labels":[]}'
-    http_version: 
-  recorded_at: Sat, 25 Jul 2015 22:33:09 GMT
-- request:
-    method: get
-    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/stories/99850784
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
-      X-Trackertoken:
-      - "<TRACKERAPITOKEN>"
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Status:
-      - 200 OK
-      X-Tracker-Project-Version:
-      - '56'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"03be92a29a4369c191f86b05b53025f0"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 5b1d4e987953526e7ed35a7cde924a4e
-      X-Runtime:
-      - '0.056421'
-      Date:
-      - Sun, 26 Jul 2015 01:56:52 GMT
-      X-Rack-Cache:
-      - miss
-      X-Powered-By:
-      - Phusion Passenger 4.0.41
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.41
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Credentials:
-      - 'false'
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, DELETE, OPTIONS
-      Access-Control-Allow-Headers:
-      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
-      X-Tracker-Client-Pinger-Interval:
-      - '12'
-    body:
-      encoding: UTF-8
-      string: '{"kind":"story","id":99850784,"created_at":"2015-07-25T22:33:06Z","updated_at":"2015-07-25T22:33:06Z","story_type":"feature","name":"As
-        a customer, I want slack integration","description":"\nAs an customer, I want
-        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
-        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/99850784","owner_ids":[],"labels":[]}'
-    http_version: 
-  recorded_at: Sun, 26 Jul 2015 01:56:52 GMT
+  recorded_at: Sun, 26 Jul 2015 02:55:07 GMT
 recorded_with: VCR 2.9.3

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include UserRoleConcern
+
   has_many :stories, dependent: :destroy, inverse_of: :user
 
   validates :uid, presence: true, uniqueness: {case_sensitive: false}

@@ -6,6 +6,10 @@ class StoryFormatter
 
   validates_presence_of :stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow
 
+  def self.policy_class
+    StoryPolicy
+  end
+
   def description
     "As an #{stakeholder}, I want #{the_ask}, so that #{reasoning}."
   end
