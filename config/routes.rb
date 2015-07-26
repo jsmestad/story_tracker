@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resource :user, only: [:show, :edit, :update]
 
+  resources :users, only: [:index]
+
   root to: 'vistors#index'
 
   get '/auth/:provider/callback' => 'sessions#create'
