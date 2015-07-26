@@ -68,6 +68,15 @@ rake db:create db:migrate
 rails server
 ```
 
+To add your first administrator, this must be done via Rails console. After
+logging into the application (creating your account) open a rails console and
+enter:
+
+```ruby
+user = User.first
+user.admin!
+```
+
 Please see the Security section as the `.env` file is not set up. Use
 `.env.template` as a guide for what values must be set.
 
