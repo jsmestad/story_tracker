@@ -14,8 +14,8 @@
             %a{href: login_path} Log In
         - else
           %li.nav-link
-            %a{href: user_path} Your Requests
+            %a{href: account_path} Your Requests
           %li.nav-link
-            %a{href: edit_user_path} Edit Account Settings
+            %a{href: edit_user_path(current_user)} Edit Account Settings
           %li.nav-link
             %a{href: logout_path} Log Out

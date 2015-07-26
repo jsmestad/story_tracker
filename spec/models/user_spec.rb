@@ -31,8 +31,6 @@ RSpec.describe User do
       expect(user.api_key).to eql('changed_bar')
       expect(user.encrypted_api_key).to_not match(/changed_bar/)
     end
-
-
   end
 
   describe 'email address' do
@@ -45,4 +43,27 @@ RSpec.describe User do
       }.to change(user, :has_email_address?).from(false).to(true)
     end
   end
+
+  describe 'roles' do
+    it 'defaults to viewer role' do
+      new_user = described_class.new
+      expect(new_user.role).to eql('viewer')
+      expect(new_user.viewer?).to eql(true)
+    end
+
+    it 'supports a "regular_user" role' do
+      new_user = FactoryGirl.build(:user)
+      expect {
+        new_user.regular_user!
+      }.to change(new_user, :regular_user?).from(false).to(true)
+    end
+
+    it 'supports a "admin" role' do
+      new_user = FactoryGirl.build(:user)
+      expect {
+        new_user.admin!
+      }.to change(new_user, :admin?).from(false).to(true)
+    end
+  end
+
 end
