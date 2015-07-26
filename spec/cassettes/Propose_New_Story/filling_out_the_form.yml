@@ -880,4 +880,62 @@ http_interactions:
         Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/99850784","owner_ids":[],"labels":[]}'
     http_version: 
   recorded_at: Sat, 25 Jul 2015 22:33:09 GMT
+- request:
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/stories/99850784
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - "<TRACKERAPITOKEN>"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 200 OK
+      X-Tracker-Project-Version:
+      - '56'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"03be92a29a4369c191f86b05b53025f0"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5b1d4e987953526e7ed35a7cde924a4e
+      X-Runtime:
+      - '0.056421'
+      Date:
+      - Sun, 26 Jul 2015 01:56:52 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.41
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
+      X-Tracker-Client-Pinger-Interval:
+      - '12'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"story","id":99850784,"created_at":"2015-07-25T22:33:06Z","updated_at":"2015-07-25T22:33:06Z","story_type":"feature","name":"As
+        a customer, I want slack integration","description":"\nAs an customer, I want
+        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
+        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/99850784","owner_ids":[],"labels":[]}'
+    http_version: 
+  recorded_at: Sun, 26 Jul 2015 01:56:52 GMT
 recorded_with: VCR 2.9.3

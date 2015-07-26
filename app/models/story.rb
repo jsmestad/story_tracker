@@ -32,10 +32,12 @@ private
 
   def external_story
     project.story(external_ref)
+  rescue TrackerApi::Error => e
+    nil
   end
 
   def project
-    @project ||= TrackerProject.new
+    @story_project ||= TrackerProject.new
   end
 
 end
