@@ -11,8 +11,8 @@ class IterationStoriesController < ApplicationController
 
   def create
     formatted_story = StoryFormatter.new(story_params)
-    authorize formatted_story, :create?
     formatted_story.after_id = last_story.to_param
+    authorize formatted_story, :create?
     @story = project.create_story(formatted_story.as_params)
     if @story.id.blank?
       flash[:error] = "Could not save the story."
@@ -32,6 +32,10 @@ private
 
   def story_params
     params.require(:story).permit(:stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow)
+  end
+
+  def last_story
+    iteration.stories.last
   end
 
 end
