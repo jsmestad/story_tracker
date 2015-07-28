@@ -13,14 +13,13 @@ class IterationStoriesController < ApplicationController
     formatted_story = StoryFormatter.new(story_params)
     formatted_story.after_id = last_story.to_param
     authorize formatted_story, :create?
-    @story = project.create_story(formatted_story.as_params)
-    if @story.id.blank?
+    @story = Story.create_from_formatter(current_user, formatted_story.as_params)
+    if @story.persisted?
+      flash[:success] = "Story has been submitted for review."
+      redirect_to iterations_path
+    else
       flash[:error] = "Could not save the story."
       render action: 'new'
-    else
-      current_user.stories.create!(external_ref: @story.id)
-      flash[:success] = "Story has been created."
-      redirect_to iterations_path
     end
   end
 

@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - "<TRACKERAPITOKEN>"
+  response:
+    status:
+      code: 403
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 403 Forbidden
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - ee626c7d4ab0a430698b007d344e6337
+      X-Runtime:
+      - '0.017812'
+      Date:
+      - Tue, 28 Jul 2015 14:31:13 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.41
+    body:
+      encoding: UTF-8
+      string: '{"code":"invalid_authentication","kind":"error","error":"Invalid authentication
+        credentials were presented.","possible_fix":"Verify that your token value
+        matches what''s shown on your Profile page in Tracker."}'
+    http_version: 
+  recorded_at: Tue, 28 Jul 2015 14:31:17 GMT
+recorded_with: VCR 2.9.3

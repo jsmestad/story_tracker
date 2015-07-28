@@ -16,6 +16,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (4.2.0)
     actionmailer (4.2.3)
       actionpack (= 4.2.3)
       actionview (= 4.2.3)
@@ -261,22 +262,23 @@ GEM
     rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    redcarpet (3.3.2)
     representable (2.2.3)
       multi_json
       nokogiri
       uber (~> 0.0.7)
-    rspec-core (3.3.1)
+    rspec-core (3.3.2)
       rspec-support (~> 3.3.0)
-    rspec-expectations (3.3.0)
+    rspec-expectations (3.3.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
     rspec-its (1.2.0)
       rspec-core (>= 3.0.0)
       rspec-expectations (>= 3.0.0)
-    rspec-mocks (3.3.1)
+    rspec-mocks (3.3.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
-    rspec-rails (3.3.2)
+    rspec-rails (3.3.3)
       actionpack (>= 3.0, < 4.3)
       activesupport (>= 3.0, < 4.3)
       railties (>= 3.0, < 4.3)
@@ -342,6 +344,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm
   activerecord-session_store
   airbrake
   attr_encrypted
@@ -369,6 +372,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.3)
   rails_12factor
+  redcarpet
   rspec-its
   rspec-rails
   sass-rails (~> 5.0)

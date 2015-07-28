@@ -1,8 +1,11 @@
 .story {
-  @include display(flex);
-  @include align-items(baseline);
-  @include justify-content(space-between);
-  /* padding: 0.2em; */
+  .row {
+    @include display(flex);
+    @include align-items(baseline);
+    @include justify-content(space-between);
+    @include flex-direction(row);
+    /* padding: 0.2em; */
+  }
 
   .type {
     padding-right: 0.6em;
