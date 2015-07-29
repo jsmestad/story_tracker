@@ -29,7 +29,6 @@ class StoryFormatter
 )
   end
 
-
   def as_params
     p = { description: body, name: name}
     if self.after_id.present?

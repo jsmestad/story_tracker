@@ -35,6 +35,14 @@ class User < ActiveRecord::Base
     api_key.present?
   end
 
+  def connection
+    @connection ||= if has_api_key?
+                      TrackerProject.new(api_token: api_key)
+                    else
+                      TrackerProject.new
+                    end
+  end
+
 protected
 
   def api_key_can_access_project

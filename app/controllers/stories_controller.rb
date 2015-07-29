@@ -2,6 +2,12 @@ class StoriesController < ApplicationController
   before_filter :authenticate_user!
   after_action :verify_authorized
 
+  def index
+    @stories = Story.submitted.all
+    authorize @stories
+    render
+  end
+
   def new
     @story = StoryFormatter.new
     authorize @story, :create?
@@ -11,18 +17,43 @@ class StoriesController < ApplicationController
   def create
     formatted_story = StoryFormatter.new(story_params)
     authorize formatted_story, :create?
-    @story = project.create_story(formatted_story.as_params)
-    if @story.id.blank?
+    @story = Story.create_from_formatter(current_user, formatted_story.as_params)
+    if @story.persisted?
+      flash[:success] = "Story has been submitted for review."
+      redirect_to iterations_path
+    else
       flash[:error] = "Could not save the story."
       render action: 'new'
-    else
-      current_user.stories.create!(external_ref: @story.id)
-      flash[:success] = "Story has been created with ID <a href='#{@story.url}'>##{@story.id}</a>."
-      redirect_to iterations_path
     end
   end
 
+  def update
+    @story = Story.find(params[:id])
+    authorize @story
+    if handle_state_change(@story, story_update_params[:state])
+      flash[:success] = "Story has been #{@story.state}."
+    else
+      flash[:notice] = "Cannot update story."
+    end
+    redirect_to stories_path
+  end
+
 private
+
+  def handle_state_change(story, change)
+    case change
+    when 'approve'
+      story.approve!
+    when 'reject'
+      story.reject!
+    else
+      false
+    end
+  end
+
+  def story_update_params
+    params.require(:story).permit(:state)
+  end
 
   def story_params
     params.require(:story).permit(:stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow)

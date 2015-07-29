@@ -21,13 +21,15 @@ gem 'pundit', '~> 1.0.1'
 
 gem 'neat'
 gem 'bourbon'
+gem 'redcarpet'
+gem 'foundation-icons-sass-rails'
 
 gem 'airbrake'
 gem 'omniauth-github', '~> 1.1.2'
 gem 'octokit'
-gem 'foundation-icons-sass-rails'
 
 gem 'email_validator'
+gem 'aasm'
 
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false

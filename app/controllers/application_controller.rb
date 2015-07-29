@@ -19,8 +19,8 @@ class ApplicationController < ActionController::Base
   end
 
   def project
-    @project ||= if user_signed_in? && current_user.has_api_key?
-                   TrackerProject.new(api_token: current_user.api_key)
+    @project ||= if user_signed_in?
+                   current_user.connection
                  else
                    TrackerProject.new
                  end

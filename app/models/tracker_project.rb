@@ -1,6 +1,4 @@
 class TrackerProject
-  # cattr_accessor :api_token
-
   attr_accessor :project_id, :api_token
 
   def initialize(project_id: nil, api_token: nil)

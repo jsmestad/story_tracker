@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :stories, only: [:new, :create], controller: 'iteration_stories'
   end
 
-  resources :stories, only: [:new, :create]
+  resources :stories, only: [:index, :new, :create, :update]
 
   # resource :user, only: [:show, :edit, :update]
   get '/account', to: 'users#show'

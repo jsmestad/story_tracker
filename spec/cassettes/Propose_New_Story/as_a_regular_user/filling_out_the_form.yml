@@ -938,4 +938,133 @@ http_interactions:
         Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/99852722","owner_ids":[],"labels":[]}'
     http_version: 
   recorded_at: Sun, 26 Jul 2015 02:14:54 GMT
+- request:
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/stories/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - "<TRACKERAPITOKEN>"
+  response:
+    status:
+      code: 403
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 403 Forbidden
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - a288586574fd672c8d1392df8747a613
+      X-Runtime:
+      - '0.017760'
+      Date:
+      - Tue, 28 Jul 2015 14:25:14 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.41
+    body:
+      encoding: UTF-8
+      string: '{"code":"invalid_authentication","kind":"error","error":"Invalid authentication
+        credentials were presented.","possible_fix":"Verify that your token value
+        matches what''s shown on your Profile page in Tracker."}'
+    http_version: 
+  recorded_at: Tue, 28 Jul 2015 14:25:17 GMT
+- request:
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/stories/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - "<TRACKERAPITOKEN>"
+  response:
+    status:
+      code: 403
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 403 Forbidden
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - b36de5068311beafa4eaa1ad3a3bb73e
+      X-Runtime:
+      - '0.020690'
+      Date:
+      - Tue, 28 Jul 2015 14:25:14 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.41
+    body:
+      encoding: UTF-8
+      string: '{"code":"invalid_authentication","kind":"error","error":"Invalid authentication
+        credentials were presented.","possible_fix":"Verify that your token value
+        matches what''s shown on your Profile page in Tracker."}'
+    http_version: 
+  recorded_at: Tue, 28 Jul 2015 14:25:17 GMT
+- request:
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/stories/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - "<TRACKERAPITOKEN>"
+  response:
+    status:
+      code: 403
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 403 Forbidden
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - f3f117ab59299df1deb2cc87b782cd2e
+      X-Runtime:
+      - '0.017854'
+      Date:
+      - Tue, 28 Jul 2015 14:25:14 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.41
+    body:
+      encoding: UTF-8
+      string: '{"code":"invalid_authentication","kind":"error","error":"Invalid authentication
+        credentials were presented.","possible_fix":"Verify that your token value
+        matches what''s shown on your Profile page in Tracker."}'
+    http_version: 
+  recorded_at: Tue, 28 Jul 2015 14:25:18 GMT
 recorded_with: VCR 2.9.3

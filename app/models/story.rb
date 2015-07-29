@@ -1,13 +1,47 @@
 class Story < ActiveRecord::Base
+  include StoryStateConcern
+
   belongs_to :user, inverse_of: :stories
 
   validates :user, presence: true
 
-  delegate :url, :name, :description, :current_state, to: :external_story, allow_nil: true
+  # validates :stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow, presence: true
+  validates :name, :description, presence: true, if: :submitted?
 
-  # def method_missing(method, *args, &block)
-    # external_story.send(method, *args, &block)
-  # end
+  delegate :url, :current_state, to: :external_story, allow_nil: true, if: :approved?
+
+  def self.create_from_formatter(user, params)
+    create do |story|
+      story.user = user
+      story.name = params[:name]
+      story.description = params[:description]
+      story.after_id = params[:after_id]
+    end
+  end
+
+  def story_type
+    if approved?
+      external_story.story_type
+    else
+      'feature'
+    end
+  end
+
+  def current_state
+    if approved?
+      external_store.current_state
+    else
+      self.state
+    end
+  end
+
+  def estimate
+    if approved?
+      external_store.estimate
+    else
+      nil
+    end
+  end
 
   def handle_callback!(resource)
     self.touch(:updated_at)

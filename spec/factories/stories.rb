@@ -1,5 +1,23 @@
 FactoryGirl.define do
   factory :story do
+    name 'As a customer, I want foo bar'
+    description 'As an boss, I want another drink, so that I get drunk'
+
+    factory :full_story, traits: [:with_user]
+
+    trait :as_approved do
+      after(:create) do |obj|
+        obj.state = :approved
+        obj.external_ref = '123'
+        obj.save(validate: false)
+      end
+    end
+
+    trait :as_rejected do
+      after(:create) do |obj|
+        obj.reject!
+      end
+    end
 
     trait :with_user do
       user

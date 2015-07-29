@@ -1,13 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Story do
+  let(:story) { FactoryGirl.create(:story, :with_user) }
+  subject { story }
+
   it { is_expected.to belong_to(:user) }
 
   it { is_expected.to validate_presence_of(:user) }
 
   describe 'subscriptions' do
-    subject(:story) { FactoryGirl.build(:story, :with_user) }
-
     it 'has a #is_subscribed? method to check subscription status' do
       expect {
         story.subscribe = false
@@ -26,6 +27,38 @@ RSpec.describe Story do
       expect {
         story.unsubscribe!
       }.to change(story, :subscribe).from(true).to(false)
+    end
+  end
+
+  describe 'states' do
+    it { is_expected.to respond_to(:state) }
+
+    describe ':submitted' do
+      it 'is the initial state' do
+        expect(subject.submitted?).to eql(true)
+      end
+    end
+
+    describe ':approved', :vcr do
+      it 'can be transitioned from :submitted' do
+        expect { subject.approve }.to change(subject, :approved?).from(false).to(true)
+      end
+
+      it 'cannot be transitioned from :rejected' do
+        subject.state = :rejected
+        expect { subject.approve }.to raise_error(AASM::InvalidTransition)
+      end
+    end
+
+    describe ':rejected' do
+      it 'can be transitioned from :submitted' do
+        expect { subject.reject }.to change(subject, :rejected?).from(false).to(true)
+      end
+
+      it 'cannot be transitioned from :approved' do
+        subject.state = :approved
+        expect { subject.reject }.to raise_error(AASM::InvalidTransition)
+      end
     end
   end
 end
