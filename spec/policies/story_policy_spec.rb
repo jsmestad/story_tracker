@@ -30,4 +30,14 @@ describe StoryPolicy do
     end
   end
 
+  permissions :update? do
+    it "denies access if not an admin" do
+      expect(subject).not_to permit(current_user)
+      expect(subject).not_to permit(viewer)
+    end
+
+    it "allows access for an admin" do
+      expect(subject).to permit(admin)
+    end
+  end
 end

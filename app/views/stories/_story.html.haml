@@ -13,3 +13,10 @@
       .description
         :markdown
           #{story.description}
+      .actions
+        = form_for story, data: {confirm: 'Are you sure?'} do |f|
+          = f.hidden_field :state, value: 'approve'
+          = f.submit 'Approve'
+        = form_for story, data: {confirm: 'Are you sure?'} do |f|
+          = f.hidden_field :state, value: 'reject'
+          = f.submit 'Reject'

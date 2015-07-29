@@ -34,5 +34,15 @@ RSpec.describe 'Story review process', feature: :feature, omniauth: true, vcr: t
     it 'lists all the submitted stories in the system' do
       expect(page).to have_css('.stories .story', count: 2)
     end
+
+    it 'has the ability to approve and reject' do
+      expect(page).to have_css('.stories .story', count: 2)
+      first('.story').click_on('Approve')
+      expect(page).to have_text('Story has been approved.')
+      expect(page).to have_css('.stories .story', count: 1)
+      first('.story').click_on('Reject')
+      expect(page).to have_text('Story has been rejected.')
+      expect(page).to_not have_css('.stories .story')
+    end
   end
 end

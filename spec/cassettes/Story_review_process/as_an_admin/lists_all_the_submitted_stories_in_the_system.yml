@@ -29,11 +29,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d3a0a7d0dbff606a387c2a192371aa84
+      - c749b3fcdb61aef84c752d2742d48c3b
       X-Runtime:
-      - '0.051315'
+      - '0.042617'
       Date:
-      - Tue, 28 Jul 2015 17:14:24 GMT
+      - Wed, 29 Jul 2015 14:47:33 GMT
       X-Rack-Cache:
       - miss
       X-Powered-By:
@@ -56,7 +56,7 @@ http_interactions:
         is a demo project, created by Tracker, with example stories for a simple shopping
         web site.","enable_incoming_emails":true,"initial_velocity":10,"public":false,"atom_enabled":false,"project_type":"demo","start_time":"2015-06-22T00:00:00Z","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T19:01:19Z","account_id":774272,"current_iteration_number":6,"enable_following":true}'
     http_version: 
-  recorded_at: Tue, 28 Jul 2015 17:14:27 GMT
+  recorded_at: Wed, 29 Jul 2015 14:47:32 GMT
 - request:
     method: get
     uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/iterations?scope=current_backlog
@@ -94,11 +94,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cfe7840854a54a324407200fb55ba8a5
+      - 9d8c208db05822aea362755deecebb28
       X-Runtime:
-      - '0.034824'
+      - '0.043911'
       Date:
-      - Tue, 28 Jul 2015 17:14:24 GMT
+      - Wed, 29 Jul 2015 14:47:33 GMT
       X-Rack-Cache:
       - miss
       X-Powered-By:
@@ -146,7 +146,7 @@ http_interactions:
         should be able to enter credit card information and shipping address","story_type":"feature","current_state":"unstarted","estimate":1,"requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166944,"project_id":<TRACKERPROJECT>,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":<TRACKERPROJECT>,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677120"},{"kind":"story","id":98677122,"project_id":<TRACKERPROJECT>,"name":"Integrate
         with payment gateway","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166944,"project_id":<TRACKERPROJECT>,"name":"checkout","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"},{"kind":"label","id":12166936,"project_id":<TRACKERPROJECT>,"name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677122"}],"start":"2015-09-14T00:00:00Z","finish":"2015-09-21T00:00:00Z"},{"kind":"iteration","number":14,"project_id":<TRACKERPROJECT>,"team_strength":1,"stories":[],"start":"2015-09-21T00:00:00Z","finish":"2015-09-28T00:00:00Z"},{"kind":"iteration","number":15,"project_id":<TRACKERPROJECT>,"team_strength":1,"stories":[],"start":"2015-09-28T00:00:00Z","finish":"2015-10-05T00:00:00Z"}]'
     http_version: 
-  recorded_at: Tue, 28 Jul 2015 17:14:28 GMT
+  recorded_at: Wed, 29 Jul 2015 14:47:32 GMT
 - request:
     method: get
     uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/iterations?limit=10&offset=10&scope=current_backlog
@@ -184,11 +184,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0c1568bf3d9f62fc050d979f9bd56a80
+      - b81c73b843b7f67e13eceaf345623899
       X-Runtime:
-      - '0.040375'
+      - '0.041593'
       Date:
-      - Tue, 28 Jul 2015 17:14:24 GMT
+      - Wed, 29 Jul 2015 14:47:33 GMT
       X-Rack-Cache:
       - miss
       X-Powered-By:
@@ -225,7 +225,7 @@ http_interactions:
         up Engine Yard production environment","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166932,"project_id":<TRACKERPROJECT>,"name":"deployment","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677138"},{"kind":"story","id":98677140,"project_id":<TRACKERPROJECT>,"name":"Beta
         launch","story_type":"release","current_state":"unstarted","deadline":"2015-07-27T00:00:00Z","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677140"}],"start":"2015-12-07T00:00:00Z","finish":"2015-12-14T00:00:00Z"}]'
     http_version: 
-  recorded_at: Tue, 28 Jul 2015 17:14:28 GMT
+  recorded_at: Wed, 29 Jul 2015 14:47:33 GMT
 - request:
     method: get
     uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/iterations?limit=10&offset=20&scope=current_backlog
@@ -263,11 +263,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 89ab984d2a4c8cc4bf9de28f7a7212c6
+      - 364db11d0dc77112679cd074bc3e52af
       X-Runtime:
-      - '0.048913'
+      - '0.039044'
       Date:
-      - Tue, 28 Jul 2015 17:14:25 GMT
+      - Wed, 29 Jul 2015 14:47:33 GMT
       X-Rack-Cache:
       - miss
       X-Powered-By:
@@ -307,7 +307,7 @@ http_interactions:
         accounts","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677156"},{"kind":"story","id":98677158,"project_id":<TRACKERPROJECT>,"name":"Provide
         feedback to designer about look/feel of site","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166954,"project_id":<TRACKERPROJECT>,"name":"design","created_at":"2015-07-08T18:57:12Z","updated_at":"2015-07-08T18:57:12Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:12Z","url":"https://www.pivotaltracker.com/story/show/98677158"}],"start":"2016-02-15T00:00:00Z","finish":"2016-02-22T00:00:00Z"}]'
     http_version: 
-  recorded_at: Tue, 28 Jul 2015 17:14:28 GMT
+  recorded_at: Wed, 29 Jul 2015 14:47:33 GMT
 - request:
     method: get
     uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/iterations?limit=10&offset=30&scope=current_backlog
@@ -345,11 +345,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f8a784b0d1b7b55204d16c9b630ae6dd
+      - d4785b35092d07f63de398f3aabe3a61
       X-Runtime:
-      - '0.046295'
+      - '0.038716'
       Date:
-      - Tue, 28 Jul 2015 17:14:25 GMT
+      - Wed, 29 Jul 2015 14:47:34 GMT
       X-Rack-Cache:
       - miss
       X-Powered-By:
@@ -393,5 +393,5 @@ http_interactions:
         higher number of production slices, for scaling","story_type":"chore","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[{"kind":"label","id":12166932,"project_id":<TRACKERPROJECT>,"name":"deployment","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677186"},{"kind":"story","id":98677188,"project_id":<TRACKERPROJECT>,"name":"Full
         production launch","story_type":"release","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677188"}],"start":"2016-04-11T00:00:00Z","finish":"2016-04-18T00:00:00Z"}]'
     http_version: 
-  recorded_at: Tue, 28 Jul 2015 17:14:28 GMT
+  recorded_at: Wed, 29 Jul 2015 14:47:33 GMT
 recorded_with: VCR 2.9.3

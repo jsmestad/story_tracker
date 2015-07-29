@@ -13,4 +13,8 @@ class StoryPolicy
   def create?
     user.regular_user? or user.admin?
   end
+
+  def update?
+    user.admin?
+  end
 end

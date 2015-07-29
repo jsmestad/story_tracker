@@ -27,7 +27,33 @@ class StoriesController < ApplicationController
     end
   end
 
+  def update
+    @story = Story.find(params[:id])
+    authorize @story
+    if handle_state_change(@story, story_update_params[:state])
+      flash[:success] = "Story has been #{@story.state}."
+    else
+      flash[:notice] = "Cannot update story."
+    end
+    redirect_to stories_path
+  end
+
 private
+
+  def handle_state_change(story, change)
+    case change
+    when 'approve'
+      story.approve!
+    when 'reject'
+      story.reject!
+    else
+      false
+    end
+  end
+
+  def story_update_params
+    params.require(:story).permit(:state)
+  end
 
   def story_params
     params.require(:story).permit(:stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow)
