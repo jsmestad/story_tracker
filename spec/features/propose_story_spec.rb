@@ -13,7 +13,7 @@ RSpec.describe "Propose New Story", type: :feature, vcr: {record: :new_episodes}
 
   context 'as a regular user' do
     before do
-      signin(as_new_user: false)
+      signin(as_new_user: false, role: 'regular_user')
       visit '/stories/new'
     end
 
@@ -46,7 +46,7 @@ RSpec.describe "Propose Story Addition to Iteration", type: :feature, vcr: {reco
 
   context 'as a regular user' do
     before do
-      signin(as_new_user: false)
+      signin(as_new_user: false, role: 'regular_user')
       visit '/iterations/6/stories/new'
     end
 

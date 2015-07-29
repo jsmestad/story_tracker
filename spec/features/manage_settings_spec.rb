@@ -5,7 +5,7 @@ feature 'Managing a User', :omniauth, :vcr do
   let(:email) { 'foo@example.local' }
 
   scenario 'user can set their own API key and Email Address' do
-    signin
+    signin(as_new_user: false, role: 'regular_user')
 
     click_on 'Edit Account Settings'
     fill_in 'Pivotal Tracker API Token', with: tracker_key
@@ -20,7 +20,7 @@ feature 'Managing a User', :omniauth, :vcr do
 
 
   scenario 'gracefully fails over when API key is outdated' do
-    user_with_badkey = FactoryGirl.create(:user, uid: '12345', provider: 'github')
+    user_with_badkey = FactoryGirl.create(:user, :regular_user, uid: '12345', provider: 'github')
     user_with_badkey.api_key = 'bad_key'
     user_with_badkey.save(validate: false)
 

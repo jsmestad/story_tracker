@@ -14,12 +14,15 @@
         - else
           #{iteration.start.strftime('%b %d')} - #{iteration.finish.strftime('%b %d')}
       %div.js-vertical-tab-content.vertical-tab-content{id: "tab#{iteration.number}"}
-        - if iteration.is_future?
+        - if iteration.is_future? and policy(:story).create?
           .suggestion
             %a{href: new_iteration_story_path(iteration)}
               %i.fi-plus
               Suggest Addition
-        = render partial: 'stories/story', collection: iteration.stories
+        - if iteration.stories.size > 0
+          = render partial: 'stories/story', collection: iteration.stories
+        - else
+          %p.nothing-targetted Nothing is targetted to complete this iteration.
         - if iteration.team_strength < 1.0
           %hr
           .flash.notice Notice: This iteration has an adjusted team strength of #{(iteration.team_strength * 100).to_i}%.

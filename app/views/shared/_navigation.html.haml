@@ -5,17 +5,19 @@
     %a#js-mobile-menu.navigation-menu-button{:href => "javascript:void(0)"} MENU
     %nav{:role => "navigation"}
       %ul#js-navigation-menu.navigation-menu.show
-        %li.nav-link
-          %a.button{href: new_story_path} Propose Story
+        - if user_signed_in? and policy(:story).create?
+          %li.nav-link
+            %a.button{href: new_story_path} Propose Story
     .navigation-tools
       %ul
         - if !user_signed_in?
           %li.nav-link
             %a{href: login_path} Log In
         - else
-          %li.nav-link
-            %a{href: account_path} Your Requests
-          %li.nav-link
-            %a{href: edit_user_path(current_user)} Edit Account Settings
+          - if policy(:story).create?
+            %li.nav-link
+              %a{href: account_path} Your Requests
+            %li.nav-link
+              %a{href: edit_user_path(current_user)} Edit Account Settings
           %li.nav-link
             %a{href: logout_path} Log Out
