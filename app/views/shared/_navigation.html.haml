@@ -8,6 +8,9 @@
         - if user_signed_in? and policy(:story).create?
           %li.nav-link
             %a.button{href: new_story_path} Propose Story
+          %li.nav-link
+            %a.button.red{href: new_defect_path} Report Defect
+    .navigation-tools
     .navigation-tools
       %ul
         - if !user_signed_in?

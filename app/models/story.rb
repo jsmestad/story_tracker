@@ -29,7 +29,7 @@ class Story < ActiveRecord::Base
 
   def current_state
     if approved?
-      external_store.current_state
+      external_story.current_state
     else
       self.state
     end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
 
   resources :stories, only: [:index, :new, :create, :update]
+  resources :defects, only: [:new, :create]
 
   # resource :user, only: [:show, :edit, :update]
   get '/account', to: 'users#show'
