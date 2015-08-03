@@ -37,7 +37,7 @@ class Story < ActiveRecord::Base
 
   def estimate
     if approved?
-      external_store.estimate
+      external_story.estimate
     else
       nil
     end
