@@ -8,7 +8,7 @@ class Story < ActiveRecord::Base
   # validates :stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow, presence: true
   validates :name, :description, presence: true, if: :submitted?
 
-  delegate :url, :current_state, to: :external_story, allow_nil: true, if: :approved?
+  delegate :url, to: :external_story, allow_nil: true, if: :approved?
 
   def self.create_from_formatter(user, params)
     create do |story|
@@ -21,7 +21,7 @@ class Story < ActiveRecord::Base
 
   def story_type
     if approved?
-      external_story.story_type
+      external_story.try(:story_type)
     else
       'feature'
     end
@@ -29,7 +29,7 @@ class Story < ActiveRecord::Base
 
   def current_state
     if approved?
-      external_story.current_state
+      external_story.try(:current_state)
     else
       self.state
     end
@@ -37,7 +37,7 @@ class Story < ActiveRecord::Base
 
   def estimate
     if approved?
-      external_story.estimate
+      external_story.try(:estimate)
     else
       nil
     end
@@ -65,6 +65,7 @@ class Story < ActiveRecord::Base
 private
 
   def external_story
+    return nil unless external_ref.present?
     project.story(external_ref)
   rescue TrackerApi::Error => e
     nil
