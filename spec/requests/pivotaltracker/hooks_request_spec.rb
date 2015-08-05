@@ -42,4 +42,27 @@ RSpec.describe 'Pivotal Tracker webhooks' do
 
     expect(response).to have_http_status(200)
   end
+
+  describe 'delete' do
+
+    let(:payload_file) { File.read(Rails.root.join('spec/fixtures/activity_payloads/story_delete_activity.json')) }
+
+    it 'handles a delete call by removing the related story' do
+
+      FactoryGirl.create(:full_story, external_ref: '98991768')
+      FactoryGirl.create(:full_story, external_ref: '123')
+
+      expect(Story.count).to eql(2)
+
+      request_headers = {
+        "Accept" => "application/json",
+        "Content-Type" => "application/json"
+      }
+      post "/pivotal_tracker/callback?token=#{ENV['CALLBACK_TOKEN']}", payload.to_json, request_headers
+
+      expect(response).to have_http_status(201)
+      expect(Story.count).to eql(1)
+    end
+
+  end
 end
