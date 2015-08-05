@@ -20,10 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   story_mailer:
     updated_story_notification:
-      subject: "Story Update"
+      subject: "Story Progress Update"
+    deleted_story_notification:
+      subject: "Story Request Closed"
   helpers:
     submit:
       story:

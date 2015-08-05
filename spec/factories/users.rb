@@ -1,9 +1,7 @@
 FactoryGirl.define do
   factory :user do
     name 'John Doe'
-    sequence :uid do |n|
-      "uid_#{n}"
-    end
+    uid { SecureRandom.uuid }
     provider 'github'
 
     trait :with_email do
