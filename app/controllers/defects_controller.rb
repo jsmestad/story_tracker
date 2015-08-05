@@ -15,9 +15,10 @@ class DefectsController < ApplicationController
   end
 
   def create
-    formatted_defect = DefectFormatter.new(story_params)
-    authorize formatted_defect, :create?
-    @story = Story.create_from_formatter(current_user, formatted_story.as_params)
+    @defect = DefectFormatter.new(defect_params)
+    authorize @defect, :create?
+    @story = Story.create_from_formatter(current_user, @defect.as_params)
+
     if @story.persisted?
       flash[:success] = "Defect has been submitted for review."
       redirect_to iterations_path
@@ -56,6 +57,6 @@ private
   end
 
   def defect_params
-    params.require(:defect).permit(:stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow)
+    params.require(:defect).permit(:assumption, :actual, :workaround)
   end
 end

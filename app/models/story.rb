@@ -7,6 +7,7 @@ class Story < ActiveRecord::Base
 
   # validates :stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow, presence: true
   validates :name, :description, presence: true, if: :submitted?
+  validates_inclusion_of :story_type, in: %w(feature bug), allow_nil: false
 
   delegate :url, to: :external_story, allow_nil: true, if: :approved?
 
@@ -16,14 +17,7 @@ class Story < ActiveRecord::Base
       story.name = params[:name]
       story.description = params[:description]
       story.after_id = params[:after_id]
-    end
-  end
-
-  def story_type
-    if approved?
-      external_story.try(:story_type)
-    else
-      'feature'
+      story.story_type = params[:story_type]
     end
   end
 

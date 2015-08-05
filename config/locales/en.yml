@@ -32,3 +32,5 @@ en:
     default: 'You cannot perform this action.'
     story_policy:
       create?: 'You do not have sufficient permissions to request stories.'
+    defect_policy:
+      create?: 'You do not have sufficient permissions to report defects.'

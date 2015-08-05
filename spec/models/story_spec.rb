@@ -8,6 +8,12 @@ RSpec.describe Story do
 
   it { is_expected.to validate_presence_of(:user) }
 
+  describe '#story_type' do
+    it { is_expected.to allow_value('bug').for(:story_type) }
+    it { is_expected.to allow_value('feature').for(:story_type) }
+    it { is_expected.to_not allow_value('chore').for(:story_type) }
+  end
+
   describe 'subscriptions' do
     it 'has a #is_subscribed? method to check subscription status' do
       expect {

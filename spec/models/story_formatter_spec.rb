@@ -31,6 +31,7 @@ RSpec.describe StoryFormatter do
       expect(obj.as_params).to have_key(:description)
       expect(obj.as_params).to have_key(:name)
       expect(obj.as_params).to_not have_key(:after_id)
+      expect(obj.as_params[:story_type]).to eql('feature')
 
       obj.after_id = 2
       expect(obj.as_params).to have_key(:after_id)
