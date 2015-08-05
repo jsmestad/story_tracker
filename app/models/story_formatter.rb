@@ -30,7 +30,7 @@ class StoryFormatter
   end
 
   def as_params
-    p = { description: body, name: name}
+    p = { story_type: 'feature', description: body, name: name}
     if self.after_id.present?
       p.merge!(after_id: self.after_id.to_i)
     end

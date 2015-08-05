@@ -1,3 +1,5 @@
+$error-color: #fbe3e4 !default;
+
 #{$all-button-inputs},
 button, .button {
   @include appearance(none);
@@ -27,5 +29,9 @@ button, .button {
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  &.red {
+    background-color: darken($error-color, 50%);
   }
 }

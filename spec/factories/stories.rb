@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :story do
     name 'As a customer, I want foo bar'
     description 'As an boss, I want another drink, so that I get drunk'
+    story_type 'feature'
 
     factory :full_story, traits: [:with_user]
 

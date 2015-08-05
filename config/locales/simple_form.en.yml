@@ -17,6 +17,10 @@ en:
     placeholders:
       user:
         api_key: 'e.g. 235bfdbddb79a48bad5fb007db87a485'
+  helpers:
+    submit:
+      defect:
+        create: 'File Report'
     # Examples
     # labels:
     #   defaults:

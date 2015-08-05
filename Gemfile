@@ -30,6 +30,7 @@ gem 'octokit'
 
 gem 'email_validator'
 gem 'aasm'
+gem 'pry-rails'
 
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false

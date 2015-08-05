@@ -1,0 +1,29 @@
+.defect-content
+  -# .line
+    -# %span As an
+    -# #{form.text_field :stakeholder, placeholder: 'e.g. accountant', required: true}
+    -# %span.comma
+    -# %span I want
+    -# #{form.text_field :the_ask, placeholder: 'e.g. slack integration', required: true}
+    -# %span.comma
+  -# .line
+    -# %span so that
+    -# #{form.text_field :reasoning, placeholder: 'e.g. I can stop importing invoices manually', required: true, class: 'reasoning'}
+    -# %span.period
+
+.acceptance-criteria
+  .line
+    %div I had expected that
+  .line
+    #{form.text_field :assumption, placeholder: 'e.g. using submit functionality would display in Slack', required: true}
+    %span.period
+  .line
+    %div Instead what happened was
+  .line
+    #{form.text_field :actual, placeholder: 'e.g. the page rendered a 500 error', required: true}
+    %span.period
+  .line
+    %span Is there a workaround?
+    = form.select :workaround, [['Yes', true], ['No', false]]
+    -# #{form.text_field :workaround, placeholder: 'No}, there is a workaround.
+
