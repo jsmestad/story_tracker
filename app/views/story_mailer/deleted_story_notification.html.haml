@@ -1,21 +1,21 @@
 %tr
-  %td.alert.alert-good
-    Good News. Your story request has been updated.
+  %td.alert.alert-warning
+    Unfortunately your story request has been closed.
 %tr
   %td.content-wrap
     %table{:cellpadding => "0", :cellspacing => "0", :width => "100%"}
       %tr
         %td.content-block
-          You submitted a story
+          The requested story
           %strong &ldquo;#{@story_name}&rdquo;
           on
           %strong #{@story_created}.
       %tr
-        %td.content-block.callout
-          #{time_ago_in_words(@story_updated)} ago, #{@body}.
-      %tr
-        %td.content-block.summary
-          We will give you send you another update as your story progresses.
+        %td.content-block
+          We appreciate your submission, but unfortunately we cannot foresee this
+          fitting into a four to six week time frame.
+          You are more than welcome to re-submit this request after that time as
+          we may have the bandwidth then.
       %tr
         %td.content-block
           %a.btn-primary{href: account_url} View Stories

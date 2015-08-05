@@ -31,6 +31,8 @@ gem 'octokit'
 gem 'email_validator'
 gem 'aasm'
 gem 'pry-rails'
+gem 'premailer-rails'
+gem 'nokogiri' # required by premailer-rails, but not listed.
 
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false
