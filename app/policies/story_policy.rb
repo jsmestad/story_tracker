@@ -10,6 +10,10 @@ class StoryPolicy
     user.admin?
   end
 
+  def show?
+    true
+  end
+
   def create?
     user.regular_user? or user.admin?
   end

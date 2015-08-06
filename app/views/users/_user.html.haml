@@ -5,8 +5,8 @@
     = user.username
   %td
     = simple_form_for user do |f|
-      = f.input :role, collection: User.roles.keys.map {|role| [role.titleize,role]}, include_blank: false
-      = f.submit
-  %td
+      = f.input :role, label: false, collection: User.roles.keys.map {|role| [role.titleize,role]}, include_blank: false
+      = f.button :submit, class: 'gh-button primary'
+  %td.delete
     - unless user == current_user
-      = link_to "Delete", user_path(user), data: { confirm: "Are you sure?" }, method: :delete
+      = link_to "Delete", user_path(user), data: { confirm: "Are you sure?" }, method: :delete, class: 'gh-button danger trash icon'

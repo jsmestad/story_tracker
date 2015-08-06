@@ -1,3 +1,58 @@
+aside {
+  & > div {
+    border-bottom: 1px solid transparentize($action-color, 0.8);
+    padding: ($base-spacing / 2) 0;
+    margin-right: $base-spacing;
+    & > span {
+      min-width: 40%;
+      display: inline-block;
+      text-align: right;
+      font-weight: bold;
+      padding-right: $base-spacing;
+    }
+  }
+  @include media($large-screen) {
+    @include span-columns(4);
+  }
+}
+
+article {
+  @include media($large-screen) {
+    @include span-columns(12);
+  }
+  h1 {
+    border-bottom: 1px solid transparentize($action-color, 0.8);
+    padding-bottom: ($base-spacing / 2);
+  }
+}
+section.header {
+  @include media($large-screen) {
+    @include span-columns(12);
+  }
+}
+
+.story-description {
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: lighten($card-border-color, 10%);
+  $card-header-background: $card-background;
+
+  @include media($large-screen) {
+    @include span-columns(8);
+  }
+  background-color: $card-background;
+  border-radius: $base-border-radius;
+  border: $card-border;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  /* cursor: pointer; */
+  /* margin: 0 $card-margin $base-spacing $card-margin; */
+  padding: $base-spacing; //($base-spacing / 2) ($base-spacing / 2);
+  min-height: 200px;
+
+}
+
 .story {
   .row {
     @include display(flex);

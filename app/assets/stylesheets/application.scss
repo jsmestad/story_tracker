@@ -11,7 +11,9 @@
 @import 'navigation';
 @import 'table_minimal';
 @import 'vertical_tabs';
+@import 'sans_serif';
 
+@import 'gh-buttons';
 @import 'story';
 
 
@@ -57,4 +59,28 @@ form .error {
   margin-left: 1em;
   display: inline-block;
 
+}
+
+.stories.admin {
+  .story {
+    border-bottom: 1px solid #F1F1F1;
+    padding: ($base-spacing / 2);
+    form { display: inline; }
+  }
+}
+
+td.delete {
+  text-align: right;
+}
+
+table form {
+  label, select, input, .input {
+    display: inline-block;
+  }
+  label {
+    padding-right: ($base-spacing / 3);
+  }
+  select {
+    margin-bottom: ($base-spacing / 3);
+  }
 }

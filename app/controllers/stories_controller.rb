@@ -8,6 +8,12 @@ class StoriesController < ApplicationController
     render
   end
 
+  def show
+    @story = Story.find(params[:id])
+    authorize @story
+    render
+  end
+
   def new
     @story = StoryFormatter.new
     authorize @story, :create?
