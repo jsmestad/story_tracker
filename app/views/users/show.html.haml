@@ -10,7 +10,7 @@
     - @user.stories.order(created_at: :desc).each do |story|
       %tr
         -# %td #{story.external_ref || story.id}
-        %td #{story.name}
+        %td #{link_to story.name, story_path(story)}
         %td
           - if story.approved?
             #{story.current_state.try(:titleize) || 'N/A'}

@@ -31,6 +31,14 @@ RSpec.describe "Propose New Story", type: :feature, vcr: {record: :new_episodes}
       # expect(page).to have_text('slack integration')
       expect(page).to have_text('Pending Review')
     end
+
+    it 'can be viewed after creation' do
+      story = FactoryGirl.create(:full_story)
+
+      visit story_path(story)
+      expect(page).to have_text(story.name)
+      expect(page).to have_text(story.description)
+    end
   end
 end
 

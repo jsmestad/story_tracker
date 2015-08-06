@@ -1,4 +1,19 @@
 %h2 Stories submitted for review
 
-%section.stories
-  = render partial: 'story', collection: @stories, locals: {show_description: true}
+%section.stories.admin
+  - @stories.each do |story|
+    .story
+      .row
+        .type
+          = story_type_icon(story.story_type)
+        .name
+          = link_to story.name, story_path(story)
+        .actions
+          = form_for story, data: {confirm: 'Are you sure?'} do |f|
+            = f.hidden_field :state, value: 'approve'
+            = f.button 'Approve', class: 'gh-button primary approve icon'
+          = form_for story, data: {confirm: 'Are you sure?'} do |f|
+            = f.hidden_field :state, value: 'reject'
+            = f.button 'Reject', class: 'gh-button danger remove icon'
+  - if @stories.empty?
+    %p No stories awaiting approval.

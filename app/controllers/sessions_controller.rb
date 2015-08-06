@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_with_omniauth(auth) || User.create_with_omniauth(auth)
     if verify_github_org(user, auth)
       reset_session
-      session[:user_id] = user.id
+      session[:user_id] = user.to_param
       if user.email_address.present?
         flash[:success] = "Logged In!"
         redirect_to iterations_path

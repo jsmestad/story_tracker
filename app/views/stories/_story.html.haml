@@ -3,20 +3,11 @@
     .type
       = story_type_icon(story.story_type)
     .name
-      = story.name
+      - if local_story = Story.where(external_ref: story.to_param).first
+        = link_to story.name, story_path(local_story)
+      - else
+        = story.name
       -# - if requested_by_user?(story)
-        %span story was requested by a fellow user
+        -# %span story was requested by a fellow user
     .risk= calculate_risk(story.estimate)
     .state{class: story.current_state, title: "Current State: #{story.current_state.titleize}"}
-  - if show_description ||= false
-    .row
-      .description
-        :markdown
-          #{story.description}
-      .actions
-        = form_for story, data: {confirm: 'Are you sure?'} do |f|
-          = f.hidden_field :state, value: 'approve'
-          = f.submit 'Approve'
-        = form_for story, data: {confirm: 'Are you sure?'} do |f|
-          = f.hidden_field :state, value: 'reject'
-          = f.submit 'Reject'

@@ -8,17 +8,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = params[:id] ? User.find(params[:id]) : current_user
+    @user = params[:id] ? User.find_by_guid(params[:id]) : current_user
     authorize @user
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by_guid(params[:id])
     authorize @user, :update?
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find_by_guid(params[:id])
     authorize @user
 
     if @user.update_attributes(permitted_attributes(@user))
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
+    user = User.find_by_guid(params[:id])
     authorize user
     user.destroy
     flash[:success] = 'User has been deleted.'

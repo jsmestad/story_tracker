@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
+  include GuidConcern
   include UserRoleConcern
+  displayed_with_guid
 
   has_many :stories, dependent: :destroy, inverse_of: :user
 

@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805232821) do
+ActiveRecord::Schema.define(version: 20150806223415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
   create_table "sessions", force: :cascade do |t|
     t.string   "session_id", null: false
@@ -27,34 +28,38 @@ ActiveRecord::Schema.define(version: 20150805232821) do
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "stories", force: :cascade do |t|
-    t.integer  "user_id",                          null: false
+    t.integer  "user_id",                                     null: false
     t.string   "external_ref"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "subscribe",    default: true,      null: false
-    t.integer  "state",        default: 0,         null: false
+    t.boolean  "subscribe",    default: true,                 null: false
+    t.integer  "state",        default: 0,                    null: false
     t.string   "name"
     t.string   "after_id"
     t.text     "description"
-    t.string   "story_type",   default: "feature", null: false
+    t.string   "story_type",   default: "feature",            null: false
+    t.uuid     "guid",         default: "uuid_generate_v4()"
   end
 
+  add_index "stories", ["guid"], name: "index_stories_on_guid", unique: true, using: :btree
   add_index "stories", ["story_type"], name: "is_defect", where: "((story_type)::text = 'defect'::text)", using: :btree
   add_index "stories", ["story_type"], name: "is_feature", where: "((story_type)::text = 'feature'::text)", using: :btree
   add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.string   "provider",                      null: false
-    t.string   "uid",                           null: false
+    t.string   "provider",                                         null: false
+    t.string   "uid",                                              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "encrypted_api_key"
     t.string   "email_address"
-    t.integer  "role",              default: 0, null: false
+    t.integer  "role",              default: 0,                    null: false
     t.string   "username"
+    t.uuid     "guid",              default: "uuid_generate_v4()"
   end
 
+  add_index "users", ["guid"], name: "index_users_on_guid", unique: true, using: :btree
   add_index "users", ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true, using: :btree
 
 end

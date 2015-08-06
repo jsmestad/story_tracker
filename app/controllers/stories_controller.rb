@@ -8,6 +8,12 @@ class StoriesController < ApplicationController
     render
   end
 
+  def show
+    @story = Story.find_by_guid(params[:id])
+    authorize @story
+    render
+  end
+
   def new
     @story = StoryFormatter.new
     authorize @story, :create?
@@ -28,7 +34,7 @@ class StoriesController < ApplicationController
   end
 
   def update
-    @story = Story.find(params[:id])
+    @story = Story.find_by_guid(params[:id])
     authorize @story
     if handle_state_change(@story, story_update_params[:state])
       flash[:success] = "Story has been #{@story.state}."

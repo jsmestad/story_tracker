@@ -1,0 +1,32 @@
+%article.type-system-sans
+  %section.header
+    %h1 #{@story.name}
+  %section
+    %aside
+      %div
+        %span Story Type
+        = @story.story_type.titleize
+      %div
+        %span State
+        - if @story.approved?
+          = @story.current_state.titleize
+        - elsif @story.submitted?
+          Pending Review
+        - else
+          \-
+      %div
+        %span Created
+        = @story.created_at.strftime('%B %m %Y')
+      %div
+        %span Updated
+        #{time_ago_in_words(@story.updated_at)} ago
+      %div
+        %span External ID
+        #{@story.external_ref || '-'}
+      %div
+        %span Reporter
+        %a{href: "https://github.com/#{@story.user.username}"}
+          #{@story.user.name || @story.user.username}
+    .story-description
+      :markdown
+        #{@story.description}
