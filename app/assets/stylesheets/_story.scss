@@ -49,15 +49,15 @@
   /* background-position: baseline; */
   @include align-self(center);
   &.accepted {
-    background-image: image-url('air6.svg');
-  }
-  &.finished, &.delivered, &.started {
-    background-image: image-url('delivery39.svg');
-  }
-  &.unstarted {
     background-image: image-url('boxes1.svg');
   }
-  &.unknown {
+  &.finished, &.delivered, &.started {
     background-image: image-url('logistics3.svg');
+  }
+  &.unstarted {
+    background-image: image-url('delivery39.svg');
+  }
+  &.unknown {
+    background-image: image-url('delivery39.svg');
   }
 }
