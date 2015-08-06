@@ -3,6 +3,8 @@
     -# = link_to user.name, user
     = user.name
   %td
+    = user.username
+  %td
     = simple_form_for user do |f|
       = f.input :role, collection: User.roles.keys.map {|role| [role.titleize,role]}, include_blank: false
       = f.submit
