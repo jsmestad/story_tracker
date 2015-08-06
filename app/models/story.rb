@@ -1,5 +1,7 @@
 class Story < ActiveRecord::Base
   include StoryStateConcern
+  include GuidConcern
+  displayed_with_guid
 
   belongs_to :user, inverse_of: :stories
 
