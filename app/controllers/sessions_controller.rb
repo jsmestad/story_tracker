@@ -10,8 +10,13 @@ class SessionsController < ApplicationController
     if verify_github_org(user, auth)
       reset_session
       session[:user_id] = user.id
-      flash[:success] = "Logged In!"
-      redirect_to iterations_path
+      if user.email_address.present?
+        flash[:success] = "Logged In!"
+        redirect_to iterations_path
+      else
+        flash[:notice] = "You are logged in. Please set your email address in the form below."
+        redirect_to edit_user_path(user)
+      end
     else
       flash[:alert] = "You do not have sufficient permissions."
       redirect_to root_url

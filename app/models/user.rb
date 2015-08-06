@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   validates :uid, presence: true, uniqueness: {case_sensitive: false}
   validates :provider, presence: true
+  validates :username, presence: true
 
   validates :email_address, email: {allow_blank: true}
 
@@ -14,7 +15,11 @@ class User < ActiveRecord::Base
   validate :api_key_can_access_project
 
   def self.find_with_omniauth(auth)
-    self.where(provider: auth['provider'], uid: auth['uid'].to_s).first
+    u = self.where(provider: auth['provider'], uid: auth['uid'].to_s).first
+    if u and u.username.blank?
+      u.update_attribute(:username, auth['info']['nickname'])
+    end
+    u
   end
 
   def self.create_with_omniauth(auth)
@@ -22,6 +27,8 @@ class User < ActiveRecord::Base
       user.provider = auth['provider']
       user.uid = auth['uid']
       if auth['info']
+        user.username = auth['info']['nickname']
+        # user.email = auth['info']['email']
         user.name = auth['info']['name'] || ""
       end
     end

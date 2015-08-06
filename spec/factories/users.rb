@@ -3,6 +3,7 @@ FactoryGirl.define do
     name 'John Doe'
     uid { SecureRandom.uuid }
     provider 'github'
+    username { FFaker::Internet.user_name }
 
     trait :with_email do
       email_address 'foo@example.com'

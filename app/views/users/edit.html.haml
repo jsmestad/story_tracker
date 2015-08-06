@@ -1,7 +1,23 @@
 %h2 Account Settings
 
+.callout
+  %p
+    StoryTracker works best when you specify both an email address and your own
+    Pivotal Tracker API token. These are not required for most site operations.
+
 = simple_form_for @user do |f|
   = f.input :email_address
+
+  .hint.email_address
+    Email Addresses are used to send system generated updates as story and defect
+    requests progress through the system. We send updates for specific events:
+    prioritization, in-flight, closed and resolved progress. The average # of
+    email notifications we send is 5 (prioritized, started, finished, delivered, accepted).
+
   = f.input :api_key
+
+  .hint.api_key
+    Adding your Pivotal Tracker API Token (<a href="https://www.pivotaltracker.com/profile">found here</a>) allows approved stories to be delivered under your account. Without this all stories are submitted under a system default user.
+
   = f.button :submit
 

@@ -59,6 +59,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'vcr'
   gem 'webmock'
+  gem 'ffaker'
 end
 
 group :production do

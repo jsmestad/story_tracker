@@ -36,3 +36,25 @@ p.nothing-targetted {
   font-size: 0.8em;
   margin-bottom: 1em;
 }
+
+form .hint {
+  color: darken($alert-color, 60%);
+  padding: 1em 2em;
+  font-style: italic;
+  font-size: 0.9em;
+  background-color: $alert-color;
+  margin-bottom: 1em;
+  &.done {
+    color: darken($success-color, 60%);
+    background-color: $success-color;
+  }
+}
+
+form .error {
+  color: darken($error-color, 60%);
+  font-weight: bold;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  display: inline-block;
+
+}
