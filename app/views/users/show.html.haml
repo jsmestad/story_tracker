@@ -6,22 +6,21 @@
       %th State
       %th Submitted
       %th Last Update
-      %th
   %tbody
     - @user.stories.order(created_at: :desc).each do |story|
       %tr
-        %td #{story.name || 'N/A'}
-        %td #{story.current_state.try(:titleize) || 'N/A'}
+        -# %td #{story.external_ref || story.id}
+        %td #{story.name}
+        %td
+          - if story.approved?
+            #{story.current_state.try(:titleize) || 'N/A'}
+          - else
+            Pending Review
         %td #{time_ago_in_words(story.created_at)} ago
         %td #{time_ago_in_words(story.updated_at)} ago
-        %td
-          - if story.url
-            %a{href: story.url} View in PT
-          - else
-            Not Listed in PT
   %tfoot
     %tr
-      %td{colspan: 5} Total Requested: #{@user.stories.count}
+      %td{colspan: 4} Total Requested: #{@user.stories.count}
 
 
 

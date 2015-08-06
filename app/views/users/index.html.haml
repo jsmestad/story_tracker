@@ -8,12 +8,6 @@
       %th
   %tbody
     = render partial: 'user', collection: @users
-    -# - @users.each do |user|
-      -# %tr
-        -# %td #{user.id}
-        -# %td #{user.name}
-        -# %td #{time_ago_in_words(user.created_at)} ago
-        -# %td #{user.role}
   %tfoot
     %tr
       %td{colspan: 4} Total Users: #{@users.count}

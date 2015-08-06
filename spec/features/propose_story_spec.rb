@@ -29,6 +29,7 @@ RSpec.describe "Propose New Story", type: :feature, vcr: {record: :new_episodes}
       click_on 'Your Requests'
       expect(page).to have_css('table tbody tr')
       # expect(page).to have_text('slack integration')
+      expect(page).to have_text('Pending Review')
     end
   end
 end
