@@ -125,6 +125,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
+    ffaker (2.1.0)
     ffi (1.9.10)
     formatador (0.2.5)
     foundation-icons-sass-rails (3.0.0)
@@ -367,6 +368,7 @@ DEPENDENCIES
   dotenv-rails
   email_validator
   factory_girl_rails
+  ffaker
   foundation-icons-sass-rails
   guard-livereload (~> 2.4)
   guard-pow

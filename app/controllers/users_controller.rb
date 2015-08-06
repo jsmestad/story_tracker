@@ -13,12 +13,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = params[:id] ? User.find(params[:id]) : current_user
+    @user = User.find(params[:id])
     authorize @user, :update?
   end
 
   def update
-    @user = params[:id] ? User.find(params[:id]) : current_user
+    @user = User.find(params[:id])
     authorize @user
 
     if @user.update_attributes(permitted_attributes(@user))

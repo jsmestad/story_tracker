@@ -21,6 +21,8 @@ en:
     submit:
       defect:
         create: 'File Report'
+      user:
+        update: 'Update Account'
     # Examples
     # labels:
     #   defaults:

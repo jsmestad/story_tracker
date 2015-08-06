@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def verify_api_key_works(exception)
     if exception.response[:status] == 403 and user_signed_in? and current_user.has_api_key?
       @project = TrackerProject.new
-      flash[:notice] = "It appears your Pivotal Tracker API no longer works. Please remove or update it."
+      flash[:alert] = "It appears your Pivotal Tracker API no longer works. Please remove or update it."
       redirect_to edit_user_path(current_user)
     else
       raise

@@ -10,7 +10,7 @@ feature 'Managing a User', :omniauth, :vcr do
     click_on 'Edit Account Settings'
     fill_in 'Pivotal Tracker API Token', with: tracker_key
     fill_in 'Email Address', with: email
-    click_on 'Update User'
+    click_on 'Update Account'
     expect(page).to have_content("Account updated")
 
     click_on 'Edit Account Settings'
@@ -20,7 +20,7 @@ feature 'Managing a User', :omniauth, :vcr do
 
 
   scenario 'gracefully fails over when API key is outdated' do
-    user_with_badkey = FactoryGirl.create(:user, :regular_user, uid: '12345', provider: 'github')
+    user_with_badkey = FactoryGirl.create(:user, :regular_user, uid: '12345', provider: 'github', email_address: 'foo@example.local')
     user_with_badkey.api_key = 'bad_key'
     user_with_badkey.save(validate: false)
 
@@ -29,7 +29,7 @@ feature 'Managing a User', :omniauth, :vcr do
     expect(page).to have_content('no longer works')
 
     fill_in 'Pivotal Tracker API Token', with: tracker_key
-    click_on 'Update User'
+    click_on 'Update Account'
 
     expect(page).to have_no_content('no longer works')
   end
