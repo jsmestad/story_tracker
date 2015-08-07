@@ -3,6 +3,11 @@ class IterationsController < ApplicationController
 
   def index
     @iterations = project.iterations(scope: 'current_backlog')
-    @icebox = project.stories(filter: "state:unscheduled id:#{Story.approved.map(&:external_ref).join(',')}")
+    iceboxed_stories = Story.approved.where('external_ref IS NOT NULL').all
+    if iceboxed_stories.empty?
+      @icebox = []
+    else
+      @icebox = project.stories(filter: "state:unscheduled id:#{iceboxed_stories.map(&:external_ref).join(',')}")
+    end
   end
 end

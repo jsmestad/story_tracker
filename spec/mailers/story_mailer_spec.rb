@@ -18,6 +18,22 @@ RSpec.describe StoryMailer, type: :mailer do
     end
   end
 
+  describe "submitted_story_notification" do
+    let(:story) { FactoryGirl.create(:story, :with_user_and_email) }
+    let(:admins) { FactoryGirl.create_list(:user, 2, :with_email, :admin) }
+    let(:mail) { StoryMailer.submitted_story_notification(admins, story) }
+
+    it "renders the headers" do
+      expect(mail.subject).to eq("Story Submission Notice")
+      expect(mail.to).to eq(admins.map(&:email_address))
+      expect(mail.from).to eq(["foo@example.local"])
+    end
+
+    it "renders the body" do
+      expect(mail.body.encoded).to match("A new story has been submitted for review")
+    end
+  end
+
   describe "deleted_story_notification" do
     let(:payload) { FactoryGirl.create(:delete_payload) }
     let(:story) { FactoryGirl.create(:story, :with_user_and_email) }
@@ -34,6 +50,5 @@ RSpec.describe StoryMailer, type: :mailer do
       expect(mail.body.encoded).to match("Unfortunately your story request has been closed.")
     end
   end
-
 
 end

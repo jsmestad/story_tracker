@@ -1,5 +1,13 @@
 class StoryMailer < ApplicationMailer
 
+  def submitted_story_notification(admins, story)
+    admin_emails = admins.map(&:email_address)
+    @story = story
+    @story_name = story.name
+    @story_created = story.created_at.strftime("%B %d %Y")
+    mail to: admin_emails
+  end
+
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #

@@ -13,6 +13,7 @@ RSpec.describe "Propose New Story", type: :feature, vcr: {record: :new_episodes}
 
   context 'as a regular user' do
     before do
+      FactoryGirl.create(:user, :with_email, :admin)
       signin(as_new_user: false, role: 'regular_user')
       visit '/stories/new'
     end
