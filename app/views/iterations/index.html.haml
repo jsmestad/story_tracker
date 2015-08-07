@@ -6,6 +6,9 @@
           Current iteration
         - else
           Iteration starting #{iteration.start.strftime('%b %d')}
+    - if @icebox.size > 0
+      %a.js-vertical-tab.vertical-tab{:href => "javascript:void(0)", rel: "tabicebox"}
+        Unscheduled
   .vertical-tab-content-container
     - @iterations.each do |iteration|
       %a.js-vertical-tab-accordion-heading.vertical-tab-accordion-heading{:href => "", :rel => "tab#{iteration.number}"}
@@ -26,6 +29,11 @@
         - if iteration.team_strength < 1.0
           %hr
           .flash.notice Notice: This iteration has an adjusted team strength of #{(iteration.team_strength * 100).to_i}%.
+    - if @icebox.size > 0
+      %a.js-vertical-tab-accordion-heading.vertical-tab-accordion-heading{:href => "", :rel => "tabicebox"}
+        Unscheduled
+      %div.js-vertical-tab-content.vertical-tab-content{id: "tabicebox"}
+        = render partial: 'stories/story', collection: @icebox
 
 .disclaimer
   %p The dates provided above are estimates. They are not provided as a commitment or contract of delivery.
