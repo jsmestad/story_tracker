@@ -530,4 +530,108 @@ http_interactions:
         production launch","story_type":"release","current_state":"unstarted","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","url":"https://www.pivotaltracker.com/story/show/98677188"}],"start":"2015-09-28T00:00:00Z","finish":"2015-10-05T00:00:00Z"}]'
     http_version: 
   recorded_at: Sun, 26 Jul 2015 02:14:45 GMT
+- request:
+    method: get
+    uri: 'https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/stories?filter=state:unscheduled%20id:'
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - "<TRACKERAPITOKEN>"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 200 OK
+      X-Tracker-Project-Version:
+      - '66'
+      X-Tracker-Pagination-Total:
+      - '17'
+      X-Tracker-Pagination-Offset:
+      - '0'
+      X-Tracker-Pagination-Limit:
+      - '100'
+      X-Tracker-Pagination-Returned:
+      - '17'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"c6115ed0eb869af3c599ac52c3634bdc"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 49f3d34e99bbb909e699e9e974ddb956
+      X-Runtime:
+      - '0.040389'
+      Date:
+      - Fri, 07 Aug 2015 00:33:40 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.41
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
+      X-Tracker-Client-Pinger-Interval:
+      - '12'
+    body:
+      encoding: UTF-8
+      string: '[{"kind":"story","id":100777958,"created_at":"2015-08-06T21:07:45Z","updated_at":"2015-08-06T21:07:45Z","story_type":"feature","name":"As
+        a customer, I want foo bar","description":"As an boss, I want another drink,
+        so that I get drunk","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/100777958","owner_ids":[],"labels":[]},{"kind":"story","id":100777886,"created_at":"2015-08-06T21:07:17Z","updated_at":"2015-08-06T21:07:17Z","story_type":"feature","name":"As
+        a customer, I want foo bar","description":"As an boss, I want another drink,
+        so that I get drunk","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/100777886","owner_ids":[],"labels":[]},{"kind":"story","id":100777310,"created_at":"2015-08-06T21:00:41Z","updated_at":"2015-08-07T00:15:01Z","story_type":"feature","name":"As
+        a accountant, I want slack integration","description":"\nAs an accountant,
+        I want slack integration, so that I can stop importing these items.\n\n##
+        Acceptance Criteria\n\n* I expect a NoMethodError to be returned explaining
+        where it failed\n* posting content does things I want\n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/100777310","owner_ids":[],"labels":[]},{"kind":"story","id":99850784,"created_at":"2015-07-25T22:33:06Z","updated_at":"2015-07-25T22:33:06Z","story_type":"feature","name":"As
+        a customer, I want slack integration","description":"\nAs an customer, I want
+        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
+        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/99850784","owner_ids":[],"labels":[]},{"kind":"story","id":99850698,"created_at":"2015-07-25T22:20:15Z","updated_at":"2015-07-25T22:20:15Z","story_type":"feature","name":"As
+        a customer, I want slack integration","description":"\nAs an customer, I want
+        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
+        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/99850698","owner_ids":[],"labels":[]},{"kind":"story","id":99850682,"created_at":"2015-07-25T22:18:25Z","updated_at":"2015-07-25T22:18:25Z","story_type":"feature","name":"As
+        a customer, I want slack integration","description":"\nAs an customer, I want
+        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
+        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/99850682","owner_ids":[],"labels":[]},{"kind":"story","id":98988516,"created_at":"2015-07-13T21:27:32Z","updated_at":"2015-07-13T21:27:32Z","story_type":"feature","name":"As
+        a customer, I want slack integration","description":"\nAs an customer, I want
+        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
+        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/98988516","owner_ids":[],"labels":[]},{"kind":"story","id":98988294,"created_at":"2015-07-13T21:24:52Z","updated_at":"2015-07-13T21:24:52Z","story_type":"feature","name":"As
+        a customer, I want slack integration","description":"\nAs an customer, I want
+        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
+        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/98988294","owner_ids":[],"labels":[]},{"kind":"story","id":98988170,"created_at":"2015-07-13T21:23:43Z","updated_at":"2015-07-13T21:23:43Z","story_type":"feature","name":"As
+        a customer, I want slack integration","description":"\nAs an customer, I want
+        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
+        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/98988170","owner_ids":[],"labels":[]},{"kind":"story","id":98988134,"created_at":"2015-07-13T21:23:13Z","updated_at":"2015-07-13T21:23:13Z","story_type":"feature","name":"As
+        a customer, I want slack integration","description":"\nAs an customer, I want
+        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
+        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/98988134","owner_ids":[],"labels":[]},{"kind":"story","id":98988092,"created_at":"2015-07-13T21:22:40Z","updated_at":"2015-07-13T21:22:40Z","story_type":"feature","name":"As
+        a customer, I want slack integration","description":"\nAs an customer, I want
+        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
+        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/98988092","owner_ids":[],"labels":[]},{"kind":"story","id":98988018,"created_at":"2015-07-13T21:21:37Z","updated_at":"2015-07-13T21:21:37Z","story_type":"feature","name":"As
+        a customer, I want slack integration","description":"\nAs an customer, I want
+        slack integration, so that I can stop importing invoices manually.\n\n## Acceptance
+        Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/98988018","owner_ids":[],"labels":[]},{"kind":"story","id":98957536,"created_at":"2015-07-13T16:33:20Z","updated_at":"2015-07-13T16:33:20Z","story_type":"feature","name":"As
+        a developer, I want joins","description":"As an developer, I want joins, so
+        that I can do joins.\n\n## Acceptance Criteria\n\n* \n* \n","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/98957536","owner_ids":[],"labels":[]},{"kind":"story","id":98677190,"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","story_type":"bug","name":"Product
+        browsing pagination not working in IE6","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/98677190","owner_ids":[],"labels":[{"id":12166964,"project_id":<TRACKERPROJECT>,"kind":"label","name":"ie6","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}]},{"kind":"story","id":98677192,"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","story_type":"feature","name":"Integrate
+        with automated order fullfillment system","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/98677192","owner_ids":[],"labels":[]},{"kind":"story","id":98677194,"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","story_type":"feature","name":"native
+        iPhone app to allow product browsing and checkout","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/98677194","owner_ids":[],"labels":[{"id":12166966,"project_id":<TRACKERPROJECT>,"kind":"label","name":"epic","created_at":"2015-07-08T18:57:13Z","updated_at":"2015-07-08T18:57:13Z"}]},{"kind":"story","id":98677196,"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-07-08T18:57:13Z","story_type":"feature","name":"Facebook
+        app, allowing users to share favorite products","current_state":"unscheduled","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/98677196","owner_ids":[],"labels":[]}]'
+    http_version: 
+  recorded_at: Fri, 07 Aug 2015 00:33:40 GMT
 recorded_with: VCR 2.9.3

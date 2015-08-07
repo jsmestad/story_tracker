@@ -1,0 +1,22 @@
+%tr
+  %td.alert.alert-good
+    New story submission notice
+%tr
+  %td.content-wrap
+    %table{:cellpadding => "0", :cellspacing => "0", :width => "100%"}
+      %tr
+        %td.content-block
+          A new story has been submitted for review
+          %strong &ldquo;#{@story_name}&rdquo;
+          on
+          %strong #{@story_created}.
+      %tr
+        %td.content-block
+          %a.btn-primary{href: story_url(@story)} View Story
+          %a.btn-secondary{href: stories_url} View Story
+          %tr
+            %td.content-block
+              Regards,
+              %br
+              Story Tracker App
+

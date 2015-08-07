@@ -25,6 +25,8 @@ en:
       subject: "Story Progress Update"
     deleted_story_notification:
       subject: "Story Request Closed"
+    submitted_story_notification:
+      subject: "Story Submission Notice"
   helpers:
     submit:
       story:

@@ -25,6 +25,10 @@ class StoriesController < ApplicationController
     authorize formatted_story, :create?
     @story = Story.create_from_formatter(current_user, formatted_story.as_params)
     if @story.persisted?
+      admins = User.admin.where('email_address IS NOT NULL').all
+      unless admins.empty?
+        StoryMailer.submitted_story_notification(admins, @story).deliver_now
+      end
       flash[:success] = "Story has been submitted for review."
       redirect_to iterations_path
     else
