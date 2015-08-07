@@ -33,6 +33,7 @@ gem 'aasm'
 gem 'pry-rails'
 gem 'premailer-rails'
 gem 'nokogiri' # required by premailer-rails, but not listed.
+gem "skylight"
 
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false

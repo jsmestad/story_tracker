@@ -7,7 +7,7 @@ that utilizes Pivotal Tracker as their development tool.
 ## Configuration
 
 See the `.env.template` for ENV values that must be set. Please use your best
-cryptographic judgement when it comes to generating values for these keys. The
+cryptographic judgment when it comes to generating values for these keys. The
 provided values should never be used and are there as contrived examples only.
 
 ## Hosting
@@ -22,6 +22,7 @@ remove a few of the included items:
 gem 'rails_12factor'
 gem 'puma'
 gem 'airbrake'
+gem 'skylight'
 ```
 
 Remove/Modify the `config/environments/production.rb` file's ActionMailer

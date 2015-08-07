@@ -16,4 +16,5 @@
 /.env.test
 
 config/database.yml
+config/skylight.yml
 
