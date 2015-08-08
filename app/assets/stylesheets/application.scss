@@ -12,10 +12,10 @@
 @import 'table_minimal';
 @import 'vertical_tabs';
 @import 'sans_serif';
+@import 'search';
 
 @import 'gh-buttons';
 @import 'story';
-
 
 .main {
   @include outer-container;
@@ -82,5 +82,15 @@ table form {
   }
   select {
     margin-bottom: ($base-spacing / 3);
+  }
+}
+
+.iteration-tools {
+  @include span-columns(12);
+  #search {
+    @include pad(0 0 default default);
+    @include span-columns(4);
+    @include shift(8);
+
   }
 }

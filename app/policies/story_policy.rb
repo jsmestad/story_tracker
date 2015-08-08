@@ -10,6 +10,10 @@ class StoryPolicy
     user.admin?
   end
 
+  def search?
+    true
+  end
+
   def show?
     true
   end

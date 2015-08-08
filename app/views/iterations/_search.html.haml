@@ -1,0 +1,5 @@
+-# %form.search-bar{role: "search"}
+= form_tag search_stories_path, method: 'get', class: 'search-bar', role: 'search' do
+  = text_field_tag :q, params[:q], placeholder: 'Search Stories'
+  %button{type: "submit"}
+    %img{alt: "Search Icon", src: "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png"}

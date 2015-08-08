@@ -3,7 +3,11 @@ Rails.application.routes.draw do
     resources :stories, only: [:new, :create], controller: 'iteration_stories'
   end
 
-  resources :stories, except: [:edit, :destroy]
+  resources :stories, except: [:edit, :destroy] do
+    collection do
+      get 'search'
+    end
+  end
   resources :defects, only: [:new, :create]
 
   # resource :user, only: [:show, :edit, :update]

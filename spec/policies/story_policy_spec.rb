@@ -18,6 +18,14 @@ describe StoryPolicy do
     end
   end
 
+  permissions :search? do
+    it "allows access for all authenticated users" do
+      expect(subject).to permit(current_user)
+      expect(subject).to permit(viewer)
+      expect(subject).to permit(admin)
+    end
+  end
+
   permissions :show? do
     it "allows access for all authenticated users" do
       expect(subject).to permit(current_user)

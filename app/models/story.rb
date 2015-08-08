@@ -14,6 +14,11 @@ class Story < ActiveRecord::Base
 
   delegate :url, to: :external_story, allow_nil: true, if: :approved?
 
+  def self.search(q)
+    # where("name ILIKE ?", "%#{q}%")
+    where("description ILIKE ?", "%#{q}%")
+  end
+
   def self.create_from_formatter(user, params)
     create do |story|
       story.user = user
