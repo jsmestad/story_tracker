@@ -21,19 +21,19 @@ http_interactions:
       Status:
       - 200 OK
       X-Tracker-Project-Version:
-      - '64'
+      - '68'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"3b25e429cbcb959de3f623d563ba6eed"'
+      - '"414825549ead27d571e10d4a121127d9"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bb44627b38cf2361efa19dcca697344d
+      - eff9237867e2c72fee95aa968f0b0f60
       X-Runtime:
-      - '0.046456'
+      - '0.042109'
       Date:
-      - Thu, 06 Aug 2015 21:07:44 GMT
+      - Sat, 08 Aug 2015 22:34:01 GMT
       X-Rack-Cache:
       - miss
       X-Powered-By:
@@ -52,11 +52,11 @@ http_interactions:
       - '12'
     body:
       encoding: UTF-8
-      string: '{"id":<TRACKERPROJECT>,"kind":"project","name":"My Sample Project","version":64,"iteration_length":1,"week_start_day":"Monday","point_scale":"0,1,2,3","point_scale_is_custom":false,"bugs_and_chores_are_estimatable":false,"automatic_planning":true,"enable_tasks":true,"time_zone":{"kind":"time_zone","olson_name":"Etc/UTC","offset":"+00:00"},"velocity_averaged_over":3,"number_of_done_iterations_to_show":12,"has_google_domain":false,"profile_content":"This
+      string: '{"id":<TRACKERPROJECT>,"kind":"project","name":"My Sample Project","version":68,"iteration_length":1,"week_start_day":"Monday","point_scale":"0,1,2,3","point_scale_is_custom":false,"bugs_and_chores_are_estimatable":false,"automatic_planning":true,"enable_tasks":true,"time_zone":{"kind":"time_zone","olson_name":"Etc/UTC","offset":"+00:00"},"velocity_averaged_over":3,"number_of_done_iterations_to_show":12,"has_google_domain":false,"profile_content":"This
         is a demo project, created by Tracker, with example stories for a simple shopping
         web site.","enable_incoming_emails":true,"initial_velocity":10,"public":false,"atom_enabled":false,"project_type":"demo","start_time":"2015-06-22T00:00:00Z","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T19:01:19Z","account_id":774272,"current_iteration_number":7,"enable_following":true}'
     http_version: 
-  recorded_at: Thu, 06 Aug 2015 21:07:45 GMT
+  recorded_at: Sat, 08 Aug 2015 22:34:01 GMT
 - request:
     method: post
     uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/stories
@@ -81,19 +81,19 @@ http_interactions:
       Status:
       - 200 OK
       X-Tracker-Project-Version:
-      - '65'
+      - '69'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"cf9fb70c36f70800e582cc7a262fb51a"'
+      - '"dbf810c027dac00524fa4a3b5abac372"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0f45b0286c26d8dde503f7ba826231eb
+      - e3806a8011918cb67429ba0af6365d2e
       X-Runtime:
-      - '0.216001'
+      - '0.200482'
       Date:
-      - Thu, 06 Aug 2015 21:07:45 GMT
+      - Sat, 08 Aug 2015 22:34:02 GMT
       X-Rack-Cache:
       - invalidate, pass
       X-Powered-By:
@@ -112,9 +112,126 @@ http_interactions:
       - '12'
     body:
       encoding: UTF-8
-      string: '{"kind":"story","id":100777958,"project_id":<TRACKERPROJECT>,"name":"As
+      string: '{"kind":"story","id":100879132,"project_id":<TRACKERPROJECT>,"name":"As
         a customer, I want foo bar","description":"As an boss, I want another drink,
-        so that I get drunk","story_type":"feature","current_state":"unscheduled","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-08-06T21:07:45Z","updated_at":"2015-08-06T21:07:45Z","url":"https://www.pivotaltracker.com/story/show/100777958"}'
+        so that I get drunk","story_type":"feature","current_state":"unscheduled","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-08-08T22:34:02Z","updated_at":"2015-08-08T22:34:02Z","url":"https://www.pivotaltracker.com/story/show/100879132"}'
     http_version: 
-  recorded_at: Thu, 06 Aug 2015 21:07:45 GMT
+  recorded_at: Sat, 08 Aug 2015 22:34:02 GMT
+- request:
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - "<TRACKERAPITOKEN>"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 200 OK
+      X-Tracker-Project-Version:
+      - '69'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"362a1b27a9c226a12b73b691a892379b"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0ad6d46a50046ef992af520484743cbd
+      X-Runtime:
+      - '0.055714'
+      Date:
+      - Sat, 08 Aug 2015 22:34:02 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.41
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
+      X-Tracker-Client-Pinger-Interval:
+      - '12'
+    body:
+      encoding: UTF-8
+      string: '{"id":<TRACKERPROJECT>,"kind":"project","name":"My Sample Project","version":69,"iteration_length":1,"week_start_day":"Monday","point_scale":"0,1,2,3","point_scale_is_custom":false,"bugs_and_chores_are_estimatable":false,"automatic_planning":true,"enable_tasks":true,"time_zone":{"kind":"time_zone","olson_name":"Etc/UTC","offset":"+00:00"},"velocity_averaged_over":3,"number_of_done_iterations_to_show":12,"has_google_domain":false,"profile_content":"This
+        is a demo project, created by Tracker, with example stories for a simple shopping
+        web site.","enable_incoming_emails":true,"initial_velocity":10,"public":false,"atom_enabled":false,"project_type":"demo","start_time":"2015-06-22T00:00:00Z","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T19:01:19Z","account_id":774272,"current_iteration_number":7,"enable_following":true}'
+    http_version: 
+  recorded_at: Sat, 08 Aug 2015 22:34:02 GMT
+- request:
+    method: post
+    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/stories
+    body:
+      encoding: UTF-8
+      string: '{"name":"As a customer, I want foo bar","description":"As an boss,
+        I want another drink, so that I get drunk"}'
+    headers:
+      User-Agent:
+      - Ruby/2.2.2 (x86_64-darwin14; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - "<TRACKERAPITOKEN>"
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 200 OK
+      X-Tracker-Project-Version:
+      - '70'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"ffc576ed44164bfa6e789298aae77eb3"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 54e8c6b23a5e71bb8f613ca3642b0ce8
+      X-Runtime:
+      - '0.176077'
+      Date:
+      - Sat, 08 Aug 2015 22:34:03 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.41
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
+      X-Tracker-Client-Pinger-Interval:
+      - '12'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"story","id":100879134,"project_id":<TRACKERPROJECT>,"name":"As
+        a customer, I want foo bar","description":"As an boss, I want another drink,
+        so that I get drunk","story_type":"feature","current_state":"unscheduled","requested_by_id":379075,"owner_ids":[],"labels":[],"created_at":"2015-08-08T22:34:03Z","updated_at":"2015-08-08T22:34:03Z","url":"https://www.pivotaltracker.com/story/show/100879134"}'
+    http_version: 
+  recorded_at: Sat, 08 Aug 2015 22:34:03 GMT
 recorded_with: VCR 2.9.3
