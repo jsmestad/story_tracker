@@ -44,7 +44,7 @@ module StoryStateConcern
 private
 
   def tracker_params_hash
-    h = { name: name, description: description}
+    h = { name: name, description: description, story_type: story_type }
     h.merge!(after_id: after_id) if after_id.present?
     h
   end
