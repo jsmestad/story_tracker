@@ -25,7 +25,9 @@ private
 
   def connection
     @connection ||= begin
-                      TrackerApi::Client.new(token: self.api_token)
+                      TrackerApi::Client.new(token: self.api_token) do |faraday|
+                        faraday.use :http_cache, store: Rails.cache, logger: Rails.logger
+                      end
                     end
   end
 end

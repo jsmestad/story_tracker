@@ -11,7 +11,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 # gem 'turbolinks'
 
-gem 'tracker_api', '~> 0.2.10', github: 'jsmestad/tracker_api', branch: 'verify-object-ext-is-needed'
+gem 'tracker_api', '~> 0.2.10', github: 'jsmestad/tracker_api', branch: 'feature/configure-client'
 gem 'haml-rails'
 gem 'simple_form'
 
@@ -33,7 +33,8 @@ gem 'aasm'
 gem 'pry-rails'
 gem 'premailer-rails'
 gem 'nokogiri' # required by premailer-rails, but not listed.
-gem "skylight"
+gem 'skylight'
+gem 'faraday-http-cache'
 
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false
@@ -64,6 +65,7 @@ group :test do
 end
 
 group :production do
+  gem 'dalli'
   gem 'puma'
   gem 'rails_12factor'
 end
