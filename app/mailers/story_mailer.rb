@@ -1,5 +1,19 @@
 class StoryMailer < ApplicationMailer
 
+  def approved_story_notification(to, story)
+    @story_name = story.name
+    @story_created = story.created_at.strftime("%B %d %Y")
+    @story_updated = story.updated_at
+    mail to: to
+  end
+
+  def rejected_story_notification(to, story)
+    @story_name = story.name
+    @story_created = story.created_at.strftime("%B %d %Y")
+    @story_updated = story.updated_at
+    mail to: to
+  end
+
   def submitted_story_notification(admins, story)
     admin_emails = admins.map(&:email_address)
     @story = story

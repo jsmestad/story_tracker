@@ -51,4 +51,19 @@ RSpec.describe StoryMailer, type: :mailer do
     end
   end
 
+  describe "rejected_story_notification" do
+    let(:story) { FactoryGirl.create(:story, :with_user_and_email) }
+    let(:mail) { StoryMailer.rejected_story_notification(story.user.email_address, story) }
+
+    it "renders the headers" do
+      expect(mail.subject).to eq("Story Request Closed")
+      expect(mail.to).to eq(["foo@example.com"])
+      expect(mail.from).to eq(["foo@example.local"])
+    end
+
+    it "renders the body" do
+      expect(mail.body.encoded).to match("Unfortunately your story request has been closed.")
+    end
+  end
+
 end

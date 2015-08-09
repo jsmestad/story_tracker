@@ -16,5 +16,11 @@ class StoryMailerPreview < ActionMailer::Preview
     StoryMailer.deleted_story_notification(@full_story.user.email_address, @full_story, 'foobar')
   end
 
+  # Preview this email at http://localhost:3000/rails/mailers/story_mailer/rejected_story_notification
+  def rejected_story_notification
+    @full_story = Story.first
+    @full_story ||= FactoryGirl.create(:story, :with_user_and_email)
+    StoryMailer.rejected_story_notification(@full_story.user.email_address, @full_story)
+  end
 
 end

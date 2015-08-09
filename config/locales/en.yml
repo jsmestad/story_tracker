@@ -23,6 +23,8 @@ en:
   story_mailer:
     updated_story_notification:
       subject: "Story Progress Update"
+    rejected_story_notification:
+      subject: "Story Request Closed"
     deleted_story_notification:
       subject: "Story Request Closed"
     submitted_story_notification:

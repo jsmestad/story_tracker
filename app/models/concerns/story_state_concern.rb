@@ -14,7 +14,7 @@ module StoryStateConcern
         transitions from: :submitted, to: :approved
       end
 
-      event :reject do
+      event :reject, after: :send_reject_notification! do
         transitions from: :submitted, to: :rejected
       end
     end
@@ -24,11 +24,15 @@ module StoryStateConcern
     pt_story = user.connection.create_story(tracker_params_hash)
     if pt_story.id.present?
       self.update_attribute(:external_ref, pt_story.id)
-    # else
-      # false
     end
   rescue TrackerApi::Error
     false
+  end
+
+  def send_reject_notification!
+    if user.has_email_address?
+      StoryMailer.rejected_story_notification(user.email_address, self).deliver_now
+    end
   end
 
 private
