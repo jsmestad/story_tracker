@@ -14,6 +14,8 @@
         %td
           - if story.approved?
             #{story.current_state.try(:titleize) || 'N/A'}
+          - elsif story.rejected?
+            Closed
           - else
             Pending Review
         %td #{time_ago_in_words(story.created_at)} ago
