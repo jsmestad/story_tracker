@@ -60,11 +60,6 @@ RSpec.describe Story do
       it 'can be transitioned from :submitted' do
         expect { subject.reject }.to change(subject, :rejected?).from(false).to(true)
       end
-
-      it 'cannot be transitioned from :approved' do
-        subject.state = :approved
-        expect { subject.reject }.to raise_error(AASM::InvalidTransition)
-      end
     end
   end
 end

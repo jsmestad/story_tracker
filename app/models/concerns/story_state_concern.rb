@@ -14,10 +14,14 @@ module StoryStateConcern
         transitions from: :submitted, to: :approved
       end
 
-      event :reject, after: :send_reject_notification! do
-        transitions from: :submitted, to: :rejected
+      event :reject, after: [:remove_external_ref!, :send_reject_notification!] do
+        transitions from: [:submitted, :approved], to: :rejected
       end
     end
+  end
+
+  def remove_external_ref!
+    update_attribute(:external_ref, nil)
   end
 
   def send_to_tracker!

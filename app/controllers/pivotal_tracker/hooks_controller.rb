@@ -27,11 +27,7 @@ module PivotalTracker
       payload.primary_resources.each do |resource|
         next if resource['kind'] != 'story'
         if story = Story.find_by(external_ref: resource['id'])
-          if payload.kind == 'story_delete_activity'
-            story.destroy
-          else
-            story.handle_callback!(payload)
-          end
+          story.handle_callback!(payload)
           updated = true
         end
       end
