@@ -10,7 +10,7 @@ module StoryStateConcern
       state :approved
       state :rejected
 
-      event :approve, guard: :send_to_tracker! do
+      event :approve, guard: :send_to_tracker!, after: :send_approved_notification! do
         transitions from: :submitted, to: :approved
       end
 
@@ -27,6 +27,12 @@ module StoryStateConcern
     end
   rescue TrackerApi::Error
     false
+  end
+
+  def send_approved_notification!
+    if user.has_email_address?
+      StoryMailer.updated_story_notification(user.email_address, self, 'this request was approved for scheduling').deliver_now
+    end
   end
 
   def send_reject_notification!
