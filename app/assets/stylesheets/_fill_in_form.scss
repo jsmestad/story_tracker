@@ -19,9 +19,6 @@ form.fill_in {
   }
   button {
     @include flex-grow(2);
-    /* margin-top: 1em; */
-    /* text-align: right; */
-    /* float: right; */
   }
 
   .line {
@@ -56,6 +53,33 @@ form.fill_in {
     }
   }
 
+
+}
+
+form.fill_in, form.new_story.advanced {
+  .flash {
+    margin-right: 1em;
+  }
+  button {
+    @include flex-grow(2);
+  }
+
+  .line {
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    span {
+      padding-right: 0.2em;
+    }
+    input {
+      flex: 2;
+      width: 100%;
+      margin-left: 0.1em;
+      margin-right: 0.1em;
+    }
+    span.comma:after { width: 3px; content: ','; }
+    span.period:after { width: 3px; content: '.'; }
+  }
 
 }
 

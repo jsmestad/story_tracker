@@ -1,0 +1,15 @@
+%h1 Propose a Story (Advanced)
+
+%p Remember that all fields accept markdown formatting.
+
+%section.add-story.advanced
+  = form_for @story, as: :story, url: stories_path(advanced: true), method: :post, html: { class: 'new_story advanced' } do |f|
+    = f.label :name, 'Story Title'
+    = f.text_field :name
+
+    = f.label :body, 'Description'
+    = f.text_area :body, rows: 20
+
+    .line
+      .flash.notice This story will be added to the icebox and be discussed in an upcoming Pre-IPM.
+      = f.button
