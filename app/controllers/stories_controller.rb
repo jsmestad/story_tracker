@@ -26,13 +26,23 @@ class StoriesController < ApplicationController
   end
 
   def new
-    @story = StoryFormatter.new
-    authorize @story, :create?
-    render
+    if params[:advanced]
+      @story = AdvancedStoryFormatter.new
+      authorize @story, :create?
+      render :new_advanced
+    else
+      @story = StoryFormatter.new
+      authorize @story, :create?
+      render
+    end
   end
 
   def create
-    formatted_story = StoryFormatter.new(story_params)
+    if params[:advanced]
+      formatted_story = AdvancedStoryFormatter.new(story_params)
+    else
+      formatted_story = StoryFormatter.new(story_params)
+    end
     authorize formatted_story, :create?
     @story = Story.create_from_formatter(current_user, formatted_story.as_params)
     if @story.persisted?
@@ -77,6 +87,10 @@ private
   end
 
   def story_params
-    params.require(:story).permit(:stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow)
+    if params[:advanced]
+      params.require(:story).permit(:name, :body)
+    else
+      params.require(:story).permit(:stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow)
+    end
   end
 end
