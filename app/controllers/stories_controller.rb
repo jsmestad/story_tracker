@@ -1,6 +1,8 @@
 class StoriesController < ApplicationController
-  before_filter :authenticate_user!
-  after_action :verify_authorized
+  before_filter :authenticate_user!, except: [:search]
+  after_action :verify_authorized, except: [:search]
+
+  respond_to :json, :html
 
   def index
     @stories = Story.submitted.all
@@ -9,13 +11,13 @@ class StoriesController < ApplicationController
   end
 
   def search
-    authorize :story, :search?
+    authorize :story, :search? if current_user
     if params[:q].present? and params[:q].length < 3
       flash[:notice] = 'Search term must be at least 3 characters.'
       redirect_to iterations_path
     else
       @stories = Story.approved.search(params[:q]).order('created_at DESC')
-      render
+      respond_with @stories
     end
   end
 

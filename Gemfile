@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.2.3'
 
 gem 'rails', '4.2.3'
 gem 'pg', '>= 0.18'
@@ -35,6 +35,9 @@ gem 'premailer-rails'
 gem 'nokogiri' # required by premailer-rails, but not listed.
 gem 'skylight'
 gem 'faraday-http-cache'
+
+gem 'active_model_serializers', '~> 0.10.0.rc2'
+gem 'responders', '~> 2.0'
 
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false
