@@ -19,7 +19,7 @@
         - else
           - if policy(:story).create?
             %li.nav-link
-              %a{href: account_path} Your Requests
+              %a{href: account_path} Your Requests (#{current_user.stories.count})
             %li.nav-link
               %a{href: edit_user_path(current_user)} Edit Account Settings
           %li.nav-link
