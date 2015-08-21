@@ -30,3 +30,21 @@
     .story-description
       :markdown
         #{@story.description}
+
+  %section.audit-log
+    %h3 Story History
+    - if @story.activities.count > 0
+      - @story.activities.order('created_at DESC').each do |activity|
+        .activity
+          .time
+            #{time_ago_in_words(activity.created_at)} ago
+          .message
+            Story has been <em>#{t("story.highlight.#{activity.highlight.underscore}")}</em>.
+
+    - else
+      .activity
+        .time
+          #{time_ago_in_words(Time.now)} ago
+        .message
+          No history to report for this story. Most likely this story is still pending review.
+

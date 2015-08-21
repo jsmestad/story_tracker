@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806223415) do
+ActiveRecord::Schema.define(version: 20150821002304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 20150806223415) do
   add_index "stories", ["story_type"], name: "is_defect", where: "((story_type)::text = 'defect'::text)", using: :btree
   add_index "stories", ["story_type"], name: "is_feature", where: "((story_type)::text = 'feature'::text)", using: :btree
   add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
+
+  create_table "story_callbacks", force: :cascade do |t|
+    t.integer  "story_id",   null: false
+    t.string   "highlight",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "story_callbacks", ["story_id"], name: "index_story_callbacks_on_story_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
