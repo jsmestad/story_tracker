@@ -23,6 +23,7 @@ RSpec.describe WebhookPayload do
     subject { obj }
 
     its(:kind) { is_expected.to eql "story_move_activity" }
+    its(:highlight) { is_expected.to eql "moved and scheduled" }
 
     it_behaves_like 'a webhook payload'
   end
@@ -35,6 +36,7 @@ RSpec.describe WebhookPayload do
     subject { obj }
 
     its(:kind) { is_expected.to eql "story_delete_activity" }
+    its(:highlight) { is_expected.to eql "deleted" }
 
     it_behaves_like 'a webhook payload'
   end
@@ -47,6 +49,7 @@ RSpec.describe WebhookPayload do
     subject { obj }
 
     its(:kind) { is_expected.to eql "story_create_activity" }
+    its(:highlight) { is_expected.to eql "added" }
 
     it_behaves_like 'a webhook payload'
   end
@@ -59,6 +62,7 @@ RSpec.describe WebhookPayload do
     subject { obj }
 
     its(:kind) { is_expected.to eql "story_update_activity" }
+    its(:highlight) { is_expected.to eql "estimated" }
 
     it_behaves_like 'a webhook payload'
   end
