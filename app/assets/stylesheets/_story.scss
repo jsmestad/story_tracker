@@ -31,6 +31,22 @@ section.header {
   }
 }
 
+section.audit-log {
+  margin-top: 3em;
+  @include media($large-screen) {
+    @include span-columns(12);
+  }
+
+  .activity {
+    @include pad;
+    background-color: lighten(#F1F1F1, 3%);
+    .time, .message { display: inline-block; }
+    .time { font-weight: bold; color: #666; padding-right: 1em; }
+    .message { padding-left: 1em; border-left: 1px dotted #CCC; }
+    .message em { font-weight: bold; }
+  }
+}
+
 .story-description {
   $dark-gray: #333 !default;
   $base-font-color: $dark-gray !default;

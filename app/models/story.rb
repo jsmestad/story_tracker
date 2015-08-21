@@ -5,6 +5,8 @@ class Story < ActiveRecord::Base
 
   belongs_to :user, inverse_of: :stories
 
+  has_many :activities, class_name: 'StoryCallback', inverse_of: :story, dependent: :destroy
+
   validates :user, presence: true
 
   # validates :stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow, presence: true

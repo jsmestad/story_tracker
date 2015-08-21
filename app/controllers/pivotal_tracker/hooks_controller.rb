@@ -27,6 +27,7 @@ module PivotalTracker
       payload.primary_resources.each do |resource|
         next if resource['kind'] != 'story'
         if story = Story.find_by(external_ref: resource['id'])
+          story.activities.create!(highlight: payload.highlight)
           story.handle_callback!(payload)
           updated = true
         end

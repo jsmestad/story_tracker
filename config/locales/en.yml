@@ -20,6 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  story:
+    highlight:
+      created: "approved"
+      estimated: "estimated"
+      moved_and_scheduled: "scheduled"
+      deleted: "rejected"
   story_mailer:
     updated_story_notification:
       subject: "Story Progress Update"

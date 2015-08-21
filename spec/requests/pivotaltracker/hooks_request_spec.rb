@@ -61,6 +61,7 @@ RSpec.describe 'Pivotal Tracker webhooks' do
       post "/pivotal_tracker/callback?token=#{ENV['CALLBACK_TOKEN']}", payload.to_json, request_headers
 
       expect(response).to have_http_status(201)
+      expect(StoryCallback.where(highlight: 'deleted').count).to eql(1)
       expect(Story.submitted.count).to eql(1)
       expect(Story.rejected.count).to eql(1)
       expect(Story.rejected.where(external_ref: nil).count).to eql(1)
