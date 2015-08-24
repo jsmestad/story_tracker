@@ -21,7 +21,6 @@ gem 'pundit', '~> 1.0.1'
 
 gem 'neat'
 gem 'bourbon'
-gem 'redcarpet'
 gem 'foundation-icons-sass-rails'
 
 gem 'airbrake'
@@ -38,6 +37,10 @@ gem 'faraday-http-cache'
 
 gem 'active_model_serializers', '~> 0.10.0.rc2'
 gem 'responders', '~> 2.0'
+
+gem 'high_voltage', '~> 2.4.0'
+gem 'markdown-rails'
+gem 'redcarpet'
 
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false
