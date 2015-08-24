@@ -162,6 +162,7 @@ GEM
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
     hashie (3.4.2)
+    high_voltage (2.4.0)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
       haml (~> 4.0.0)
@@ -187,6 +188,9 @@ GEM
     lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    markdown-rails (0.2.1)
+      rails
+      rdiscount (>= 1.6.8, < 2.0)
     method_source (0.8.2)
     mime-types (2.6.1)
     mini_portile (0.6.2)
@@ -275,6 +279,7 @@ GEM
     rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    rdiscount (1.6.8)
     redcarpet (3.3.2)
     representable (2.3.0)
       uber (~> 0.0.7)
@@ -377,8 +382,10 @@ DEPENDENCIES
   guard-pow
   guard-rails
   haml-rails
+  high_voltage (~> 2.4.0)
   jquery-rails
   launchy
+  markdown-rails
   neat
   nokogiri
   octokit
@@ -405,4 +412,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.10.5
+   1.10.6

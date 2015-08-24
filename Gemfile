@@ -21,7 +21,6 @@ gem 'pundit', '~> 1.0.1'
 
 gem 'neat'
 gem 'bourbon'
-gem 'redcarpet'
 gem 'foundation-icons-sass-rails'
 
 gem 'airbrake'
@@ -35,6 +34,10 @@ gem 'premailer-rails'
 gem 'nokogiri' # required by premailer-rails, but not listed.
 gem 'skylight'
 gem 'faraday-http-cache'
+
+gem 'high_voltage', '~> 2.4.0'
+gem 'markdown-rails'
+gem 'redcarpet'
 
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false
