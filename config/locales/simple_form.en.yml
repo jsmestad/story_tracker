@@ -14,6 +14,7 @@ en:
       user:
         email_address: 'Email Address'
         api_key: 'Pivotal Tracker API Token'
+        token: 'API Access Token'
     placeholders:
       user:
         api_key: 'e.g. 235bfdbddb79a48bad5fb007db87a485'

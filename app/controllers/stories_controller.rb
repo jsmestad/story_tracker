@@ -2,6 +2,8 @@ class StoriesController < ApplicationController
   before_filter :authenticate_user!
   after_action :verify_authorized
 
+  respond_to :json, :html
+
   def index
     @stories = Story.submitted.all
     authorize @stories
@@ -15,7 +17,7 @@ class StoriesController < ApplicationController
       redirect_to iterations_path
     else
       @stories = Story.approved.search(params[:q]).order('created_at DESC')
-      render
+      respond_with @stories
     end
   end
 

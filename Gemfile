@@ -35,6 +35,9 @@ gem 'nokogiri' # required by premailer-rails, but not listed.
 gem 'skylight'
 gem 'faraday-http-cache'
 
+gem 'active_model_serializers', '~> 0.10.0.rc2'
+gem 'responders', '~> 2.0'
+
 gem 'high_voltage', '~> 2.4.0'
 gem 'markdown-rails'
 gem 'redcarpet'
