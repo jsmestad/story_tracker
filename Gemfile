@@ -34,6 +34,7 @@ gem 'premailer-rails'
 gem 'nokogiri' # required by premailer-rails, but not listed.
 gem 'skylight'
 gem 'faraday-http-cache'
+gem 'faraday_middleware'
 
 gem 'active_model_serializers', '~> 0.10.0.rc2'
 gem 'responders', '~> 2.0'
@@ -49,6 +50,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'faraday-detailed_logger'
   gem 'byebug'
   gem 'quiet_assets'
 

@@ -97,7 +97,9 @@ Rails.application.configure do
                         :password => ENV["MEMCACHIER_PASSWORD"],
                         :failover => true,
                         :socket_timeout => 1.5,
-                        :socket_failure_delay => 0.2
+                        :socket_failure_delay => 0.2,
+                        :expires_in => 5.minutes,
+                        :compress => true
                       }
   end
 end

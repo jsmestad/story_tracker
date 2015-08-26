@@ -124,6 +124,8 @@ GEM
       railties (>= 3.0.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    faraday-detailed_logger (1.0.0)
+      faraday
     faraday-http-cache (1.2.0)
       faraday (~> 0.8)
     faraday_middleware (0.10.0)
@@ -380,7 +382,9 @@ DEPENDENCIES
   dotenv-rails
   email_validator
   factory_girl_rails
+  faraday-detailed_logger
   faraday-http-cache
+  faraday_middleware
   ffaker
   foundation-icons-sass-rails
   guard-livereload (~> 2.4)
