@@ -2,6 +2,13 @@
 
 Below are a list of questions we often get from users of StoryTracker.
 
+### Why do only select stories appear as links?
+
+The answer to this is the same as it is to "Why can I not search all stories?".
+
+Links only appear for stories submitted through StoryTracker. This provides a
+barrier between day-to-day engineering tasks and stakeholder requests.
+
 ### Why are the submission forms so restrictive?
 
 The restrictive nature of the forms is **very intentional**. The aim is the
