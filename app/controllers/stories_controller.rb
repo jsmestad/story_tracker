@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
-  before_filter :authenticate_user!, except: [:search]
-  after_action :verify_authorized, except: [:search]
+  before_filter :authenticate_user!
+  after_action :verify_authorized
 
   respond_to :json, :html
 
@@ -11,7 +11,7 @@ class StoriesController < ApplicationController
   end
 
   def search
-    authorize :story, :search? if current_user
+    authorize :story, :search?
     if params[:q].present? and params[:q].length < 3
       flash[:notice] = 'Search term must be at least 3 characters.'
       redirect_to iterations_path

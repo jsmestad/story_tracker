@@ -14,6 +14,14 @@ RSpec.describe User do
 
   it { is_expected.to validate_uniqueness_of(:uid).case_insensitive }
 
+  describe "#create" do
+    it "generates a token" do
+      user = FactoryGirl.create(:user)
+
+      expect(user.token.length).to eq 22
+    end
+  end
+
   it "#name returns a string" do
     expect(subject.name).to match 'Test User'
   end

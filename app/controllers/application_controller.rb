@@ -58,9 +58,29 @@ class ApplicationController < ActionController::Base
     end
 
     def authenticate_user!
-      if !current_user
-        redirect_to login_url, :alert => 'You need to sign in for access to this page.'
+      case request.format
+      when Mime::JSON
+        if user = authenticate_token
+          @current_user = user
+        else
+          render_unauthorized
+        end
+      else
+        if !current_user
+          redirect_to login_url, alert: 'You need to sign in for access to this page.'
+        end
       end
+    end
+
+    def authenticate_token
+      authenticate_with_http_token do |token, options|
+        User.find_by(token: token)
+      end
+    end
+
+    def render_unauthorized
+      self.headers['WWW-Authenticate'] = 'Token realm="Application"'
+      render json: 'Bad credentials', status: 401
     end
 
 end

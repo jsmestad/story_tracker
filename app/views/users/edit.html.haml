@@ -19,5 +19,10 @@
   .hint.api_key
     Adding your Pivotal Tracker API Token (<a href="https://www.pivotaltracker.com/profile">found here</a>) allows approved stories to be delivered under your account. Without this all stories are submitted under a system default user.
 
+  = f.input :token, readonly: true
+
+  .hint.token
+    This is your external API key to be used with StoryTracker. Please keep this safe!
+
   = f.button :submit
 

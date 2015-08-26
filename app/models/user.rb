@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include UserTokenConcern
   include GuidConcern
   include UserRoleConcern
   displayed_with_guid
