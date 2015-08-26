@@ -48,7 +48,8 @@ describe a regression, "a defect".
 StoryTracker has a submission review process. Upon submission the administrators
 are sent an email notification requesting they review it. This can take a bit of
 time depending on the team. - If something is urgent, it's best to reach out and
-ping your administrator directly.
+ping your administrator directly. For more information see [Workflow
+Explained](/pages/workflow).
 
 ### Why am I not getting email notifications?
 
