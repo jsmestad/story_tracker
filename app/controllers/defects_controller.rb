@@ -57,6 +57,6 @@ private
   end
 
   def defect_params
-    params.require(:defect).permit(:assumption, :actual, :workaround)
+    params.require(:defect).permit(:assumption, :actual, :workaround, :name_expectation, :name_actual)
   end
 end

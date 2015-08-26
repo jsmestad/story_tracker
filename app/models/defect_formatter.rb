@@ -3,6 +3,11 @@ class DefectFormatter
 
   attr_accessor :assumption, :actual, :workaround
 
+  attr_accessor :name_expectation, :name_actual
+
+  validates_presence_of :assumption, :actual, :workaround
+  validates_presence_of :name_expectation, :name_actual
+
   def self.policy_class
     DefectPolicy
   end
@@ -25,8 +30,7 @@ class DefectFormatter
   # end
 
   def name
-    "User expected #{}"
-    #"As a #{stakeholder}, I want #{the_ask}"
+    "Expected #{name_expectation}, instead received #{name_actual}"
   end
 
   def workaround_sentence

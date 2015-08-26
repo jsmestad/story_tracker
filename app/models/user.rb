@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
 
   validates :email_address, email: {allow_blank: true}
 
-  # attr_encrypted_options.merge!(encode: true)
   attr_encrypted :api_key, key: ENV['USER_APIKEY_KEY']
 
   validate :api_key_can_access_project
@@ -31,7 +30,6 @@ class User < ActiveRecord::Base
       user.uid = auth['uid']
       if auth['info']
         user.username = auth['info']['nickname']
-        # user.email = auth['info']['email']
         user.name = auth['info']['name'] || ""
       end
     end

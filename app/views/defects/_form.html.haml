@@ -1,17 +1,9 @@
-.defect-content
-  -# .line
-    -# %span As an
-    -# #{form.text_field :stakeholder, placeholder: 'e.g. accountant', required: true}
-    -# %span.comma
-    -# %span I want
-    -# #{form.text_field :the_ask, placeholder: 'e.g. slack integration', required: true}
-    -# %span.comma
-  -# .line
-    -# %span so that
-    -# #{form.text_field :reasoning, placeholder: 'e.g. I can stop importing invoices manually', required: true, class: 'reasoning'}
-    -# %span.period
+
+%p In as few words as possible, please provide us with a very high level overview of what is going on.
 
 .acceptance-criteria
+  %h3 High-level details:
+  %hr
   .line
     %div I had expected that
   .line
@@ -25,5 +17,14 @@
   .line
     %span Is there a workaround?
     = form.select :workaround, [['Yes', true], ['No', false]]
-    -# #{form.text_field :workaround, placeholder: 'No}, there is a workaround.
 
+.defect-content
+  %h2 Provide a Short Title:
+  %hr
+  .line
+    %span Expected
+    #{form.text_field :name_expectation, placeholder: 'e.g. an empty result set', required: true, maxlength: 40}
+    %span.comma
+    %span instead received
+    #{form.text_field :name_actual, placeholder: 'e.g. a NullPointerException', required: true, maxlength: 40}
+    %span.period

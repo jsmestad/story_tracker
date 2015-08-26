@@ -1,14 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe DefectFormatter do
-  # it { is_expected.to validate_presence_of(:stakeholder) }
-  # it { is_expected.to validate_presence_of(:the_ask) }
-  # it { is_expected.to validate_presence_of(:reasoning) }
+  it { is_expected.to validate_presence_of(:assumption) }
+  it { is_expected.to validate_presence_of(:actual) }
+  it { is_expected.to validate_presence_of(:workaround) }
 
-  # it 'uses the ask and stakeholder for the name' do
-    # obj = described_class.new(stakeholder: 'customer', the_ask: 'foo bar')
-    # expect(obj.name).to eql('As a customer, I want foo bar')
-  # end
+  it { is_expected.to validate_presence_of(:name_expectation) }
+  it { is_expected.to validate_presence_of(:name_actual) }
 
   # it 'has a formatted description' do
     # obj = described_class.new(stakeholder: 'boss', the_ask: 'another drink', reasoning: 'I get drunk')
@@ -24,6 +22,17 @@ RSpec.describe DefectFormatter do
       # expect(obj.as_params[:description]).to match(/\* see it again/)
     # end
   # end
+
+  describe '#name' do
+    it 'uses specific variables to craft the name' do
+      obj = described_class.new(name_expectation: 'foobar', name_actual: 'baz')
+      expect(obj.name).to eql("Expected foobar, instead received baz")
+    end
+  end
+
+  it 'has a policy class set' do
+    expect(described_class.policy_class).to eql(DefectPolicy)
+  end
 
   describe '#as_params' do
     it 'returns all the expected keys' do
