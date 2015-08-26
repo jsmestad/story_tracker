@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
   validates :email_address, email: {allow_blank: true}
 
-  attr_encrypted_options.merge!(encode: true)
+  # attr_encrypted_options.merge!(encode: true)
   attr_encrypted :api_key, key: ENV['USER_APIKEY_KEY']
 
   validate :api_key_can_access_project
@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
 protected
 
   def api_key_can_access_project
-    if api_key.present?
+    if has_api_key?
       project = TrackerProject.new(api_token: api_key)
       errors.add(:api_key, 'does not have access to the Pivotal Tracker project.') unless project.is_properly_configured?
     end
