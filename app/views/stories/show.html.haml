@@ -27,6 +27,10 @@
         %span Reporter
         %a{href: "https://github.com/#{@story.user.username}"}
           #{@story.user.name || @story.user.username}
+      %div
+        %span Follow Story?
+        = render partial: 'follow'
+
     .story-description
       :markdown
         #{@story.description}

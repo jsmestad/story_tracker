@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+
+    resource :follow, only: [:create, :destroy]
   end
   resources :defects, only: [:new, :create]
 

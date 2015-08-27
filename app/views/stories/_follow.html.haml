@@ -1,0 +1,7 @@
+.follow
+  - if current_user.following?(@story)
+    = link_to 'Watch', story_follow_path(@story), class: 'gh-button primary favorite icon follow hidden'
+    = link_to 'Unwatch', story_follow_path(@story), class: 'gh-button primary remove icon danger unfollow'
+  - else
+    = link_to 'Watch', story_follow_path(@story), class: 'gh-button primary favorite icon follow'
+    = link_to 'Unwatch', story_follow_path(@story), class: 'gh-button primary remove icon danger unfollow hidden'
