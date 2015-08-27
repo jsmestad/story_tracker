@@ -8,7 +8,6 @@ FactoryGirl.define do
 
     trait :as_approved do
       after(:create) do |obj|
-        # obj.approve!
         obj.state = :approved
         obj.external_ref = '100879128'
         obj.save(validate: false)
