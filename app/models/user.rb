@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   include UserRoleConcern
   displayed_with_guid
 
+  acts_as_follower
+
   has_many :stories, dependent: :destroy, inverse_of: :user
 
   validates :uid, presence: true, uniqueness: {case_sensitive: false}

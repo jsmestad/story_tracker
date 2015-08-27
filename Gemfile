@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'tracker_api', '~> 0.2.10', github: 'jsmestad/tracker_api', branch: 'feature/configure-client'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'acts_as_follower', '>= 0.2.1'
 
 gem 'attr_encrypted'
 gem 'activerecord-session_store'
