@@ -24,5 +24,29 @@
     %tr
       %td{colspan: 4} Total Requested: #{@user.stories.count}
 
-
+%br
+%h3 Followed Stories
+%table.table-minimal
+  %thead
+    %tr
+      %th Name
+      %th State
+      %th Submitted
+      %th Last Update
+  %tbody
+    - @user.following_stories.order(name: :asc).each do |story|
+      %tr
+        %td #{link_to story.name, story_path(story)}
+        %td
+          - if story.approved?
+            #{story.current_state.try(:titleize) || 'N/A'}
+          - elsif story.rejected?
+            Closed
+          - else
+            Pending Review
+        %td #{time_ago_in_words(story.created_at)} ago
+        %td #{time_ago_in_words(story.updated_at)} ago
+  %tfoot
+    %tr
+      %td{colspan: 4} Total Requested: #{@user.following_stories_count}
 

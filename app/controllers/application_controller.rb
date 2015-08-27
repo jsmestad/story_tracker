@@ -39,11 +39,11 @@ class ApplicationController < ActionController::Base
     end
 
     def current_user
-      begin
-        @current_user ||= User.find_by_guid(session[:user_id]) if session[:user_id]
-      rescue Exception => e
-        nil
-      end
+      @current_user ||= if session[:user_id]
+                          User.find_by_guid(session[:user_id])
+                        end
+    rescue Exception => e
+      nil
     end
 
     def user_signed_in?

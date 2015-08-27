@@ -22,4 +22,32 @@ $(document).ready(function() {
       changeState($(this), $(this).closest('form').find('.hint.api_key'));
     }).trigger('focusout');
   }
+
+  $('.hidden').hide();
+
+  $('.follow a').on('click', function(e) {
+    e.preventDefault();
+
+    var $link = $(this);
+    if ($link.hasClass('follow')) {
+      $.ajax({
+        url: $link.attr('href'),
+        method: 'POST',
+        success: function(data) {
+          $link.hide();
+          $link.siblings('a.unfollow').show();
+        }
+      });
+    } else {
+      $.ajax({
+        url: $link.attr('href'),
+        method: 'POST',
+        data: {'_method': 'delete'},
+        success: function(data) {
+          $link.hide();
+          $link.siblings('a.follow').show();
+        }
+      });
+    }
+  });
 });

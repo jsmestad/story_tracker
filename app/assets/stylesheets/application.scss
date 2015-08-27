@@ -17,6 +17,13 @@
 @import 'gh-buttons';
 @import 'story';
 
+.follow {
+  display: inline-block;
+  .gh-button {
+    margin-left: 0;
+  }
+}
+
 .main {
   @include outer-container;
   padding-top: 2em;

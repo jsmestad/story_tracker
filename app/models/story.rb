@@ -3,6 +3,8 @@ class Story < ActiveRecord::Base
   include GuidConcern
   displayed_with_guid
 
+  acts_as_followable
+
   belongs_to :user, inverse_of: :stories
 
   has_many :activities, class_name: 'StoryCallback', inverse_of: :story, dependent: :destroy

@@ -58,6 +58,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_follower (0.2.1)
     addressable (2.3.8)
     airbrake (4.3.0)
       builder
@@ -371,6 +372,7 @@ DEPENDENCIES
   aasm
   active_model_serializers (~> 0.10.0.rc2)
   activerecord-session_store
+  acts_as_follower (>= 0.2.1)
   airbrake
   attr_encrypted
   bourbon
