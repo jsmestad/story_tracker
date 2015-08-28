@@ -2,22 +2,22 @@
   Daily Summary
 
 - content_for :header do
-  #{@name} here is an update on all of your submissions as of #{@date}.
+  #{@name}, here is an update on all of your submissions as of #{@date}.
 
 - content_for :left_column do
-  .number 8
+  .number #{@submissions.size}
   .unit submitted stories
 
 - content_for :right_column do
-  .number 12
+  .number #{@follows.size}
   .unit watched stories
 
 .subtitle
   Submission Updates
 
 .body-text
-  - if @submissions.count > 0
-    - @submissions.sort_by(&:name).each do |submission|
+  - if @watched.count > 0
+    - @watched.sort_by(&:name).each do |submission|
       %table.submission{align: 'left', border: '0', cellpadding: '0'}
         %tr
           %td.name{colspan: '2'}
@@ -45,6 +45,11 @@
 
   - else
     You have no submissions in progress.
+
+  -# %br
+  -# %br
+  -# %em
+    -# %small Last updated: #{Date.today.strftime('%d %B %Y')}
 
 
 -# .subtitle

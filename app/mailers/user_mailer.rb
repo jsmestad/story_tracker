@@ -10,8 +10,10 @@ class UserMailer < ApplicationMailer
     @name = user.name
     @date = DateTime.now.strftime('%B %d %Y')
     @submissions = user.stories.all
-    # @greeting = "Hi"
+    @follows = user.following_stories.all
 
-    mail to: "to@example.org"
+    @watched = (@follows + @submissions).sort_by(&:name)
+
+    mail to: user.email_address, subject: "Daily StoryTracker Summary for #{@date}"
   end
 end

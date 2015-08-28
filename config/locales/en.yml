@@ -26,6 +26,9 @@ en:
       estimated: "estimated"
       moved_and_scheduled: "scheduled"
       deleted: "rejected"
+  user_mailer:
+    daily_summary:
+      subject: "Your Daily StoryTracker Summary"
   story_mailer:
     updated_story_notification:
       subject: "Story Progress Update"
