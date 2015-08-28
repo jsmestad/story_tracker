@@ -88,7 +88,7 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
   config.action_mailer.default_url_options = { host: ENV['APP_HOST'] }
-  config.action_mailer.asset_host = config.action_controller.asset_host
+  config.action_mailer.asset_host = "http://#{ENV['APP_HOST']}"
 
   if ENV.has_key?("MEMCACHIER_SERVERS")
     config.cache_store = :dalli_store,
