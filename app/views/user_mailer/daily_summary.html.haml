@@ -18,16 +18,16 @@
 .body-text
   - if @watched.count > 0
     - @watched.sort_by(&:name).each do |submission|
-      %table.submission{align: 'left', border: '0', cellpadding: '0'}
+      %table.submission{width: '552', align: 'left', border: '0', cellpadding: '0'}
         %tr
-          %td.name{colspan: '2'}
+          %td.name{colspan: '2', width: '552'}
             = link_to submission.name, story_url(submission)
         %tr
           - if activity = submission.activities.for_today.first
-            %td.activity.time
+            %td.activity.time{width: '80'}
               .when
                 @ #{activity.created_at.strftime('%I:%M %p')}
-            %td.activity
+            %td.activity{width: '452'}
               .what
                 this submission was <em>#{t("story.highlight.#{activity.highlight.underscore}")}</em>.
           - else

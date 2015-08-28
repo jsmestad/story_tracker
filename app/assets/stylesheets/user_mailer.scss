@@ -110,8 +110,8 @@ hr {
 }
 
 table.submission {
-  width: 552px;
-  table-layout: auto;
+  /* width: 552px; */
+  /* table-layout: auto; */
   padding-top: 10px;
   padding-bottom: 10px;
   .name {
@@ -126,7 +126,7 @@ table.submission {
   }
   .activity {
     /* .when { padding-right: 1em; border-right: 1px dotted #CCC; } */
-    &.time { padding-left: 20px; width: 80px; }
+    &.time { padding-left: 20px; }
     .when {
       font-size: 12px; font-weight: bold; color: #666; padding-right: 1em; }
     .what {
