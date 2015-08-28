@@ -1,4 +1,14 @@
 namespace :maintenance do
+  desc "Send out daily summary emails"
+  task :deliver_daily_emails => :environment do
+    start_timestamp = Time.now
+    puts "#{start_timestamp} -- Beginning sending of daily emails"
+    User.where('email_address IS NOT NULL').each do |user|
+      UserMailer.daily_summary(user).deliver_now
+    end
+    puts "#{start_timestamp} -- Finish sending of daily emails"
+  end
+
   desc "Cleanup stale sessions (optional ENV[\"BEFORE_DATE\"] = yyyy/mm/dd)"
   task :clear_stale_sessions => :environment do
     before_date = ENV["BEFORE_DATE"] || 1.week.ago
