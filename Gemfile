@@ -61,6 +61,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'dotenv-rails'
+  gem 'ffaker'
 end
 
 group :test do
@@ -70,7 +71,6 @@ group :test do
   gem 'shoulda-matchers'
   gem 'vcr'
   gem 'webmock'
-  gem 'ffaker'
 end
 
 group :production do

@@ -1,0 +1,138 @@
+@import 'user_mailer/responsive';
+
+.header, .title, .subtitle, .footer-text {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: lighter;
+  padding-bottom: 12px;
+  color: #e77128;
+  &.logo {
+    /* width: 35px !important; */
+    padding-left: 24px;
+  }
+}
+
+.footer-text {
+  font-size: 12px;
+  line-height: 16px;
+  color: #aaaaaa;
+  a {
+    color: #aaaaaa;
+  }
+}
+
+.container {
+  width: 600px;
+  max-width: 600px;
+}
+
+.container-padding {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.content {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #f0eae4;
+}
+
+code {
+  background-color: lighten(#f2efeb, 4%);
+  padding: 0px 4px;
+  font-family: Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+.hr {
+  height: 1px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374550;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3033;
+  span {
+    font-weight: 400;
+    color: #999999;
+  }
+}
+
+.body-text {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  color: #2d3033;
+}
+
+.col {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  color: #333333;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+.number {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 56px;
+  font-weight: bolder;
+  color: #2d3033;
+  text-shadow: 1px 1px 1px #FFF;
+}
+
+.unit {
+  text-align: center;
+  font-weight: normal;
+  padding-top: 20px;
+  line-height: 20px;
+  color: #999;
+}
+
+table.submission {
+  width: 552px;
+  table-layout: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .name {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    a {
+      font-weight: lighter;
+      text-decoration: none;
+      font-size: 16px;
+    }
+  }
+  .activity {
+    /* .when { padding-right: 1em; border-right: 1px dotted #CCC; } */
+    &.time { padding-left: 20px; width: 80px; }
+    .when {
+      font-size: 12px; font-weight: bold; color: #666; padding-right: 1em; }
+    .what {
+      padding-left: 1em;
+      border-left: 1px dotted #CCC;
+      em { font-weight: bold; }
+    }
+  }
+}

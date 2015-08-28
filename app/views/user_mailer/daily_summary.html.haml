@@ -1,0 +1,75 @@
+- content_for :title do
+  Daily Summary
+
+- content_for :header do
+  #{@name} here is an update on all of your submissions as of #{@date}.
+
+- content_for :left_column do
+  .number 8
+  .unit submitted stories
+
+- content_for :right_column do
+  .number 12
+  .unit watched stories
+
+.subtitle
+  Submission Updates
+
+.body-text
+  - if @submissions.count > 0
+    - @submissions.sort_by(&:name).each do |submission|
+      %table.submission{align: 'left', border: '0', cellpadding: '0'}
+        %tr
+          %td.name{colspan: '2'}
+            = link_to submission.name, story_url(submission)
+        %tr
+          - if activity = submission.activities.for_today.first
+            %td.activity.time
+              .when
+                @ #{activity.created_at.strftime('%I:%M %p')}
+            %td.activity
+              .what
+                this submission was <em>#{t("story.highlight.#{activity.highlight.underscore}")}</em>.
+          - else
+            %td.activity
+              .what
+                No recent activity.
+
+        -# %tr
+          %td
+            %strong Status
+            %em= submission.state
+          %td
+            %strong Submitted
+            %em= submission.created_at.strftime('%b %m %Y')
+
+  - else
+    You have no submissions in progress.
+
+
+-# .subtitle
+  Code Walkthrough
+
+-# .body-text
+  %ol
+    %li
+      Create a columns container <code>&lt;table&gt;</code> just for Outlook using <code>if mso</code> conditionals.
+      %br
+      The container's <code>&lt;td&gt;</code>'s have a width of <code>50%.</code>
+      <br><br>
+    %li
+      Wrap our columns in a <code>&lt;table&gt;</code> with a <strong>fixed width</strong> of <code>264px</code>.
+      %ul
+        %li
+          264px = (600 - 24*3) / 2 - container width minus margins divided by number of columns
+        %li
+          First table is aligned left.
+        %li
+          Second table is aligned right.
+      %br
+    %li
+      Apply <code>clear: both;</code> to first element after our wrapper table.
+  %br
+  %em
+    %small Last updated: #{Date.today.strftime('%d %B %Y')}
+

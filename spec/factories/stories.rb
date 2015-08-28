@@ -27,5 +27,11 @@ FactoryGirl.define do
     trait :with_user_and_email do
       association :user, factory: :user, email_address: 'foo@example.com'
     end
+
+    trait :with_activity do
+      after(:create) do |obj|
+        FactoryGirl.create_list(:activity, 4, story: obj)
+      end
+    end
   end
 end
