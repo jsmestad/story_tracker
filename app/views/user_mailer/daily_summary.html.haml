@@ -18,9 +18,9 @@
 .body-text
   - if @watched.count > 0
     - @watched.sort_by(&:name).each do |submission|
-      %table.submission{width: '552', align: 'left', border: '0', cellpadding: '0'}
+      %table.submission.force-row{width: '532', align: 'left', border: '0', cellpadding: '0'}
         %tr
-          %td.name{colspan: '2', width: '552'}
+          %td.name{colspan: '2'}
             = link_to submission.name, story_url(submission)
         %tr
           - if activity = submission.activities.for_today.first
