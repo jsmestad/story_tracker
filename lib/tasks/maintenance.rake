@@ -3,8 +3,12 @@ namespace :maintenance do
   task :deliver_daily_emails => :environment do
     start_timestamp = Time.now
     puts "#{start_timestamp} -- Beginning sending of daily emails"
-    User.where('email_address IS NOT NULL').each do |user|
-      UserMailer.daily_summary(user).deliver_now
+    if Date.today.saturday? or Date.today.sunday?
+      puts "#{start_timestamp} -- Skipping due to weekend"
+    else
+      User.where('email_address IS NOT NULL').each do |user|
+        UserMailer.daily_summary(user).deliver_now
+      end
     end
     puts "#{start_timestamp} -- Finish sending of daily emails"
   end
