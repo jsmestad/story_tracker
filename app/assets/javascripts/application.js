@@ -1,8 +1,13 @@
 //= require jquery
 //= require jquery_ujs
+//= require intro.min
 //= require_tree .
 
 $(document).ready(function() {
+  $('#tour').on('click', function() {
+    introJs().setOption('showBullets', false).setOption('showStepNumbers', false).start();
+  });
+
   $edit_user_form = $('form.edit_user');
   if ($edit_user_form.length > 0) {
     $api_key_field = $('#user_api_key');

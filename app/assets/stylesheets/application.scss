@@ -17,6 +17,8 @@
 @import 'gh-buttons';
 @import 'story';
 
+@import 'introjs';
+
 .follow {
   display: inline-block;
   .gh-button {
@@ -91,9 +93,23 @@ table form {
     margin-bottom: ($base-spacing / 3);
   }
 }
-
+#first-time.flash {
+  padding: 0.2em;
+  @include span-columns(12);
+  font-size: 1.5em;
+  .help {
+    vertical-align: bottom;
+    display: inline-block;
+  }
+  button {
+    font-size: 13px;
+    margin-bottom: 4px;
+    margin-left: 15px;
+  }
+}
 .iteration-tools {
   @include span-columns(12);
+
   #search {
     @include pad(0 0 default default);
     @include span-columns(4);
