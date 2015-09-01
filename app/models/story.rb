@@ -54,9 +54,9 @@ class Story < ActiveRecord::Base
       reject!
     else
       self.touch(:updated_at)
-      if user.has_email_address?
-        StoryMailer.updated_story_notification(user.email_address, self, resource.message).deliver_now
-      end
+      # if user.has_email_address?
+        # StoryMailer.updated_story_notification(user.email_address, self, resource.message).deliver_now
+      # end
     end
   end
 
