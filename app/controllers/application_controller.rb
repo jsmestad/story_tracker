@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pundit
   include AuthorizationConcern
+  include RedirectedLoginConcern
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -67,6 +68,7 @@ class ApplicationController < ActionController::Base
         end
       else
         if !current_user
+          remember_location! unless request.url == login_url
           redirect_to login_url, alert: 'You need to sign in for access to this page.'
         end
       end

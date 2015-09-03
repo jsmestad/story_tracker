@@ -8,11 +8,12 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
     user = User.find_with_omniauth(auth) || User.create_with_omniauth(auth)
     if verify_github_org(user, auth)
+      referrer = stored_location
       reset_session
       session[:user_id] = user.to_param
       if user.email_address.present?
         flash[:success] = "Logged In!"
-        redirect_to iterations_path
+        redirect_to referrer || iterations_path
       else
         flash[:notice] = "You are logged in. Please set your email address in the form below."
         redirect_to edit_user_path(user)
