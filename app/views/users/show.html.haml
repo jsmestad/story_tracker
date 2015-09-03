@@ -1,31 +1,32 @@
-%h3 Requested Stories
-%table.table-minimal
-  %thead
-    %tr
-      %th Name
-      %th State
-      %th Submitted
-      %th Last Update
-  %tbody
-    - @user.stories.order(created_at: :desc).each do |story|
+- if policy(:story).create?
+  %h3 Requested Stories
+  %table.table-minimal
+    %thead
       %tr
-        -# %td #{story.external_ref || story.id}
-        %td #{link_to story.name, story_path(story)}
-        %td
-          - if story.approved?
-            #{story.current_state.try(:titleize) || 'N/A'}
-          - elsif story.rejected?
-            Closed
-          - else
-            Pending Review
-        %td #{time_ago_in_words(story.created_at)} ago
-        %td #{time_ago_in_words(story.updated_at)} ago
-  %tfoot
-    %tr
-      %td{colspan: 4} Total Requested: #{@user.stories.count}
+        %th Name
+        %th State
+        %th Submitted
+        %th Last Update
+    %tbody
+      - @user.stories.order(created_at: :desc).each do |story|
+        %tr
+          -# %td #{story.external_ref || story.id}
+          %td #{link_to story.name, story_path(story)}
+          %td
+            - if story.approved?
+              #{story.current_state.try(:titleize) || 'N/A'}
+            - elsif story.rejected?
+              Closed
+            - else
+              Pending Review
+          %td #{time_ago_in_words(story.created_at)} ago
+          %td #{time_ago_in_words(story.updated_at)} ago
+    %tfoot
+      %tr
+        %td{colspan: 4} Total Requested: #{@user.stories.count}
 
-%br
-%h3 Followed Stories
+  %br
+%h3 Stories you are watching
 %table.table-minimal
   %thead
     %tr

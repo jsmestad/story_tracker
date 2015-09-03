@@ -22,6 +22,11 @@
               %a{href: account_path} Your Requests (#{current_user.stories.count})
             %li.nav-link
               %a{href: edit_user_path(current_user)} Edit Account Settings
+          - else
+            %li.nav-link
+              %a{href: account_path} Watched Stories
+          %li.nav-link
+            %a{href: iterations_path} Stories by Iteration
           %li.nav-link
             %a{href: logout_path} Log Out
         %li.nav-link
