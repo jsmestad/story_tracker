@@ -63,5 +63,16 @@ RSpec.describe Story do
         expect { subject.reject }.to change(subject, :rejected?).from(false).to(true)
       end
     end
+
+    describe '.in_flight scope' do
+      it 'excludes rejected stories' do
+        rejected_story = FactoryGirl.create(:story, :with_user, :as_rejected)
+        approved_story = FactoryGirl.create(:story, :with_user, :as_approved)
+        submitted_story = FactoryGirl.create(:story, :with_user)
+
+        expect(described_class.in_flight.all).to include(approved_story, submitted_story)
+        expect(described_class.in_flight.all).to_not include(rejected_story)
+      end
+    end
   end
 end

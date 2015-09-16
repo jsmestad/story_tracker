@@ -22,6 +22,8 @@
 en:
   story:
     highlight:
+      added: "scheduled for discussion"
+      started: "started"
       created: "approved"
       estimated: "estimated"
       moved_and_scheduled: "scheduled"

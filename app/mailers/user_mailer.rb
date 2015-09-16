@@ -9,7 +9,7 @@ class UserMailer < ApplicationMailer
   def daily_summary(user)
     @name = user.name
     @date = DateTime.now.strftime('%B %d %Y')
-    @submissions = user.stories.all
+    @submissions = user.stories.in_flight.all
     @follows = user.following_stories.all
 
     @watched = (@follows + @submissions).sort_by(&:name)

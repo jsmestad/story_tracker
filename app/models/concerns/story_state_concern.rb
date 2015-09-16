@@ -18,6 +18,8 @@ module StoryStateConcern
         transitions from: [:submitted, :approved], to: :rejected
       end
     end
+
+    scope :in_flight, -> { where('state != ?', self.states[:rejected]) }
   end
 
   def remove_external_ref!

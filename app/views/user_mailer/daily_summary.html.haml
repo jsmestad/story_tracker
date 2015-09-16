@@ -29,7 +29,7 @@
                 @ #{activity.created_at.strftime('%I:%M %p')}
             %td.activity{width: '452'}
               .what
-                this submission was <em>#{t("story.highlight.#{activity.highlight.underscore}")}</em>.
+                this submission was <em>#{t("story.highlight.#{activity.highlight.underscore.gsub(' ','_')}")}</em>.
           - else
             %td.activity
               .what

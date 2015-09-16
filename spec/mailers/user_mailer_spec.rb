@@ -14,6 +14,11 @@ RSpec.describe UserMailer, type: :mailer do
     it "renders the body" do
       expect(mail.body.encoded).to match("here is an update on all of your submissions as of")
     end
+
+    it "only displays stories that are not rejected" do
+      rejected_story = FactoryGirl.create(:story, :as_rejected, :with_activity, name: 'rejected story', user: user)
+      expect(mail.body.encoded).to_not match("#{rejected_story.name}")
+    end
   end
 
 end
