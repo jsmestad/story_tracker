@@ -30,7 +30,7 @@
             <figure class="watch">
               <% if local_story = Story.find_by_external_ref(story.to_param) %>
                 <% if current_user.following?(local_story) %>
-                  <a class="unfollow fa fa-eye-slash" href="<%= story_unfollow_path(local_story) %>"> Unfollow</a>
+                  <a class="unfollow fa fa-eye-slash" href="<%= story_follow_path(local_story) %>"> Unfollow</a>
                 <% else %>
                   <a class="follow fa fa-eye" href="<%= story_follow_path(local_story) %>"> Follow</a>
                 <% end %>
