@@ -17,6 +17,7 @@ jQuery(document).ready(function() {
         success: function(data) {
           $link.removeClass('follow').addClass('unfollow');
           $link.removeClass('fa-eye').addClass('fa-eye-slash').html(' Unfollow');
+          $trackedLink.closest('.story').toggleClass('tracked');
         }
       });
     } else {
@@ -27,6 +28,7 @@ jQuery(document).ready(function() {
         success: function(data) {
           $link.removeClass('unfollow').addClass('follow');
           $link.removeClass('fa-eye-slash').addClass('fa-eye').html(' Follow');
+          $trackedLink.closest('.story').toggleClass('tracked');
         }
       });
     }
