@@ -15,8 +15,8 @@ jQuery(document).ready(function() {
         url: $link.attr('href'),
         method: 'POST',
         success: function(data) {
-          $link.hide();
-          $link.siblings('a.unfollow').show();
+          $link.removeClass('follow').addClass('unfollow');
+          $link.removeClass('fa-eye').addClass('fa-eye-slash');
         }
       });
     } else {
@@ -25,8 +25,8 @@ jQuery(document).ready(function() {
         method: 'POST',
         data: {'_method': 'delete'},
         success: function(data) {
-          $link.hide();
-          $link.siblings('a.follow').show();
+          $link.removeClass('unfollow').addClass('follow');
+          $link.removeClass('fa-eye-slash').addClass('fa-eye');
         }
       });
     }
