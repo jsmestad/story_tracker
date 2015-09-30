@@ -34,42 +34,7 @@ jQuery(document).ready(function() {
 
 
 
-var markdown_copy = `## What is this?
-
-Currently, all joins are implemented as sort-merge joins (https://en.wikipedia.org/wiki/Sort-merge_join).
-
-In the very specific case where we are performing an equi-join of a relation (any relation) to a view and where the join condition is based on the primary key of the view, and where the partitioning of the join matches the partitioning of the view, then we can implement a highly optimized hash-join (https://en.wikipedia.org/wiki/Hash_join) instead of using a sort-merge join, where we perform the hash join co-located with the view partitions.
-
-Until we implement #103668518 we can only co-locate whole streams, not subsets of the query plan, so for now there will be a further restriction that this optimization will only take place for the top level join in a stream in the case where a stream contains nested joins.
-
-\`\`\`ruby
-class Foo
-  attr_accessor :first, :last
-
-  def thing
-
-  end
-end
-\`\`\`
-
-## Urgency
-
-This feature request is required in order to refactor the hazard flow at RMS to make it scalable.
-
-## Stakeholders
-
-* Cory Isaacson
-* Dan Lynn
-
-## Acceptance Criteria
-
-* A relation-to-view join defaults to a hash-join implementation, in which the stream is shuffled so that each partition is co-located with the corresponding view partition (using the equi-join condition)
-* For each tuple from the stream, the corresponding tuple is fetched from the view using an index lookup.
-* Neither the stream nor the view is re-sorted.
-* The output collation of the join is the same as the input collation of the stream
-* If needed, guides are updated for this story.`;
-
-
+var markdown_copy = '';
 
   var md = window.markdownit({
     linkify: true,
