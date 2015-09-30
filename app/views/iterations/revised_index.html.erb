@@ -16,7 +16,8 @@
     <div class="stories green">
 
       <% iteration.stories.each do |story| %>
-        <div class="story <%= "tracked" if current_user.following?(story) %>">
+        <% local_story = Story.find_by_external_ref(story.to_param) %>
+        <div class="story <%= "tracked" if current_user.following?(local_story) %>">
           <div class="stats">
             <figure class="type">
               <%= story_type_icon(story.story_type) %>
@@ -28,7 +29,7 @@
               <span class="fa fa-clock-o"> <%= (1..100).to_a.sample %> days</span>
             </figure>
             <figure class="watch">
-              <% if local_story = Story.find_by_external_ref(story.to_param) %>
+              <% if local_story.present? %>
                 <% if current_user.following?(local_story) %>
                   <a class="unfollow fa fa-eye-slash" href="<%= story_follow_path(local_story) %>"> Unfollow</a>
                 <% else %>
