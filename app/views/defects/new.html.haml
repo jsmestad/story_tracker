@@ -2,6 +2,10 @@
   = form_for @defect, as: :defect, url: defects_path, method: :post, html: { class: 'new_defect fill_in' } do |f|
     = render partial: 'form', locals: {form: f}
     .line
-      .flash.notice This story will be added to the icebox and be discussed in an upcoming Pre-IPM.
-      = f.button
-
+      = f.button class: 'button' do
+        %i.fa.fa-send
+        File Report
+  :erb
+    <div class="discussion-notice">
+      <div class="flash notice">This story will be added to the icebox and be discussed in an upcoming Pre-IPM.</div>
+    </div>

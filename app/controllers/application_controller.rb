@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  layout 'application_v2'
+
   include Pundit
   include AuthorizationConcern
   include RedirectedLoginConcern

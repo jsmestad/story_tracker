@@ -9,5 +9,7 @@ class IterationsController < ApplicationController
     else
       @icebox = project.stories(filter: "state:unscheduled id:#{iceboxed_stories.map(&:external_ref).join(',')}")
     end
+
+    render template: 'iterations/revised_index'
   end
 end

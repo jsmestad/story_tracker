@@ -6,7 +6,7 @@ module ApplicationHelper
     when 1
       'low'
     when 2
-      'marginal'
+      'medium'
     when 3
       'high'
     else
@@ -17,13 +17,13 @@ module ApplicationHelper
   def story_type_icon(kind)
     case kind
     when 'feature'
-      content_tag(:i, nil, class: 'fi-star', title: 'Story Type: Feature')
+      content_tag(:span, ' Feature', class: 'fa fa-star', title: 'Story Type: Feature')
     when 'bug'
-      content_tag(:i, nil, class: 'fi-first-aid', title: 'Story Type: Bug')
+      content_tag(:span, ' Defect', class: 'fa fa-bug', title: 'Story Type: Defect')
     when 'chore'
-      content_tag(:i, nil, class: 'fi-widget', title: 'Story Type: Chore')
+      content_tag(:span, ' Chore', class: 'fa fa-support', title: 'Story Type: Chore')
     when 'release'
-      content_tag(:i, nil, class: 'fi-flag', title: 'Story Type: Milestone')
+      content_tag(:span, ' Release', class: 'fa fa-flag-checkered', title: 'Story Type: Milestone')
     end
   end
 

@@ -1,0 +1,84 @@
+// Custom Grid
+// See bottom for example usage
+//
+
+$grid-settings: (
+  margin: 0.5rem,
+  columns: 12,
+  row-spacing: 0.5rem
+) !default;
+
+@mixin respond-to($media) {
+  @if $media == phones {
+    @media only screen and (max-width: 480px) { @content; }
+  }
+}
+
+%row {
+  @include display(flex);
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  box-sizing: border-box;
+  @include respond-to(phones) {
+    @include flex-direction(column);
+  }
+}
+
+%container {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+
+  * { box-sizing: border-box; }
+}
+
+%_base-column {
+  margin-bottom: map-get($grid-settings, 'row-spacing');
+  padding-left: map-get($grid-settings, 'margin');
+  padding-right: map-get($grid-settings, 'margin');
+}
+
+@mixin column {
+  @include flex(1);
+  @extend %_base-column;
+}
+
+@mixin columns($size) {
+  @if $size > map-get($grid-settings, 'columns') {
+    @error "The size requested '#{$size}' specified is larger than the total columns '#{map-get($grid-settings, 'columns')}'";
+  }
+  $size: percentage($size / map-get($grid-settings, 'columns'));
+  @include flex(0 0 $size);
+  @extend %_base-column;
+  @include respond-to(phones) {
+    // TODO not sure if this should be "0 1 auto" or "0 0 auto"
+    @include flex(0 0 auto);
+  }
+}
+
+// Example Usage
+//
+// .grid {
+//   @extend %container;
+//   .row {
+//     @extend %row;
+//   }
+//   @for $i from 1 through 12 {
+//     .col-#{$i} {
+//       @include flex($i);
+//       @extend %_base-column;
+//     }
+//   }
+//   &.standard {
+//     @for $i from 1 through 12 {
+//       .col-#{$i} {
+//         @include columns($i);
+//       }
+//     }
+//   }
+// }
+//
+// .column {
+//   @include column;
+// }
+
