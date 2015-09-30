@@ -154,15 +154,15 @@ var markdown_copy = '';
 
 $(document).ready(function() {
 
-  $('a.follow').on('click', function(event) {
-    event.preventDefault();
-    var $trackedLink = $(this);
-    if ($trackedLink.hasClass('fa-eye-slash')) {
-      $trackedLink.text(' Follow');
-    } else {
-      $trackedLink.text(' Unfollow');
-    }
-    $trackedLink.toggleClass('fa-eye-slash').toggleClass('fa-eye');
-    $trackedLink.closest('.story').toggleClass('tracked');
-  });
+  // $('a.follow').on('click', function(event) {
+    // event.preventDefault();
+    // var $trackedLink = $(this);
+    // if ($trackedLink.hasClass('fa-eye-slash')) {
+      // $trackedLink.text(' Follow');
+    // } else {
+      // $trackedLink.text(' Unfollow');
+    // }
+    // $trackedLink.toggleClass('fa-eye-slash').toggleClass('fa-eye');
+    // $trackedLink.closest('.story').toggleClass('tracked');
+  // });
 });
