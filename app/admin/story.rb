@@ -39,6 +39,24 @@ ActiveAdmin.register Story do
     end
   end
 
+  show do
+    attributes_table do
+      row :guid
+      row :external_ref
+      row :name
+      row :story_type
+      row :state
+      row :created_at
+      row :updated_at
+
+    end
+    panel "Rendered Details" do
+      attributes_table_for story do
+        text_node raw(RDiscount.new(story.description).to_html)
+      end
+    end
+  end
+
   controller do
     def find_resource
       Story.find_by_guid(params[:id])
