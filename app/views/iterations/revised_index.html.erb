@@ -17,7 +17,7 @@
 
       <% iteration.stories.each do |story| %>
         <% local_story = Story.find_by_external_ref(story.to_param) %>
-        <div class="story <%= "tracked" if local_story && current_user.following?(local_story) %>">
+        <div class="story <%= "tracked" if local_story && current_user.following?(local_story) %>" data-local="<%= local_story ? 'true' : 'false' %>">
           <div class="stats">
             <figure class="type">
               <%= story_type_icon(story.story_type) %>
@@ -42,7 +42,7 @@
             <div>
               <div>
                 <h3><%= story.name %></h3>
-                <a class="external fa fa-external-link">&nbsp;</a>
+                <a class="external fa fa-external-link" data-url="<%= story_path(local_story) if local_story.present? %>">&nbsp;</a>
               </div>
               <p><%= story.description %></p>
             </div>

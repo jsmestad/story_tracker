@@ -24,7 +24,7 @@ class StoriesController < ApplicationController
   def show
     @story = Story.find_by_guid(params[:id])
     authorize @story
-    render
+    respond_with @story
   end
 
   def new

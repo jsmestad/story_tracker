@@ -57,10 +57,21 @@ var markdown_copy = '';
   });
   var result = md.render(markdown_copy);
 
-  $('div.story a.external').on('click', function(event) {
+  // TODO better way to show limited external stories
+  $('div.story[data-local="false"] a.external').remove();
+
+  $('div.story[data-local="true"] a.external').on('click', function(event) {
 		event.preventDefault();
-		$('.cd-panel').addClass('is-visible');
-    $('.cd-panel-content').html(result);
+    var $link = $(this);
+    $.ajax({
+        url: $link.data('url'),
+        method: 'GET',
+        success: function(data) {
+
+          $('.cd-panel').addClass('is-visible');
+          $('.cd-panel-content').html(md.render(data.data.attributes.description));
+        }
+      });
   });
 
   	//close the lateral panel
