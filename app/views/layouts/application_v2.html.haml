@@ -13,8 +13,9 @@
     %main.cd-main-content
       .wrapper
         %header.page
-          %img{ src: "#{image_path('logo-web_1x.png')}",
-                srcset: "#{image_path('logo-web_2x.png')} 2x" }/
-          %h1.logo StoryTracker
+          %a{ href: root_path }
+            %img{ src: "#{image_path('logo-web_1x.png')}",
+                  srcset: "#{image_path('logo-web_2x.png')} 2x" }/
+            %h1.logo StoryTracker
         = yield
     = render 'shared/panel'

@@ -2,16 +2,25 @@
   <a href="#0" class="cd-secondary-nav-trigger"><span></span></a> <!-- button visible on small devices -->
   <nav>
     <ul>
-      <li>
-        <a href="<%= new_story_path %>">
-          Request Feature
-        </a>
-      </li>
-      <li>
-        <a href="<%= new_defect_path %>">
-          Report Defect
-        </a>
-      </li>
+      <% if user_signed_in? %>
+        <li>
+          <a href="<%= new_story_path %>">
+            Request Feature
+          </a>
+        </li>
+        <li>
+          <a href="<%= new_defect_path %>">
+            Report Defect
+          </a>
+        </li>
+        <li>
+          <a href="<%= logout_path %>">Log out</a>
+        </li>
+      <% else %>
+        <li>
+          <a href="<%= login_path %>">Log in</a>
+        </li>
+      <% end %>
       <%# <li> %>
         <%# <a href="/open-question"> %>
           <%# Ask Question %>

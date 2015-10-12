@@ -48,7 +48,8 @@ h1, h2, h3, h4, h5, h6 {
   @include antialiasing(antialiased);
 }
 
-header.page {
+header.page a{
+  text-decoration: none;
   @extend %row;
   align-items: baseline;
   img {
