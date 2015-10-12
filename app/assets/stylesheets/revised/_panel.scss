@@ -103,7 +103,7 @@ $color-4: #ffffff; // white
       }
     }
   }
-  .current-description {
+  .current-description, .original-description {
     /* border-left: 3px solid white; */
     border-left: 5px solid darken(#F1F1F1, 5%);
     padding: 1em;
