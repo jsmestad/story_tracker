@@ -10,7 +10,7 @@ module PivotalTracker
     include ActionController::Head
     include ActionController::Instrumentation
 
-    EVENTS = %w[ story_move_activity story_update_activity story_delete_activity ].freeze
+    EVENTS = %w[ story_create_activity story_move_activity story_update_activity story_delete_activity ].freeze
 
     def callback
       if ENV['CALLBACK_TOKEN'] != params[:token]
@@ -29,6 +29,11 @@ module PivotalTracker
         if story = Story.find_by(external_ref: resource['id'])
           story.activities.create!(highlight: payload.highlight)
           story.handle_callback!(payload)
+          updated = true
+        elsif payload.kind != 'story_delete_activity'
+          # TODO create from payload
+
+          Story.import_from_pivotal!(resource['id'])
           updated = true
         end
       end
