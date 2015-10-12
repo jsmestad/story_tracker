@@ -44,6 +44,8 @@ gem 'high_voltage', '~> 2.4.0'
 gem 'markdown-rails'
 gem 'redcarpet'
 
+gem 'activeadmin', '~> 1.0.0.pre2'
+
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false
   gem 'guard-pow', require: false

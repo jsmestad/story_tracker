@@ -76,6 +76,13 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def authenticate_admin!
+      if !current_user
+        remember_location! unless request.url == login_url
+        redirect_to login_url, alert: 'You need to sign in for access to this page.'
+      end
+    end
+
     def authenticate_token
       authenticate_with_http_token do |token, options|
         User.find_by(token: token)
