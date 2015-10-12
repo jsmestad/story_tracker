@@ -69,7 +69,13 @@ var markdown_copy = '';
         success: function(data) {
 
           $('.cd-panel').addClass('is-visible');
-          $('.cd-panel-content').html(md.render(data.data.attributes.description));
+          $('.cd-panel-content')
+            .find('.name').html(data.data.attributes.name)
+          .end()
+            .find('.current-description').html(md.render(data.data.attributes.latest_description))
+          .end()
+            .find('.original-description').html(md.render(data.data.attributes.description));
+          // $('.cd-panel-content').html(md.render(data.data.attributes.latest_description));
         }
       });
   });

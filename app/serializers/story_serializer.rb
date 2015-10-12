@@ -1,6 +1,6 @@
 class StorySerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
-  attributes :id, :name, :description, :href
+  attributes :id, :name, :description, :href, :latest_description
 
   url :story
 
@@ -11,4 +11,5 @@ class StorySerializer < ActiveModel::Serializer
   def href
     story_path(object)
   end
+
 end

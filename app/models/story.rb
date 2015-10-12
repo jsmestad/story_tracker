@@ -72,12 +72,18 @@ class Story < ActiveRecord::Base
     update_attribute(:subscribe, false)
   end
 
+  def latest_description
+    if external_ref
+      external_story.try(:description)
+    end
+  end
+
 private
 
   def external_story
     return nil unless external_ref.present?
     project.story(external_ref)
-  rescue TrackerApi::Error => e
+  rescue TrackerApi::Error
     nil
   end
 
