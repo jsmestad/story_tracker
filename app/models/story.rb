@@ -15,7 +15,7 @@ class Story < ActiveRecord::Base
 
   # validates :stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow, presence: true
   validates :name, :description, presence: true, if: :submitted?
-  validates_inclusion_of :story_type, in: %w(feature bug), allow_nil: false
+  validates_inclusion_of :story_type, in: %w(feature bug chore), allow_nil: false
   # validates_presence_of :external_ref, if: :submitted?
 
   delegate :url, to: :external_story, allow_nil: true, if: :approved?
