@@ -1,4 +1,6 @@
 class Story < ActiveRecord::Base
+  has_paper_trail
+
   include StoryStateConcern
   include GuidConcern
   displayed_with_guid

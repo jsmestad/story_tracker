@@ -45,6 +45,7 @@ gem 'markdown-rails'
 gem 'redcarpet'
 
 gem 'activeadmin', '~> 1.0.0.pre2'
+gem 'paper_trail', '~> 4.0.0'
 
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false

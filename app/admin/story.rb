@@ -1,4 +1,5 @@
 ActiveAdmin.register Story do
+  permit_params :name, :description
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -52,7 +53,7 @@ ActiveAdmin.register Story do
     end
     panel "Current Description" do
       attributes_table_for story do
-        text_node raw(RDiscount.new(story.latest_description || story.description).to_html)
+        text_node raw(RDiscount.new(story.latest_description || '#### No External Reference').to_html)
       end
     end
 
@@ -67,6 +68,14 @@ ActiveAdmin.register Story do
     def find_resource
       Story.find_by_guid(params[:id])
     end
+
+    def show
+      @story = find_resource
+      @versions = @story.versions
+      @story = @story.versions[params[:version].to_i].reify if params[:version]
+      show!
+    end
   end
+  sidebar :versions, :partial => "admin/layouts/version", :only => :show
 
 end
