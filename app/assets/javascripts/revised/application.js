@@ -36,7 +36,7 @@ jQuery(document).ready(function() {
 
 
 
-var markdown_copy = '';
+// var markdown_copy = '';
 
   var md = window.markdownit({
     linkify: true,
@@ -55,7 +55,12 @@ var markdown_copy = '';
       return ''; // use external default escaping
     }
   });
-  var result = md.render(markdown_copy);
+  // $('.stories .story .description').each(function(index, value) {
+    // var $description = $(this);
+    // $description.html(md.render($description.html()));
+
+  // });
+  // var result = md.render(markdown_copy);
 
   // TODO better way to show limited external stories
   $('div.story[data-local="false"] a.external').remove();

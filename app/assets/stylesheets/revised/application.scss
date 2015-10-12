@@ -214,7 +214,7 @@ section.iterations-list {
           /* align-items: baseline; */
         }
       }
-      p {
+      p.description {
         padding: 0.2rem 0.6rem;
         font-size: 85%;
         border-left: 2px solid rgba(0,0,0,0.1);
@@ -226,6 +226,9 @@ section.iterations-list {
       small { flex: 1; font-size: 60%; text-align: right; }
       background-color: rgba(147,128,108,.1);
       /* min-height: 150px; */
+      /* .description p { */
+        /* border: none; */
+      /* } */
     }
   }
 }
