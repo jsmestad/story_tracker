@@ -1,0 +1,26 @@
+%html
+  %head
+    %title StoryTracker
+    = stylesheet_link_tag 'revised/application'
+    = stylesheet_link_tag 'font-awesome.min'
+    = javascript_include_tag 'markdown-it.min'
+    = javascript_include_tag 'revised/application'
+    %link{ href: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css", rel: "stylesheet" }
+    %script{ src: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js" }
+    = csrf_meta_tags
+  %body
+    = render 'shared/secondary_nav'
+    %main.cd-main-content
+      .wrapper
+        %header.page
+          %a{ href: root_path }
+            %img{ src: "#{image_path('logo-web_1x.png')}",
+                  srcset: "#{image_path('logo-web_2x.png')} 2x" }/
+            %h1.logo StoryTracker
+        - if controller_name == 'pages'
+          .fixed
+            .padded
+              = yield
+        - else
+          = yield
+    = render 'shared/panel'

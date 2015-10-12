@@ -16,3 +16,25 @@
             %span= raw(msg)
         = yield
     = render partial: 'shared/footer'
+
+%html
+  %head
+    %title StoryTracker
+    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'font-awesome.min'
+    -# %link{:href => "stylesheets/font-awesome.min.css", rel: => "stylesheet" }
+    -# %script{ src: '//code.jquery.com/jquery-2.1.4.min.js' }
+    %script{ src: '/javascripts/markdown-it.min.js' }
+    = javascript_include_tag 'application'
+    %link{ href: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css", rel: "stylesheet" }
+    %script{ src: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js" }
+  %body
+    = render 'secondary_nav'
+    %main.cd-main-content
+      .wrapper
+        %header.page
+          %img{ src: "#{image_path('logo-web_1x.png')}",
+                srcset: "#{image_path('logo-web_2x.png')} 2x" }/
+          %h1.logo StoryTracker
+        = yield
+    = render 'panel'

@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  layout 'application_v2'
+
   include Pundit
   include AuthorizationConcern
   include RedirectedLoginConcern
@@ -43,7 +45,7 @@ class ApplicationController < ActionController::Base
       @current_user ||= if session[:user_id]
                           User.find_by_guid(session[:user_id])
                         end
-    rescue Exception => e
+    rescue Exception
       nil
     end
 

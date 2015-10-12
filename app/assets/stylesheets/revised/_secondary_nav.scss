@@ -1,0 +1,195 @@
+
+// z-index
+$secondary-bar-zindex: 1;
+$intro-zindex: 2;
+$header-zindex: 3;
+
+//secondary bar
+$bar-height-full: 100px;
+$bar-height: 70px;
+
+// center vertically and/or horizontally an absolute positioned element
+
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    @include transform(translateX(-50%) translateY(-50%));
+  } @else if $xy == x {
+    left: 50%;
+    right: auto;
+    @include transform(translateX(-50%));
+  } @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    @include transform(translateY(-50%));
+  }
+}
+
+
+
+/* --------------------------------
+
+Secondary Fixed Navigation
+
+-------------------------------- */
+
+.cd-secondary-nav {
+  position: relative;
+  z-index: $header-zindex;
+
+  a {
+    color: $color-2;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* mobile first - secondary navigation hidden by default, triggered by tap/click on .cd-secondary-nav-trigger*/
+    position: fixed;
+    width: 90%;
+    max-width: 245px;
+    /* right: 5%; */
+    // BEGIN - edit to place on left
+    left: 2em;
+    text-align: right;
+    // END - edit to place on left
+    bottom: 40px;
+    /* @include border-radius; */
+    background: rgba($color-1, .96);
+    visibility: hidden;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    @include transform(scale(0));
+    @include transform-origin(0% 100%);
+    -webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
+    -moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
+    transition: transform 0.3s, visibility 0s 0.3s;
+
+    &.is-visible {
+      visibility: visible;
+      @include transform(scale(1));
+      -webkit-transition: -webkit-transform 0.3s, visibility 0s 0s;
+      -moz-transition: -moz-transform 0.3s, visibility 0s 0s;
+      transition: transform 0.3s, visibility 0s 0s;
+
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  li a {
+    display: block;
+    padding: 1em;
+    border-bottom: 1px solid lighten($color-1, 10%);
+    color: $color-3;
+  }
+
+  li:last-child a {
+    border-bottom: none;
+  }
+
+}
+
+.cd-secondary-nav-trigger {
+  position: fixed;
+  bottom: 40px;
+  /* right: 5%; */
+  left: 2em;
+  width: 44px;
+  height: 44px;
+  background: #D50000;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 22px;
+  display: block;
+
+  z-index: 2;
+
+  span {
+    /* the span element is used to create the menu icon */
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 60px;
+    @include center;
+
+    /* image replacement */
+    display: inline-block;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+
+    &::after {
+      /* close icon created in CSS */
+      position: absolute;
+      top: 21px;
+      left: 20px;
+      height: 3px;
+      width: 20px;
+      background-color: white;
+      /* this fixes a bug where pseudo elements are slighty off position */
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      @include transform(rotate(90deg));
+    }
+
+    &::before {
+    /* &::before, &::after { */
+      /* close icon created in CSS */
+      position: absolute;
+      top: 21px;
+      left: 20px;
+      height: 3px;
+      width: 20px;
+      background-color: white;
+      /* this fixes a bug where pseudo elements are slighty off position */
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+  }
+
+  &.menu-is-open {
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  &.menu-is-open span {
+
+    &:before {
+      background-color: #333;
+      @include animation(cd-expand-2 .5s ease forwards);
+    }
+
+    &:after {
+      background-color: #333;
+      @include animation(cd-expand-1 .5s ease forwards);
+    }
+  }
+}
+
+@include keyframes(cd-expand-1) {
+  from {
+    @include transform(rotate(0deg));
+  }
+
+  to {
+    @include transform(rotate(45deg));
+  }
+}
+
+@include keyframes(cd-expand-2) {
+  from {
+    @include transform(rotate(90deg));
+  }
+
+  to {
+    @include transform(rotate(135deg));
+  }
+}

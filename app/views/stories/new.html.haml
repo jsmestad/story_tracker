@@ -1,11 +1,16 @@
 %h1 Proposing a Story
 
-%p If this is too restrictive, you can use the #{link_to 'advanced form', new_story_path(advanced: true)}.
+-# %p If this is too restrictive, you can use the #{link_to 'advanced form', new_story_path(advanced: true)}.
 
 %section.add-story
   = form_for @story, as: :story, url: stories_path, method: :post, html: { class: 'new_story fill_in' } do |f|
     = render partial: 'shared/story_fields', locals: {form: f}
     .line
-      .flash.notice This story will be added to the icebox and be discussed in an upcoming Pre-IPM.
-      = f.button
+      = f.button class: 'button' do
+        %i.fa.fa-send
+        Submit Request
+  :erb
+    <div class="discussion-notice">
+      <div class="flash notice">This story will be added to the icebox and be discussed in an upcoming Pre-IPM.</div>
+    </div>
 
