@@ -50,7 +50,13 @@ ActiveAdmin.register Story do
       row :updated_at
 
     end
-    panel "Rendered Details" do
+    panel "Current Description" do
+      attributes_table_for story do
+        text_node raw(RDiscount.new(story.latest_description || story.description).to_html)
+      end
+    end
+
+    panel "Original Description" do
       attributes_table_for story do
         text_node raw(RDiscount.new(story.description).to_html)
       end
