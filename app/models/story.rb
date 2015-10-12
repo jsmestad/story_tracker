@@ -35,6 +35,18 @@ class Story < ActiveRecord::Base
     end
   end
 
+  def self.import_from_pivotal!(external_ref)
+    raise if self.where(external_ref: external_ref).first
+    new_story = self.new(external_ref: external_ref)
+    external = new_story.external_story
+    new_story.name = external.name
+    new_story.description = external.description
+    new_story.story_type = external.story_type
+    new_story.state = 'approved'
+    new_story.user = User.admin.first # TODO should find a way to discover users
+    new_story.save!
+  end
+
   def current_state
     if approved?
       external_story.try(:current_state)
@@ -80,14 +92,14 @@ class Story < ActiveRecord::Base
     end
   end
 
-private
-
   def external_story
     return nil unless external_ref.present?
     project.story(external_ref)
   rescue TrackerApi::Error
     nil
   end
+
+private
 
   def project
     @story_project ||= TrackerProject.new
