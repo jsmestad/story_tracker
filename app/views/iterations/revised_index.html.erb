@@ -26,7 +26,7 @@
               <span class="fa fa-signal"> <%= calculate_risk(story.estimate).titleize %></span>
             </figure>
             <figure class="updated">
-              <span class="fa fa-clock-o"> <%= (1..100).to_a.sample %> days</span>
+              <span class="fa fa-clock-o"> <%= time_ago_in_words(story.updated_at) %></span>
             </figure>
             <figure class="watch">
               <% if local_story.present? %>
