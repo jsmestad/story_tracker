@@ -9,6 +9,7 @@ module PivotalTracker
     include ActionController::Renderers::All
     include ActionController::Head
     include ActionController::Instrumentation
+    include Airbrake::Rails::ControllerMethods
 
     EVENTS = %w[ story_create_activity story_started_activity story_estimated_activity story_move_activity story_update_activity story_delete_activity ].freeze
 
@@ -43,6 +44,9 @@ module PivotalTracker
       else
         head :ok
       end
+    rescue => e
+      notify_airbrake(e)
+      render json: { message: "Internal Error: #{e}" }.to_json, status: 500
     end
 
   protected
