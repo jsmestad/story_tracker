@@ -27,9 +27,12 @@ module PivotalTracker
       end
 
       updated = false
-      payload.primary_resources.each do |resource|
-        next if resource['kind'] != 'story'
+      payload.changes.each do |resource|
+        next unless resource['kind'] == 'story'
         if story = Story.find_by(external_ref: resource['id'])
+          if resource['change_type'] == 'update'
+            update_from_pivotal(story, resource)
+          end
           story.activities.create!(highlight: payload.highlight)
           story.handle_callback!(payload)
           updated = true
@@ -51,7 +54,15 @@ module PivotalTracker
       render json: { message: "Internal Error: #{e}" }.to_json, status: 500
     end
 
-  protected
+    protected
+
+    def update_from_pivotal(story, payload)
+      changes = payload['new_values']
+      %w(name story_type description).each do |field|
+        story.send(:"#{field}=", changes[field]) if changes.has_key?(field)
+      end
+      story.save!
+    end
 
     def payload_params
       params.permit(:kind, :occurred_at, :highlight, :message, :project_version,
@@ -65,13 +76,19 @@ module PivotalTracker
                         :current_state,
                         :updated_at,
                         :before_id,
-                        :after_id
+                        :after_id,
+                        :story_type,
+                        :description,
+                        :name
                       ],
                       :new_values => [
                         :current_state,
                         :updated_at,
                         :before_id,
-                        :after_id
+                        :after_id,
+                        :story_type,
+                        :description,
+                        :name
                       ]],
                       :primary_resources => [:kind, :id, :name, :story_type, :url],
                       :performed_by => [:kind, :id, :name, :initials],

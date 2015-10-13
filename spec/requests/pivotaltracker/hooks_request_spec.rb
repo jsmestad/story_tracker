@@ -47,7 +47,6 @@ RSpec.describe 'Pivotal Tracker webhooks', :vcr do
   end
 
   describe 'delete' do
-
     let(:payload_file) { File.read(Rails.root.join('spec/fixtures/activity_payloads/story_delete_activity.json')) }
 
     it 'handles a delete call by removing the related story' do
@@ -68,6 +67,49 @@ RSpec.describe 'Pivotal Tracker webhooks', :vcr do
       expect(Story.submitted.count).to eql(1)
       expect(Story.rejected.count).to eql(1)
       expect(Story.rejected.where(external_ref: nil).count).to eql(1)
+    end
+  end
+
+  describe 'edit' do
+
+    context 'editing name' do
+      let(:payload_file) { File.read(Rails.root.join('spec/fixtures/activity_payloads/story_edited_activity.json')) }
+
+      it 'handles a delete call by removing the related story' do
+        story = FactoryGirl.create(:full_story, external_ref: '98677110', name: 'foo bar')
+
+        expect(story.name).to eql('foo bar')
+
+        request_headers = {
+          "Accept" => "application/json",
+          "Content-Type" => "application/json"
+        }
+        post "/pivotal_tracker/callback?token=#{ENV['CALLBACK_TOKEN']}", payload.to_json, request_headers
+
+        expect(response).to have_http_status(201)
+        updated_story = Story.where(external_ref: story.external_ref).first
+        expect(updated_story.name).to eql('Some product photos not scaled properly when browsing product')
+      end
+    end
+
+    context 'changing type' do
+      let(:payload_file) { File.read(Rails.root.join('spec/fixtures/activity_payloads/story_type_change_activity.json')) }
+
+      it 'handles a delete call by removing the related story' do
+        story = FactoryGirl.create(:full_story, external_ref: '98677112', name: 'foo bar')
+
+        expect(story.story_type).to eql('feature')
+
+        request_headers = {
+          "Accept" => "application/json",
+          "Content-Type" => "application/json"
+        }
+        post "/pivotal_tracker/callback?token=#{ENV['CALLBACK_TOKEN']}", payload.to_json, request_headers
+
+        expect(response).to have_http_status(201)
+        updated_story = Story.where(external_ref: story.external_ref).first
+        expect(updated_story.story_type).to eql('bug')
+      end
     end
 
   end
