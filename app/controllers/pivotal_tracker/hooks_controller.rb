@@ -1,3 +1,5 @@
+require 'airbrake/rails/controller_methods'
+
 module PivotalTracker
   class HooksController < ActionController::Metal
     include AbstractController::Rendering
