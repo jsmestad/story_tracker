@@ -13,7 +13,8 @@ RSpec.describe Story do
   describe '#story_type' do
     it { is_expected.to allow_value('bug').for(:story_type) }
     it { is_expected.to allow_value('feature').for(:story_type) }
-    it { is_expected.to_not allow_value('chore').for(:story_type) }
+    it { is_expected.to allow_value('chore').for(:story_type) }
+    it { is_expected.to_not allow_value('release').for(:story_type) }
   end
 
   describe 'subscriptions' do
