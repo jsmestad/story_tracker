@@ -1,5 +1,5 @@
 ActiveAdmin.register Story do
-  permit_params :name, :description
+  permit_params :name, :description, :comment
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -22,6 +22,10 @@ ActiveAdmin.register Story do
           input :name
           input :description
         end
+
+        inputs 'Update Details' do
+          input :comment
+        end
       end
     end
     actions
@@ -41,7 +45,20 @@ ActiveAdmin.register Story do
   end
 
   show do
+
+    panel "Versions" do
+      table_for story.versions.reverse do
+        column('Version #') { |version| link_to( version.index == 0 ? "Original" : "Version #{version.index+1}", {version: (version.index+1)}) }
+        column 'Comment', :comment
+        column 'Created', :created_at
+      end
+    end
+
     attributes_table do
+      row(:version) { |story|
+        version = story.version || story.versions.last
+        version.index == 0 ? 'Original' : "Version #{version.index+1}"
+      }
       row :guid
       row :external_ref
       row :name
@@ -49,11 +66,18 @@ ActiveAdmin.register Story do
       row :state
       row :created_at
       row :updated_at
-
     end
+
     panel "Current Description" do
       attributes_table_for story do
         text_node raw(RDiscount.new(story.latest_description || '#### No External Reference').to_html)
+        row 'Update Comment', :comment do |story|
+          if story.live?
+            nil
+          else
+            story.version.comment
+          end
+        end
       end
     end
 
@@ -62,6 +86,7 @@ ActiveAdmin.register Story do
         text_node raw(RDiscount.new(story.description).to_html)
       end
     end
+
   end
 
   controller do
@@ -72,10 +97,10 @@ ActiveAdmin.register Story do
     def show
       @story = find_resource
       @versions = @story.versions
-      @story = @story.versions[params[:version].to_i].reify if params[:version]
+      @story = @story.versions[params[:version].to_i-1].reify if params[:version]
       show!
     end
   end
-  sidebar :versions, :partial => "admin/layouts/version", :only => :show
+  # sidebar :versions, :partial => "admin/layouts/version", :only => :show
 
 end
