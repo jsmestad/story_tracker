@@ -12,8 +12,12 @@ feature 'Log out', :omniauth, :vcr do
   #   Then I see a signed out message
   scenario 'user logs out successfully' do
     signin
-    click_link 'Log Out'
-    expect(page).to have_content 'Logged out'
+    main_menu.click
+    click_link 'Log out'
+    main_menu.click
+    expect(page).to have_link('Log in')
+    expect(page).to have_no_link('Log out')
+    # expect(page).to have_content 'Logged out'
   end
 
 end

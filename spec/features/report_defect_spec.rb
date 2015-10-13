@@ -23,10 +23,11 @@ RSpec.describe "Report Defect", type: :feature, vcr: {record: :new_episodes} do
       # fill_in 'story_reasoning', with: 'I can stop importing invoices manually'
       select 'No', from: 'defect_workaround'
 
-      click_on 'File Report'
+      find(:alt_button, 'File Report').click
 
       expect(current_path).to eql('/iterations')
 
+      main_menu.click
       click_on 'Your Requests'
       expect(page).to have_css('table tbody tr')
       # expect(page).to have_text('slack integration')

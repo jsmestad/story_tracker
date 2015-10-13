@@ -27,7 +27,6 @@ module StoryStateConcern
   end
 
   def send_to_tracker!
-    story_service = PivotalTracker::StoryService.new(self)
     if result = story_service.create
       update_attribute(:external_ref, result.id)
     else

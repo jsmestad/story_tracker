@@ -9,6 +9,12 @@ class PivotalTracker::StoryService
     false
   end
 
+  def fetch
+    _connection.story(@model.external_ref)
+  rescue TrackerApi::Error
+    nil
+  end
+
   # def update
   # end
 
@@ -26,6 +32,11 @@ class PivotalTracker::StoryService
   end
 
   def _connection
-    @model.user.connection
+    if @model.user
+      @model.user.connection
+    else
+      TrackerProject.new
+    end
+    # @model.user.connection
   end
 end
