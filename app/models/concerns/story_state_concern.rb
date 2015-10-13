@@ -27,12 +27,12 @@ module StoryStateConcern
   end
 
   def send_to_tracker!
-    pt_story = user.connection.create_story(tracker_params_hash)
-    if pt_story.id.present?
-      self.update_attribute(:external_ref, pt_story.id)
+    story_service = PivotalTracker::StoryService.new(self)
+    if result = story_service.create
+      update_attribute(:external_ref, result.id)
+    else
+      return false
     end
-  rescue TrackerApi::Error
-    false
   end
 
   def send_approved_notification!
@@ -47,11 +47,4 @@ module StoryStateConcern
     end
   end
 
-private
-
-  def tracker_params_hash
-    h = { name: name, description: description, story_type: story_type }
-    h.merge!(after_id: after_id) if after_id.present?
-    h
-  end
 end

@@ -48,9 +48,15 @@ RSpec.describe Story do
       end
     end
 
-    describe ':approved', :vcr do
+    describe ':approved' do
       it 'can be transitioned from :submitted' do
+        expect(subject).to receive(:send_to_tracker!).and_return(true)
         expect { subject.approve }.to change(subject, :approved?).from(false).to(true)
+      end
+
+      it 'cannot be transitioned from :submitted if PT is unavailable' do
+        expect(subject).to receive(:send_to_tracker!).and_return(false)
+        expect { subject.approve }.to raise_error(AASM::InvalidTransition)
       end
 
       it 'cannot be transitioned from :rejected' do
