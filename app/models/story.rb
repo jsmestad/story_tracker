@@ -1,5 +1,6 @@
 class Story < ActiveRecord::Base
-  has_paper_trail
+  has_paper_trail meta: { comment: :comment }
+  attr_accessor :comment
 
   include StoryStateConcern
   include GuidConcern
