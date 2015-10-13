@@ -45,6 +45,7 @@ class Story < ActiveRecord::Base
     new_story.story_type = external.story_type
     new_story.state = 'approved'
     new_story.user = User.admin.first # TODO should find a way to discover users
+    new_story.comment = 'Automatically imported from Pivotal Tracker callback'
     new_story.save!
   end
 

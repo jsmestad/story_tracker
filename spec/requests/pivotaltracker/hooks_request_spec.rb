@@ -43,7 +43,9 @@ RSpec.describe 'Pivotal Tracker webhooks', :vcr do
     post "/pivotal_tracker/callback?token=#{ENV['CALLBACK_TOKEN']}", payload.to_json, request_headers
 
     expect(response).to have_http_status(201)
-    expect(Story.where(external_ref: 99432476).count).to eql(1)
+    story = Story.where(external_ref: 99432476).first
+    expect(story).to be_a(Story)
+    expect(story.versions.last.comment).to eql('Automatically imported from Pivotal Tracker callback')
   end
 
   describe 'delete' do
