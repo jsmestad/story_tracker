@@ -17,6 +17,7 @@ class Story < ActiveRecord::Base
   # validates :stakeholder, :the_ask, :reasoning, :error_expectation, :confirmation_flow, presence: true
   validates :name, :description, presence: true, if: :submitted?
   validates_inclusion_of :story_type, in: %w(feature bug chore), allow_nil: false
+  # TODO validates_numericality_of :estimate, only_integer: true, allow_nil: true
   # validates_presence_of :external_ref, if: :submitted?
 
   # delegate :url, to: :external_story, allow_nil: true, if: :approved?
@@ -52,14 +53,6 @@ class Story < ActiveRecord::Base
       # external_story.try(:current_state)
     # else
       self.state
-    # end
-  end
-
-  def estimate
-    # if approved?
-      # external_story.try(:estimate)
-    # else
-      nil
     # end
   end
 

@@ -7,16 +7,29 @@ RSpec.describe PivotalTracker::StoryService do
 
   describe '#pull' do
     let(:external_story) do
-      OpenStruct.new(name: 'changed', description: 'bar', story_type: 'bug')
+      double('Story', name: 'changed', description: 'bar', story_type: 'bug', estimate: nil)
     end
 
-    it 'changes attributes based on the PT story' do
-      service_obj = described_class.new(story_model)
-      allow(service_obj).to receive(:fetch).and_return(external_story)
-
+    before do
       expect(story_model).to receive(:name=).with('changed')
       expect(story_model).to receive(:description=).with('bar')
       expect(story_model).to receive(:story_type=).with('bug')
+    end
+
+    it 'changes attributes based on the PT story' do
+      expect(external_story).to receive(:estimate).and_return(3)
+      expect(story_model).to receive(:estimate=).with(3)
+      service_obj = described_class.new(story_model)
+      allow(service_obj).to receive(:fetch).and_return(external_story)
+
+      service_obj.pull
+    end
+
+    it 'handles estimate when missing' do
+      expect(external_story).to receive(:estimate).and_return(nil)
+      expect(story_model).to receive(:estimate=).with(nil)
+      service_obj = described_class.new(story_model)
+      allow(service_obj).to receive(:fetch).and_return(external_story)
 
       service_obj.pull
     end

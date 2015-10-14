@@ -17,7 +17,7 @@ class PivotalTracker::StoryService
 
   def pull
     if remote_story = fetch
-      _param_keys.each do |field|
+      _read_only_param_keys.each do |field|
         @model.send(:"#{field}=", remote_story.send(:"#{field}"))
       end
     else
@@ -39,8 +39,18 @@ class PivotalTracker::StoryService
   # def destroy
   # end
 
+  # Keys to use in all operations #push and #pull
+  #
+  # @see #_read_only_param_keys
   def _param_keys
     %w(name description story_type)
+  end
+
+  # Additional keys to only use during #pull operation.
+  #
+  # @see #_param_keys
+  def _read_only_param_keys
+    _param_keys + %w(estimate)
   end
 
   def _params_hash

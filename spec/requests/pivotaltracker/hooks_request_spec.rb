@@ -45,6 +45,7 @@ RSpec.describe 'Pivotal Tracker webhooks', :vcr do
     expect(response).to have_http_status(201)
     story = Story.where(external_ref: 99432476).first
     expect(story).to be_a(Story)
+    expect(story.estimate).to eql(3)
     expect(story.versions.last.comment).to eql('Automatically imported from Pivotal Tracker callback')
   end
 

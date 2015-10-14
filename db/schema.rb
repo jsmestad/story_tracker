@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013172841) do
+ActiveRecord::Schema.define(version: 20151014163246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,17 +41,18 @@ ActiveRecord::Schema.define(version: 20151013172841) do
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "stories", force: :cascade do |t|
-    t.integer  "user_id",                                     null: false
+    t.integer  "user_id",                                               null: false
     t.string   "external_ref"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "subscribe",    default: true,                 null: false
-    t.integer  "state",        default: 0,                    null: false
+    t.boolean  "subscribe",              default: true,                 null: false
+    t.integer  "state",                  default: 0,                    null: false
     t.string   "name"
     t.string   "after_id"
     t.text     "description"
-    t.string   "story_type",   default: "feature",            null: false
-    t.uuid     "guid",         default: "uuid_generate_v4()"
+    t.string   "story_type",             default: "feature",            null: false
+    t.uuid     "guid",                   default: "uuid_generate_v4()"
+    t.integer  "estimate",     limit: 2
   end
 
   add_index "stories", ["guid"], name: "index_stories_on_guid", unique: true, using: :btree
