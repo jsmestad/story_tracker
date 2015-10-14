@@ -38,11 +38,8 @@ class Story < ActiveRecord::Base
 
   def self.import_from_pivotal!(external_ref)
     new_story = self.new(external_ref: external_ref)
-    external = new_story.story_service.fetch
+    new_story.story_service.pull
 
-    new_story.name = external.name
-    new_story.description = external.description
-    new_story.story_type = external.story_type
     new_story.state = 'approved'
     new_story.user = User.admin.first # TODO should find a way to discover users
     new_story.comment = 'Automatically imported from Pivotal Tracker callback'
@@ -96,20 +93,8 @@ class Story < ActiveRecord::Base
     # end
   end
 
-  # def external_story
-    # story_service.fetch
-    # return nil unless external_ref.present?
-    # project.story(external_ref)
-  # rescue TrackerApi::Error
-    # nil
-  # end
-
   def story_service
     PivotalTracker::StoryService.new(self)
   end
-
-  # def project
-    # @story_project ||= TrackerProject.new
-  # end
 
 end

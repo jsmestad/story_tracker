@@ -36,9 +36,6 @@ class PivotalTracker::StoryService
     end
   end
 
-  # def update
-  # end
-
   # def destroy
   # end
 
