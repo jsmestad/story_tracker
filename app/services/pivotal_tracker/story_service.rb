@@ -17,7 +17,7 @@ class PivotalTracker::StoryService
 
   def pull
     if remote_story = fetch
-      %w(name description story_type).each do |field|
+      _param_keys.each do |field|
         @model.send(:"#{field}=", remote_story.send(:"#{field}"))
       end
     else
@@ -25,8 +25,15 @@ class PivotalTracker::StoryService
     end
   end
 
-  def push
-    raise NotImplementedError
+  def push!
+    if remote_story = fetch
+      _param_keys.each do |field|
+        remote_story.send(:"#{field}=", _params_hash[field.to_sym])
+      end
+      remote_story.save
+    else
+      false #create # TODO should this create or fail?
+    end
   end
 
   # def update
@@ -35,12 +42,15 @@ class PivotalTracker::StoryService
   # def destroy
   # end
 
+  def _param_keys
+    %w(name description story_type)
+  end
+
   def _params_hash
-    h = {
-      name: @model.name,
-      description: @model.description,
-      story_type: @model.story_type
-    }
+    h = {}
+    _param_keys.each do |key|
+      h[key.to_sym] = @model.send(:"#{key}")
+    end
     h.merge!(after_id: after_id) if @model.after_id.present?
     h
   end

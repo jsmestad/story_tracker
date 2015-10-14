@@ -10,7 +10,7 @@ RSpec.describe PivotalTracker::StoryService do
       OpenStruct.new(name: 'changed', description: 'bar', story_type: 'bug')
     end
 
-    it 'sets attributes from PT' do
+    it 'changes attributes based on the PT story' do
       service_obj = described_class.new(story_model)
       allow(service_obj).to receive(:fetch).and_return(external_story)
 
@@ -19,6 +19,25 @@ RSpec.describe PivotalTracker::StoryService do
       expect(story_model).to receive(:story_type=).with('bug')
 
       service_obj.pull
+    end
+  end
+
+  describe '#push!' do
+    let(:external_story) do
+      OpenStruct.new(name: 'changed', description: 'fizzbuzz', story_type: 'bug', save: true)
+    end
+
+    it 'pushes attributes based on the local story' do
+      service_obj = described_class.new(story_model)
+      allow(service_obj).to receive(:fetch).and_return(external_story) # return mock PT story
+      expect(service_obj).to receive(:_params_hash).and_return({name: 'foo', description: 'bar', story_type: 'chore'}).at_least(:once)
+
+      expect(external_story).to receive(:name=).with('foo')
+      expect(external_story).to receive(:description=).with('bar')
+      expect(external_story).to receive(:story_type=).with('chore')
+
+      allow(external_story).to receive(:save).and_return(true)
+      expect(service_obj.push!).to eql(true)
     end
   end
 
