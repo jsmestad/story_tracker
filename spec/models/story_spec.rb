@@ -13,7 +13,8 @@ RSpec.describe Story do
   describe '#story_type' do
     it { is_expected.to allow_value('bug').for(:story_type) }
     it { is_expected.to allow_value('feature').for(:story_type) }
-    it { is_expected.to_not allow_value('chore').for(:story_type) }
+    it { is_expected.to allow_value('chore').for(:story_type) }
+    it { is_expected.to_not allow_value('release').for(:story_type) }
   end
 
   describe 'subscriptions' do
@@ -47,9 +48,15 @@ RSpec.describe Story do
       end
     end
 
-    describe ':approved', :vcr do
+    describe ':approved' do
       it 'can be transitioned from :submitted' do
+        expect(subject).to receive(:send_to_tracker!).and_return(true)
         expect { subject.approve }.to change(subject, :approved?).from(false).to(true)
+      end
+
+      it 'cannot be transitioned from :submitted if PT is unavailable' do
+        expect(subject).to receive(:send_to_tracker!).and_return(false)
+        expect { subject.approve }.to raise_error(AASM::InvalidTransition)
       end
 
       it 'cannot be transitioned from :rejected' do

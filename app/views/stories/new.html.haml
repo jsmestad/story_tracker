@@ -6,7 +6,7 @@
   = form_for @story, as: :story, url: stories_path, method: :post, html: { class: 'new_story fill_in' } do |f|
     = render partial: 'shared/story_fields', locals: {form: f}
     .line
-      = f.button class: 'button' do
+      = f.button class: 'button', alt: 'Submit Request' do
         %i.fa.fa-send
         Submit Request
   :erb

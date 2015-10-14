@@ -17,6 +17,9 @@
             %img{ src: "#{image_path('logo-web_1x.png')}",
                   srcset: "#{image_path('logo-web_2x.png')} 2x" }/
             %h1.logo StoryTracker
+        - flash.each do |type, msg|
+          .flash{class: type}
+            %span= raw(msg)
         - if controller_name == 'pages'
           .fixed
             .padded

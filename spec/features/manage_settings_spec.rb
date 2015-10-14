@@ -7,13 +7,17 @@ feature 'Managing a User', :omniauth, :vcr do
   scenario 'user can set their own API key and Email Address' do
     signin(as_new_user: false, role: 'regular_user')
 
-    click_on 'Edit Account Settings'
+    visit account_path
+    click_on 'Edit Account'
+
     fill_in 'Pivotal Tracker API Token', with: tracker_key
     fill_in 'Email Address', with: email
     click_on 'Update Account'
     expect(page).to have_content("Account updated")
 
-    click_on 'Edit Account Settings'
+    visit account_path
+    click_on 'Edit Account'
+
     expect(page).to have_field('Pivotal Tracker API Token', with: tracker_key)
     expect(page).to have_field('Email Address', with: email)
   end
