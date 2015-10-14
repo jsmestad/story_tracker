@@ -20,7 +20,7 @@ class PivotalTracker::StoryService
 
   # def destroy
   # end
-  #
+
   def _params_hash
     h = {
       name: @model.name,
@@ -31,12 +31,13 @@ class PivotalTracker::StoryService
     h
   end
 
+  # TODO remove user info from this, have the key crafted here
+  #
   def _connection
     if @model.user
       @model.user.connection
     else
       TrackerProject.new
     end
-    # @model.user.connection
   end
 end
