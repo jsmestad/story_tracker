@@ -5,6 +5,23 @@ RSpec.describe PivotalTracker::StoryService do
 
   let(:story_model) { double('Story') }
 
+  describe '#pull' do
+    let(:external_story) do
+      OpenStruct.new(name: 'changed', description: 'bar', story_type: 'bug')
+    end
+
+    it 'sets attributes from PT' do
+      service_obj = described_class.new(story_model)
+      allow(service_obj).to receive(:fetch).and_return(external_story)
+
+      expect(story_model).to receive(:name=).with('changed')
+      expect(story_model).to receive(:description=).with('bar')
+      expect(story_model).to receive(:story_type=).with('bug')
+
+      service_obj.pull
+    end
+  end
+
   describe '#_connection' do
     it 'grabs the connection from the associated user' do
       allow(story_model).to receive(:user) { user_mock }

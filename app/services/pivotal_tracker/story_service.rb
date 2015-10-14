@@ -15,6 +15,20 @@ class PivotalTracker::StoryService
     nil
   end
 
+  def pull
+    if remote_story = fetch
+      %w(name description story_type).each do |field|
+        @model.send(:"#{field}=", remote_story.send(:"#{field}"))
+      end
+    else
+      @model
+    end
+  end
+
+  def push
+    raise NotImplementedError
+  end
+
   # def update
   # end
 
