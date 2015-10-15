@@ -100,6 +100,8 @@ $color-4: #ffffff; // white
     &.markdown {
       h1, h2, h3, h4, h5, h6 {
         font-size: 96%;
+        font-weight: 400;
+        text-transform: uppercase;
       }
     }
   }
@@ -107,6 +109,7 @@ $color-4: #ffffff; // white
     /* border-left: 3px solid white; */
     border-left: 5px solid darken(#F1F1F1, 5%);
     padding: 1em;
+    font-weight: 300;
   }
   .current-description { margin-bottom: 5em; }
 }
@@ -290,7 +293,7 @@ $color-4: #ffffff; // white
     line-height: 1.4;
     margin: 2em 0;
     text-shadow: 0 0 1px transparent;
-    font-weight: 200;
+    font-weight: 300;
 
     &:first-of-type {
       margin-top: 0;
