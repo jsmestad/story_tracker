@@ -284,12 +284,13 @@ $color-4: #ffffff; // white
     border: 3px solid #F1F1F1;
     code { font-size: 0.9em; }
   }
-  p {
+  p, h1, h2, h3, h4, h5, h6 {
     @include font-size(14px);
-    color: #444;//$color-3;
+    color: #222;//$color-3;
     line-height: 1.4;
     margin: 2em 0;
     text-shadow: 0 0 1px transparent;
+    font-weight: 200;
 
     &:first-of-type {
       margin-top: 0;
