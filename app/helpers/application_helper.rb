@@ -17,13 +17,13 @@ module ApplicationHelper
   def story_type_icon(kind)
     case kind
     when 'feature'
-      content_tag(:span, ' Feature', class: 'fa fa-star', title: 'Story Type: Feature')
+      content_tag(:span, nil, class: 'fa fa-star', title: 'Story Type: Feature') + 'Feature'
     when 'bug'
-      content_tag(:span, ' Defect', class: 'fa fa-bug', title: 'Story Type: Defect')
+      content_tag(:span, nil, class: 'fa fa-bug', title: 'Story Type: Defect') + "Defect"
     when 'chore'
-      content_tag(:span, ' Chore', class: 'fa fa-support', title: 'Story Type: Chore')
+      content_tag(:span, nil, class: 'fa fa-support', title: 'Story Type: Chore') + "Chore"
     when 'release'
-      content_tag(:span, ' Release', class: 'fa fa-flag-checkered', title: 'Story Type: Milestone')
+      content_tag(:span, nil, class: 'fa fa-flag-checkered', title: 'Story Type: Milestone') + "Release"
     end
   end
 

@@ -77,8 +77,6 @@ header.page a{
     letter-spacing: 1.64px;
     line-height: 47px;
     color: #677B82;
-    /* text-shadow: 0 0px 1px lighten(#677B82,45%); */
-    /* @include column; */
   }
 }
 
@@ -94,7 +92,6 @@ section.iterations-list {
       padding-left: 0;
     }
     .iteration {
-
       @include respond-to(phones) {
         background: none;
         padding-left: 0;
@@ -150,13 +147,13 @@ section.iterations-list {
       border-left: 0.8rem solid #FAFBFC;
       @include transition(border-color .5s);
       &.tracked {
-        /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); */
         border-left: 0.8rem solid #FAFBFC; //rgba(147,128,108,.2);
         margin-left: 0;
         @include transition(border-color .5s);
       }
 
-      @include display(flex);
+      /* @include display(flex); */
+      @extend %row;
       padding: .8em 1em;
       align-items: center;
       margin-bottom: 0.5rem;
@@ -173,53 +170,83 @@ section.iterations-list {
         }
       }
       a.external {
-        opacity: 0.4;
-        font-size: 80%;
-        margin-left: 0.5em;
-        cursor: pointer;
-        @include transition(opacity 0.3s ease);
-        &:hover {
-          opacity: 0.8;
-          border-bottom: 1px dotted #aaa;
-        }
+        /* opacity: 0.4; */
+        /* font-size: 80%; */
+        /* margin-left: 0.5em; */
+        /* cursor: pointer; */
+        /* @include transition(opacity 0.3s ease); */
+        /* &:hover { */
+          /* opacity: 0.8; */
+          /* border-bottom: 1px dotted #aaa; */
+        /* } */
       }
       .stats {
-        padding-top: .3em;
-        display: flex;
-        flex-direction: column;
-        padding-right: 1rem;
-        flex-basis: 120px;
-        @include respond-to(phones) {
-          flex-basis: 100px;
-          /* margin-right: 1rem; */
+        @include column;
+        padding-bottom: 1.2rem;
+        /* @include columns(6); */
+        /* padding-top: .3em; */
+        /* display: flex; */
+        /* flex-direction: row; */
+        /* @extend %row; */
+        /* padding-right: 1rem; */
+        /* flex-basis: 120px; */
+        /* @include respond-to(phones) { */
+          /* flex-basis: 100px; */
+        /* } */
+
+        a { cursor: pointer; }
+        .row {
+          @extend %row;
+          /* display: inline-flex; */
+          justify-content: flex-start;
+          align-items: baseline;
+          /* align-content: strecth; */
         }
-        a { cursor: pointer;}
-      }
-      figure {
-        opacity: 0.2;
-        font-size: 80%;
-        text-align: left;
-        /* margin: 0 0 1rem 0; */
-        margin: 0 0 1rem 0;
-        width: 100%;
-        @include transition(opacity .2s);
-        &:first-child {
-          /* margin: 0 3rem 1rem 0; */
-          @include respond-to(phones) {
-            /* margin-right: 1rem; */
+        .item .fa { opacity: 0.9;padding-right: 0.4rem; }
+
+        .item a {
+          text-decoration: none;
+          border-bottom: 1px dotted $base-font-color;
+          color: $base-font-color;
+          padding-bottom: 0.1em;
+          &:hover {
+            border-bottom: 1px solid $base-font-color;
           }
         }
-        &:hover {
-          opacity: 0.8;
-          @include transition(opacity .4s);
-        }
+
+        .watch { flex: 0 1 110px; }
+        .updated { flex: 0 1 170px;}
+        .risk { flex: 1 1 80px; }
+        .type {  flex: 0 1 110px; }
+        .author { flex: 1 1 100px; text-align: right;}
+        .external-link { flex: 0 1 100px; text-align: right; }
+      }
+      figure{
+        /* @include flex(); */
+        /* display: flex; */
+        /* flex: 0 1 auto; */
+        /* flex: 1; */
+        /* order: 2; */
+        /* display: flex; */
+        /* flex-direction: row; */
+        /* display: flex; */
+        /* @extend %row; */
+        /* opacity: 0.2; */
+        /* font-size: 80%; */
+        /* text-align: left; */
+        /* margin: 0 0 1rem 0; */
+        display: inline-block;
+        text-align: left;
+        margin: 0;
         /* order: 1; */
         &.type {
-          font-weight: 100;
+          font-weight: 200;
         }
-      }
+              }
       .body {
-        flex: 1;
+        @include columns(12);
+        /* @extend %row; */
+        /* flex: 1; */
         >div {
           flex-direction: column;
           display: flex;
