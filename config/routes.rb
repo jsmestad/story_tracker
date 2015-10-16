@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :stories, only: [:new, :create], controller: 'iteration_stories'
   end
 
-  resources :stories, except: [:index, :edit, :destroy] do
+  resources :stories, except: [:index, :destroy] do
     collection do
       get 'search'
     end

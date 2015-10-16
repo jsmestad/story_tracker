@@ -84,7 +84,7 @@ header.page a{
   }
 }
 
-section.iterations-list {
+section.iterations-list, section.story-group {
   @extend %row;
   > * {
     margin-bottom: 1px !important;
@@ -95,7 +95,7 @@ section.iterations-list {
     @include respond-to(phones) {
       padding-left: 0;
     }
-    .iteration {
+    .iteration, .group {
       @include respond-to(phones) {
         background: none;
         padding-left: 0;
