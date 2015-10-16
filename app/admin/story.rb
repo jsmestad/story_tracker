@@ -83,7 +83,7 @@ ActiveAdmin.register Story do
 
     panel "Original Description" do
       attributes_table_for story do
-        text_node raw(RDiscount.new(story.description).to_html)
+        text_node raw(RDiscount.new(story.description || '#### No External Reference').to_html)
       end
     end
 
