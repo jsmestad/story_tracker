@@ -187,24 +187,12 @@ section.iterations-list {
       .stats {
         @include column;
         padding-bottom: 1.2rem;
-        /* @include columns(6); */
-        /* padding-top: .3em; */
-        /* display: flex; */
-        /* flex-direction: row; */
-        /* @extend %row; */
-        /* padding-right: 1rem; */
-        /* flex-basis: 120px; */
-        /* @include respond-to(phones) { */
-          /* flex-basis: 100px; */
-        /* } */
 
         a { cursor: pointer; }
         .row {
           @extend %row;
-          /* display: inline-flex; */
           justify-content: flex-start;
           align-items: baseline;
-          /* align-content: strecth; */
         }
         .item .fa { opacity: 0.9;padding-right: 0.4rem; }
 
@@ -243,35 +231,18 @@ section.iterations-list {
         }
       }
       figure{
-        /* @include flex(); */
-        /* display: flex; */
-        /* flex: 0 1 auto; */
-        /* flex: 1; */
-        /* order: 2; */
-        /* display: flex; */
-        /* flex-direction: row; */
-        /* display: flex; */
-        /* @extend %row; */
-        /* opacity: 0.2; */
-        /* font-size: 80%; */
-        /* text-align: left; */
-        /* margin: 0 0 1rem 0; */
         display: inline-block;
         text-align: left;
         margin: 0;
-        /* order: 1; */
         &.type {
           font-weight: 200;
         }
               }
       .body {
         @include columns(12);
-        /* @extend %row; */
-        /* flex: 1; */
         >div {
           flex-direction: column;
           display: flex;
-          /* align-items: baseline; */
         }
       }
       p.description {
@@ -285,19 +256,7 @@ section.iterations-list {
       }
       small { flex: 1; font-size: 60%; text-align: right; }
       background-color: rgba(147,128,108,.1);
-      /* min-height: 150px; */
-      /* .description p { */
-        /* border: none; */
-      /* } */
     }
   }
 }
 
-/* h1.logo { */
-  /* font-weight: 200; */
-  /* font-size: 40px; */
-  /* text-transform: uppercase; */
-  /* background: url(/images/logo.png) no-repeat; */
-  /* padding-left: 40px; */
-  /* height: 55px; */
-/* } */
