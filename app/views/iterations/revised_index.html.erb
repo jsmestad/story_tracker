@@ -24,15 +24,11 @@
               <div class="item watch">
                 <% if local_story.present? %>
                   <% if current_user.following?(local_story) %>
-                    <a class="unfollow" href="<%= story_follow_path(local_story) %>"> <span class="fa fa-eye-slash"></span>Unfollow</a>
+                    <a class="unfollow" href="<%= story_follow_path(local_story) %>"> <span class="fa fa-eye-slash"></span><span class="name">Unfollow</span></a>
                   <% else %>
-                    <a class="follow" href="<%= story_follow_path(local_story) %>"><span class="fa fa-eye"></span>Follow</a>
+                    <a class="follow" href="<%= story_follow_path(local_story) %>"><span class="fa fa-eye"></span><span class="name">Follow</span></a>
                   <% end %>
                 <% end %>
-              </div>
-
-              <div class="item updated">
-                <span class="fa fa-clock-o"></span><%= time_ago_in_words(story.updated_at) %>
               </div>
 
               <div class="item type">
@@ -43,11 +39,15 @@
                 <span class="fa fa-signal"></span><%= calculate_risk(story.estimate).titleize %>
               </div>
 
+              <div class="item updated">
+                <span class="fa fa-clock-o"></span><%= time_ago_in_words(story.updated_at) %>
+              </div>
+
               <div class="item author">
                 <span class="fa fa-user"></span>jsmestad
               </div>
               <div class="item external-link">
-                <a class="external" data-url="<%= story_path(local_story) if local_story.present? %>"><span class="fa fa-external-link"></span>More</a>
+                <a class="external" data-url="<%= story_path(local_story) if local_story.present? %>"><span class="fa fa-external-link"></span><span class="name">Details</span></a>
               </div>
             </div>
           </div>

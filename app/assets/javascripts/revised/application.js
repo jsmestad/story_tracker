@@ -16,7 +16,7 @@ jQuery(document).ready(function() {
         method: 'POST',
         success: function(data) {
           $link.removeClass('follow').addClass('unfollow');
-          $link.html('<span class="fa fa-eye-slash"/> Unfollow');
+          $link.html('<span class="fa fa-eye-slash"/><span class="name">Unfollow</span>');
           $link.closest('.story').toggleClass('tracked');
         }
       });
@@ -27,7 +27,7 @@ jQuery(document).ready(function() {
         data: {'_method': 'delete'},
         success: function(data) {
           $link.removeClass('unfollow').addClass('follow');
-          $link.html('<span class="fa fa-eye"/> Follow');
+          $link.html('<span class="fa fa-eye"/><span class="name">Follow</span>');
           $link.closest('.story').toggleClass('tracked');
         }
       });

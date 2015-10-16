@@ -218,12 +218,29 @@ section.iterations-list {
           }
         }
 
-        .watch { flex: 0 1 110px; }
-        .updated { flex: 0 1 170px;}
-        .risk { flex: 1 1 80px; }
+        .watch {
+          flex: 0 1 110px;
+          /* @media only screen and (max-width: 1000px) { */
+            /* flex: 0 1 25px; */
+            /* .fa { padding-right: 0; } */
+            /* .name { display: none; } */
+            /* a { border-bottom: none; } */
+          /* } */
+        }
+        .updated { flex: 1 1 150px;}
+        .risk { flex: 0 1 80px; }
         .type {  flex: 0 1 110px; }
         .author { flex: 1 1 100px; text-align: right;}
-        .external-link { flex: 0 1 100px; text-align: right; }
+        .external-link {
+          flex: 0 1 100px;
+          text-align: right;
+          /* @media only screen and (max-width: 1000px) { */
+            /* flex: 0 1 25px; */
+            /* .fa { padding-right: 0; } */
+            /* .name { display: none; } */
+            /* a { border-bottom: none; } */
+          /* } */
+        }
       }
       figure{
         /* @include flex(); */
