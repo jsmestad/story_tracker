@@ -44,7 +44,17 @@
               </div>
 
               <div class="item author">
-                <span class="fa fa-user"></span>jsmestad
+                <% if local_story %>
+                  <span class="fa fa-user"></span>
+                  <% if local_story.user == current_user %>
+                    <strong><%= local_story.user.username %></strong>
+                  <% else %>
+                    <%= local_story.user.username %>
+                  <% end %>
+                <% else %>
+                  <span class="fa fa-lock"></span>
+                  <%# not available %>
+                <% end %>
               </div>
               <div class="item external-link">
                 <a class="external" data-url="<%= story_path(local_story) if local_story.present? %>"><span class="fa fa-external-link"></span><span class="name">Details</span></a>
