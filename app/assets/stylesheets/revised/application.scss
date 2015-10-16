@@ -11,6 +11,8 @@ $grid-settings: (
 
 // Import Work Sans font
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:200,300,500,700,400,100);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,300italic,100italic,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,600italic);
 
 @import 'panel';
 @import 'secondary_nav';
@@ -26,7 +28,9 @@ $grid-settings: (
 }
 
 $worksans: 'Work Sans';
-$font-family: $worksans, sans-serif;
+$lato: 'Lato';
+$source-sans: 'Source Sans Pro';
+$font-family: $source-sans, sans-serif;
 $base-font-color: #323232;
 
 body {
@@ -41,7 +45,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 200;
+  font-weight: 300;
   margin: 0 0 0.5em 0;
 }
 
