@@ -4,8 +4,6 @@
 
 jQuery(document).ready(function() {
 
-
-
   $('a.follow, a.unfollow').on('click', function(e) {
     e.preventDefault();
 

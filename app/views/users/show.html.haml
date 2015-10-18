@@ -2,14 +2,17 @@
   %aside
     .group
       %div
-        %figure
-          %img{:srcset => "#{image_path("pin-green.png")} 2x"}/
+        %span.st-icons-map-pin.green>
         .name
           %h2
             Requested Stories
   .stories.green
     - (@user.stories + @user.following_stories).sort_by(&:created_at).each do |story|
       %div{:class => "story tracked", "data-state" => story.state, "data-local" => 'true', "data-owned" => story.user == current_user ? 'true' : 'false'}
+        .body
+          %div
+            %div
+              %h3= story.name
         .stats
           .row
             .item.watch
@@ -39,10 +42,7 @@
               %a.external{"data-url" => story_path(story)}
                 %span.fa.fa-external-link
                 %span.name Details
-        .body
-          %div
-            %div
-              %h3= story.name
+
 
 
 
