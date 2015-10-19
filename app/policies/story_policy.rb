@@ -23,6 +23,16 @@ class StoryPolicy
   end
 
   def update?
-    user.admin?
+    if user.regular_user? and user == story.try(:user)
+      if story.submitted?
+        true
+      else
+        false
+      end
+    elsif user.admin?
+      true
+    else
+      false
+    end
   end
 end
