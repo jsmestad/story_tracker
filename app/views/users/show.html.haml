@@ -18,12 +18,18 @@
             .item.watch
               - if story.user != current_user
                 %a.unfollow{:href => story_follow_path(story)}
-                  %span.fa.fa-eye-slash
+                  %span.fa.fa-eye-slash.fa-fw>
                   %span.name Unfollow
-              - else
+              - elsif policy(story).update?
                 %a{href: edit_story_path(story)}
-                  %span.fa.fa-pencil>
+                  %span.fa.fa-pencil.fa-fw>
                   Revise
+              - else
+                - if story.state == 'approved'
+                  %span.fa.fa-check-circle-o.fa-fw>
+                - elsif story.state == 'rejected'
+                  %span.fa.fa-exclamation-circle.fa-fw>
+                = story.state.titleize
             .item.type
               = story_type_icon(story.story_type)
             .item.risk

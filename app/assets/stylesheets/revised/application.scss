@@ -17,6 +17,11 @@ $blueHot: rgb(37, 232, 243);
 $blueLight: rgb(0, 184, 215);
 $blueDark:  rgb(1, 80, 119);
 
+.fa-circle {
+  &.approved { color: $blueLight; }
+  &.rejected { color: $redLight; }
+}
+
 .st-icons-map-pin {
   &:before {
     font-size: 30px;
@@ -228,7 +233,7 @@ section.iterations-list, section.story-group {
           align-items: baseline;
           margin-bottom: 0;
         }
-        .item .fa { opacity: 0.9;padding-right: 0.4rem; }
+        .item .fa { opacity: 0.9; padding-right: 0.4rem; }
 
         .item a {
           text-decoration: none;
@@ -248,6 +253,9 @@ section.iterations-list, section.story-group {
             /* .name { display: none; } */
             /* a { border-bottom: none; } */
           /* } */
+          span.fa {
+            padding-right: 0.4rem;
+          }
         }
         .updated { flex: 1 1 150px;}
         .risk { flex: 0 1 90px; }
@@ -293,4 +301,5 @@ section.iterations-list, section.story-group {
     }
   }
 }
+
 

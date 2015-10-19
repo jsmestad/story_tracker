@@ -67,8 +67,8 @@ describe StoryPolicy do
       expect(subject).not_to permit(viewer)
     end
 
-    it "allows access for an admin" do
-      expect(subject).to permit(admin)
+    it "denies access for an admin" do
+      expect(subject).to_not permit(admin)
     end
   end
 end
