@@ -71,6 +71,15 @@ RSpec.describe Story do
       end
     end
 
+    describe '#additional_description' do
+      let(:existing_story) { FactoryGirl.build_stubbed(:story, description: 'foo') }
+
+      it 'appends to existing description' do
+        existing_story.additional_description = 'bar'
+        expect(existing_story.description).to eql("foo\nbar")
+      end
+    end
+
     describe '.in_flight scope' do
       it 'excludes rejected stories' do
         rejected_story = FactoryGirl.create(:story, :with_user, :as_rejected)

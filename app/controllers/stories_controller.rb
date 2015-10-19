@@ -79,7 +79,7 @@ class StoriesController < ApplicationController
 private
 
   def story_update_params
-    params.require(:story).permit(:name)
+    params.require(:story).permit(:name, :additional_description, :comment)
   end
 
   def story_params

@@ -1,12 +1,30 @@
+%h3 Suggest revision to pending story
 
 %section.update-story
   = form_for @story, as: :story, url: story_path(@story), method: :put do |f|
-    = f.label :name, 'Story Title'
-    = f.text_field :name
+    .line
+      = f.label :name, 'Title:'
+      = f.text_field :name
+
+    .line
+      = f.label :description, 'Description'
+    .line
+      .existing-content
+        = raw(RDiscount.new(f.object.description).to_html)
+
+    .line
+      = f.label :additional_description, 'Additional Description (Markdown supported)'
+    .line
+      = f.text_area :additional_description, rows: 10
+
+    = field_set_tag 'Reason for revision*' do
+      .line
+        = f.text_field :comment, placeholder: 'Requested additional information', required: true
 
     -# = f.label :body, 'Description'
     -# = f.text_area :body, rows: 20
 
     .line
-      .flash.notice This story will be added to the icebox and be discussed in an upcoming Pre-IPM.
-      = f.button
+      = f.button class: 'button', alt: 'Submit Revision' do
+        %i.fa.fa-send>
+        Submit Revision
