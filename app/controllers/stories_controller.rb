@@ -69,7 +69,7 @@ class StoriesController < ApplicationController
     @story = Story.find_by_guid(params[:id])
     authorize @story
     if @story.update_attributes(story_update_params)
-      flash[:success] = "Story has been updated."
+      flash[:success] = "Story revision has been submitted successfully."
     else
       flash[:notice] = "Cannot update story."
     end
