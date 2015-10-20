@@ -28,10 +28,13 @@
               <div class="item watch">
                 <% if local_story.present? %>
                   <% if current_user.following?(local_story) %>
-                    <a class="unfollow" href="<%= story_follow_path(local_story) %>"> <span class="fa fa-eye-slash"></span><span class="name">Unfollow</span></a>
+                    <a class="unfollow" href="<%= story_follow_path(local_story) %>"> <span class="fa fa-eye-slash fa-fw"></span><span class="name">Unfollow</span></a>
                   <% else %>
-                    <a class="follow" href="<%= story_follow_path(local_story) %>"><span class="fa fa-eye"></span><span class="name">Follow</span></a>
+                    <a class="follow" href="<%= story_follow_path(local_story) %>"><span class="fa fa-eye fa-fw"></span><span class="name">Follow</span></a>
                   <% end %>
+                <% else %>
+                  <span class="fa fa-lock fa-fw"></span>
+                  <span class="name">Private</span>
                 <% end %>
               </div>
 
@@ -55,9 +58,6 @@
                   <% else %>
                     <%= local_story.user.username %>
                   <% end %>
-                <% else %>
-                  <span class="fa fa-lock"></span>
-                  <%# not available %>
                 <% end %>
               </div>
               <div class="item external-link">
