@@ -4,6 +4,11 @@
 
 jQuery(document).ready(function() {
 
+  var hash = window.location.hash;
+  if (hash !== undefined) {
+    $(hash).addClass('linked');
+  }
+
   $('a.follow, a.unfollow').on('click', function(e) {
     e.preventDefault();
 
@@ -64,7 +69,7 @@ jQuery(document).ready(function() {
   $('div.story[data-local="false"] a.external').remove();
 
   $('div.story[data-local="true"] a.external').on('click', function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     var $link = $(this);
     $.ajax({
         url: $link.data('url'),

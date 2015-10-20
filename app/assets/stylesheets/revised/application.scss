@@ -182,11 +182,22 @@ section.iterations-list, section.story-group {
     &.green {
       border-color: #6ACC00;
       .story.tracked { border-color: rgba(#6ACC00, 0.5); }
+      .story.linked {
+        border-top: 4px solid rgba(#6ACC00, 0.5);
+        border-bottom: 4px solid rgba(#6ACC00, 0.5);
+        border-right: 4px solid rgba(#6ACC00, 0.5);
+      }
     }
     &.blue {
       border-color: #00B8D7;
       .story.tracked { border-color: rgba(#00B8D7, 0.5); }
+      .story.linked {
+        border-top: 4px solid rgba(#00B8D7, 0.5);
+        border-bottom: 4px solid rgba(#00B8D7, 0.5);
+        border-right: 4px solid rgba(#00B8D7, 0.5);
+      }
     }
+
     @include respond-to(phones) {
       padding-top: 0;
       border-left: 1px dotted #aaa;

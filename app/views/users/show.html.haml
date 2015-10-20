@@ -8,7 +8,7 @@
             Requested Stories
   .stories.green
     - (@user.stories + @user.following_stories).sort_by(&:created_at).each do |story|
-      %div{:class => "story tracked", "data-state" => story.state, "data-local" => 'true', "data-owned" => story.user == current_user ? 'true' : 'false'}
+      %div{:class => "story tracked", "data-state" => story.state, "data-local" => 'true', "data-owned" => story.user == current_user ? 'true' : 'false', :id => story.to_param}
         .body
           %div
             %div
@@ -45,7 +45,7 @@
               - else
                 = story.user.username
             .item.external-link
-              %a.external{"data-url" => story_path(story)}
+              %a.external{href: "##{story.to_param}","data-url" => story_path(story)}
                 %span.fa.fa-external-link
                 %span.name Details
 
