@@ -48,6 +48,15 @@ class Story < ActiveRecord::Base
     new_story.save!
   end
 
+  def additional_description
+    @additional_description
+  end
+
+  def additional_description=(addtl)
+    @additional_description = addtl
+    self.description += "\n#{@additional_description}"
+  end
+
   def current_state
     # if approved?
       # external_story.try(:current_state)

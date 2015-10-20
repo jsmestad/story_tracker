@@ -1,55 +1,110 @@
+%section.story-group
+  %aside
+    .group
+      %div
+        %span.st-icons-map-pin.green>
+        .name
+          %h2
+            Requested Stories
+  .stories.green
+    - (@user.stories + @user.following_stories).sort_by(&:created_at).each do |story|
+      %div{:class => "story tracked", "data-state" => story.state, "data-local" => 'true', "data-owned" => story.user == current_user ? 'true' : 'false', :id => story.to_param}
+        .body
+          %div
+            %div
+              %h3= story.name
+        .stats
+          .row
+            .item.watch
+              - if story.user != current_user
+                %a.unfollow{:href => story_follow_path(story)}
+                  %span.fa.fa-eye-slash.fa-fw>
+                  %span.name Unfollow
+              - elsif policy(story).update?
+                %a{href: edit_story_path(story)}
+                  %span.fa.fa-pencil.fa-fw>
+                  Revise
+              - else
+                - if story.state == 'approved'
+                  %span.fa.fa-check-circle-o.fa-fw>
+                - elsif story.state == 'rejected'
+                  %span.fa.fa-exclamation-circle.fa-fw>
+                = story.state.titleize
+            .item.type
+              = story_type_icon(story.story_type)
+            .item.risk
+              %span.fa.fa-signal
+              = calculate_risk(story.estimate).titleize
+            .item.updated
+              %span.fa.fa-clock-o
+              = time_ago_in_words(story.updated_at)
+            .item.author
+              %span.fa.fa-user>
+              - if story.user == current_user
+                %strong= story.user.username
+              - else
+                = story.user.username
+            .item.external-link
+              %a.external{href: "##{story.to_param}","data-url" => story_path(story)}
+                %span.fa.fa-external-link
+                %span.name Details
+
+
+
+
+
 = link_to 'Edit Account', edit_user_path(current_user)
 
-- if policy(:story).create?
-  %h3 Requested Stories
-  %table.table-minimal
-    %thead
-      %tr
-        %th Name
-        %th State
-        %th Submitted
-        %th Last Update
-    %tbody
-      - @user.stories.order(created_at: :desc).each do |story|
-        %tr
-          -# %td #{story.external_ref || story.id}
-          %td #{link_to story.name, story_path(story)}
-          %td
-            - if story.approved?
-              #{story.current_state.try(:titleize) || 'N/A'}
-            - elsif story.rejected?
-              Closed
-            - else
-              Pending Review
-          %td #{time_ago_in_words(story.created_at)} ago
-          %td #{time_ago_in_words(story.updated_at)} ago
-    %tfoot
-      %tr
-        %td{colspan: 4} Total Requested: #{@user.stories.count}
+-# - if policy(:story).create?
+  -# %h3 Requested Stories
+  -# %table.table-minimal
+    -# %thead
+      -# %tr
+        -# %th Name
+        -# %th State
+        -# %th Submitted
+        -# %th Last Update
+    -# %tbody
+      -# - @user.stories.order(created_at: :desc).each do |story|
+        -# %tr
+          -# -# %td #{story.external_ref || story.id}
+          -# %td #{link_to story.name, story_path(story)}
+          -# %td
+            -# - if story.approved?
+              -# #{story.current_state.try(:titleize) || 'N/A'}
+            -# - elsif story.rejected?
+              -# Closed
+            -# - else
+              -# Pending Review
+          -# %td #{time_ago_in_words(story.created_at)} ago
+          -# %td #{time_ago_in_words(story.updated_at)} ago
+    -# %tfoot
+      -# %tr
+        -# %td{colspan: 4} Total Requested: #{@user.stories.count}
 
-  %br
-%h3 Stories you are watching
-%table.table-minimal
-  %thead
-    %tr
-      %th Name
-      %th State
-      %th Submitted
-      %th Last Update
-  %tbody
-    - @user.following_stories.order(name: :asc).each do |story|
-      %tr
-        %td #{link_to story.name, story_path(story)}
-        %td
-          - if story.approved?
-            #{story.current_state.try(:titleize) || 'N/A'}
-          - elsif story.rejected?
-            Closed
-          - else
-            Pending Review
-        %td #{time_ago_in_words(story.created_at)} ago
-        %td #{time_ago_in_words(story.updated_at)} ago
-  %tfoot
-    %tr
-      %td{colspan: 4} Total Requested: #{@user.following_stories_count}
+  -# %br
+-# %h3 Stories you are watching
+-# %table.table-minimal
+  -# %thead
+    -# %tr
+      -# %th Name
+      -# %th State
+      -# %th Submitted
+      -# %th Last Update
+  -# %tbody
+    -# - @user.following_stories.order(name: :asc).each do |story|
+      -# %tr
+        -# %td #{link_to story.name, story_path(story)}
+        -# %td
+          -# - if story.approved?
+            -# #{story.current_state.try(:titleize) || 'N/A'}
+          -# - elsif story.rejected?
+            -# Closed
+          -# - else
+            -# Pending Review
+        -# %td #{time_ago_in_words(story.created_at)} ago
+        -# %td #{time_ago_in_words(story.updated_at)} ago
+  -# %tfoot
+    -# %tr
+      -# %td{colspan: 4} Total Requested: #{@user.following_stories_count}
 

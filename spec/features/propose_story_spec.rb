@@ -29,9 +29,8 @@ RSpec.describe "Propose New Story", type: :feature, vcr: {record: :new_episodes}
 
       main_menu.click
       click_on 'Your Requests'
-      expect(page).to have_css('table tbody tr')
-      # expect(page).to have_text('slack integration')
-      expect(page).to have_text('Pending Review')
+      expect(page).to have_css('.stories .story')
+      expect(page).to have_css(".story[data-state='submitted']")
     end
 
     it 'can be viewed after creation' do

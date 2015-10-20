@@ -11,5 +11,4 @@ class StorySerializer < ActiveModel::Serializer
   def href
     story_path(object)
   end
-
 end

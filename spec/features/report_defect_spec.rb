@@ -29,7 +29,7 @@ RSpec.describe "Report Defect", type: :feature, vcr: {record: :new_episodes} do
 
       main_menu.click
       click_on 'Your Requests'
-      expect(page).to have_css('table tbody tr')
+      expect(page).to have_css('.stories .story')
       # expect(page).to have_text('slack integration')
     end
   end
