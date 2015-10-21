@@ -71,6 +71,23 @@ RSpec.describe Story do
       end
     end
 
+    describe ':completed' do
+      it 'can be transitioned from :approved' do
+        subject.state = :approved
+        expect { subject.complete }.to change(subject, :completed?).from(false).to(true)
+      end
+
+      it 'cannot be transitioned from :rejected' do
+        subject.state = :submitted
+        expect { subject.complete }.to raise_error(AASM::InvalidTransition)
+      end
+
+      it 'cannot be transitioned from :rejected' do
+        subject.state = :rejected
+        expect { subject.complete }.to raise_error(AASM::InvalidTransition)
+      end
+    end
+
     describe '#additional_description' do
       let(:existing_story) { FactoryGirl.build_stubbed(:story, description: 'foo') }
 
