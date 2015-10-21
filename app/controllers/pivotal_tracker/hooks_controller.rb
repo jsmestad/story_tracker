@@ -61,6 +61,12 @@ module PivotalTracker
       %w(name story_type description).each do |field|
         story.send(:"#{field}=", changes[field]) if changes.has_key?(field)
       end
+
+      if changes.has_key?('current_state')
+        if changes['current_state'] == 'accepted'
+          story.complete
+        end
+      end
       story.save!
     end
 

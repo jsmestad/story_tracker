@@ -1,0 +1,211 @@
+{
+  "kind": "story_update_activity",
+  "guid": "1383802_80",
+  "project_version": 80,
+  "message": "Justin Smestad accepted this feature",
+  "highlight": "accepted",
+  "changes": [
+    {
+      "kind": "label",
+      "change_type": "update",
+      "id": 12166936,
+      "original_values": {
+        "counts": {
+          "number_of_zero_point_stories_by_state": {
+            "accepted": 0,
+            "started": 2,
+            "finished": 0,
+            "unstarted": 1,
+            "planned": 0,
+            "delivered": 0,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "sum_of_story_estimates_by_state": {
+            "accepted": 7,
+            "started": 0,
+            "finished": 1,
+            "unstarted": 10,
+            "planned": 0,
+            "delivered": 3,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "number_of_stories_by_state": {
+            "accepted": 5,
+            "started": 2,
+            "finished": 1,
+            "unstarted": 7,
+            "planned": 0,
+            "delivered": 2,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "kind": "story_counts"
+        }
+      },
+      "new_values": {
+        "counts": {
+          "number_of_zero_point_stories_by_state": {
+            "accepted": 0,
+            "started": 2,
+            "finished": 0,
+            "unstarted": 1,
+            "planned": 0,
+            "delivered": 0,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "sum_of_story_estimates_by_state": {
+            "accepted": 9,
+            "started": 0,
+            "finished": 1,
+            "unstarted": 10,
+            "planned": 0,
+            "delivered": 1,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "number_of_stories_by_state": {
+            "accepted": 6,
+            "started": 2,
+            "finished": 1,
+            "unstarted": 7,
+            "planned": 0,
+            "delivered": 1,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "kind": "story_counts"
+        }
+      },
+      "name": "shopping"
+    },
+    {
+      "kind": "label",
+      "change_type": "update",
+      "id": 12166940,
+      "original_values": {
+        "counts": {
+          "number_of_zero_point_stories_by_state": {
+            "accepted": 0,
+            "started": 0,
+            "finished": 0,
+            "unstarted": 0,
+            "planned": 0,
+            "delivered": 0,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "sum_of_story_estimates_by_state": {
+            "accepted": 1,
+            "started": 0,
+            "finished": 1,
+            "unstarted": 0,
+            "planned": 0,
+            "delivered": 3,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "number_of_stories_by_state": {
+            "accepted": 1,
+            "started": 0,
+            "finished": 1,
+            "unstarted": 0,
+            "planned": 0,
+            "delivered": 2,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "kind": "story_counts"
+        }
+      },
+      "new_values": {
+        "counts": {
+          "number_of_zero_point_stories_by_state": {
+            "accepted": 0,
+            "started": 0,
+            "finished": 0,
+            "unstarted": 0,
+            "planned": 0,
+            "delivered": 0,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "sum_of_story_estimates_by_state": {
+            "accepted": 3,
+            "started": 0,
+            "finished": 1,
+            "unstarted": 0,
+            "planned": 0,
+            "delivered": 1,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "number_of_stories_by_state": {
+            "accepted": 2,
+            "started": 0,
+            "finished": 1,
+            "unstarted": 0,
+            "planned": 0,
+            "delivered": 1,
+            "unscheduled": 0,
+            "rejected": 0,
+            "kind": "counts_by_story_state"
+          },
+          "kind": "story_counts"
+        }
+      },
+      "name": "cart"
+    },
+    {
+      "kind": "story",
+      "change_type": "update",
+      "id": 98677104,
+      "original_values": {
+        "current_state": "delivered",
+        "accepted_at": null,
+        "updated_at": 1436381831000
+      },
+      "new_values": {
+        "current_state": "accepted",
+        "accepted_at": 1445447145000,
+        "updated_at": 1445447145000
+      },
+      "name": "Shopper should be able to view contents of shopping cart",
+      "story_type": "feature"
+    }
+  ],
+  "primary_resources": [
+    {
+      "kind": "story",
+      "id": 98677104,
+      "name": "Shopper should be able to view contents of shopping cart",
+      "story_type": "feature",
+      "url": "https://www.pivotaltracker.com/story/show/98677104"
+    }
+  ],
+  "project": {
+    "kind": "project",
+    "id": 1383802,
+    "name": "My Sample Project"
+  },
+  "performed_by": {
+    "kind": "person",
+    "id": 379075,
+    "name": "Justin Smestad",
+    "initials": "JS"
+  },
+  "occurred_at": 1445447145000
+}

@@ -115,5 +115,26 @@ RSpec.describe 'Pivotal Tracker webhooks', :vcr do
       end
     end
 
+    context 'story accepted/completed in PT' do
+      let(:payload_file) { File.read(Rails.root.join('spec/fixtures/activity_payloads/story_accepted_activity.json')) }
+
+       it 'transitions the local story' do
+        story = FactoryGirl.create(:full_story, :as_approved, external_ref: '98677104', name: 'foo bar')
+        expect(story.external_ref).to eql('98677104')
+
+        expect(story.approved?).to eql(true)
+
+        request_headers = {
+          "Accept" => "application/json",
+          "Content-Type" => "application/json"
+        }
+        post "/pivotal_tracker/callback?token=#{ENV['CALLBACK_TOKEN']}", payload.to_json, request_headers
+
+        expect(response).to have_http_status(201)
+        updated_story = Story.where(external_ref: story.external_ref).first
+        expect(updated_story.completed?).to eql(true)
+      end
+
+    end
   end
 end

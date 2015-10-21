@@ -27,9 +27,13 @@
               - else
                 - if story.state == 'approved'
                   %span.fa.fa-check-circle-o.fa-fw>
+                  = story.state.titleize
                 - elsif story.state == 'rejected'
                   %span.fa.fa-exclamation-circle.fa-fw>
-                = story.state.titleize
+                  = story.state.titleize
+                - elsif story.state == 'completed'
+                  %span.fa.fa-thumbs-o-up.fa-fw>
+                  Completed
             .item.type
               = story_type_icon(story.story_type)
             .item.risk
