@@ -312,3 +312,46 @@ $color-4: #ffffff; // white
     }
   }
 }
+
+section.versions {
+  $table-background: white !default;
+  $table-header-background: lighten($table-background, 10);
+  $table-padding: .75em 1em !default;
+  $base-line-height: 1.5em !default;
+  $base-border-color: gainsboro !default;
+  $table-border-color: $base-border-color;
+
+  h5 {
+    font-size: 120%;
+    font-weight: 500;
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+  }
+
+  thead {
+    th {
+      /* background-color: $table-header-background; */
+      background-color: transparent;
+      border-bottom: 0px;
+      padding: $table-padding;
+      text-align: left;
+      text-transform: uppercase;
+    }
+  }
+
+  tbody {
+    /* background-color: $table-background; */
+    background-color: rgba(255,255,255,0.8);
+
+    td {
+      border-bottom: 0px;
+      border-top: 1px solid $table-border-color;
+      line-height: $base-line-height;
+      padding: $table-padding;
+    }
+  }
+}

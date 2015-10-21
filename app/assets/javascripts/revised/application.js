@@ -80,10 +80,16 @@ jQuery(document).ready(function() {
           $('.cd-panel-content')
             .find('.name').html(data.data.attributes.name)
           .end()
-            .find('.current-description').html(md.render(data.data.attributes.latest_description))
-          .end()
-            .find('.original-description').html(md.render(data.data.attributes.description));
-          // $('.cd-panel-content').html(md.render(data.data.attributes.latest_description));
+            .find('.current-description').html(md.render(data.data.attributes.latest_description));
+          $.each(data.data.attributes.versions, function(index, value) {
+            var name;
+            if(value.id == 0) {
+              name = 'Original';
+            } else {
+              name = value.id;
+            }
+            $('.cd-panel-content').find('.version-history tbody').html('').append('<tr><td>'+name+'</td><td>'+value.comment+'</td><td>'+value.created_at+'</td></tr>');
+          });
         }
       });
   });
