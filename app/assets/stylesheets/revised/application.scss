@@ -111,15 +111,13 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-.story {
-  /* @extend %row; */
-  /* @include columns(9); */
-  @extend %row;
+article.story h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
 
-  h1 {
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
+.story {
+  @extend %row;
 
   .body {
       @include columns(12);
