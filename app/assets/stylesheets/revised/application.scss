@@ -3,13 +3,14 @@
 $redLight: rgb(186, 8, 14);
 $redDark: rgb(107, 15, 1);
 //oranges
-$orangeLight: rgb(226, 89, 21);
+/* $orangeLight: rgb(226, 89, 21); */
+$orangeLight: rgb(253,147,1);
 $orangeDark: rgb(254, 147, 2);
 //yellows
 $yellowHot: rgb(230, 255, 17);
 $yellowDark: rgb(255, 212, 38);
 //greens
-$greenHot: rgb(156, 255, 48);
+$greenHot: rgb(140, 245, 0);
 $greenLight: rgb(101, 246, 172);
 $greenDark: rgb(42, 170, 15);
 //blues
@@ -33,10 +34,11 @@ $blueDark:  rgb(1, 80, 119);
   &.blue {
     color: #00B8D7; //$blueDark;
   }
-  &.yellow {
-    color: $yellowDark;
+  &.orange {
+    color: $orangeLight;
   }
   &.green {
+    /* color: #6ACC00; //$greenDark; */
     color: #6ACC00; //$greenDark;
   }
 }
@@ -267,6 +269,15 @@ section.iterations-list, section.story-group {
         border-top: 4px solid rgba(#6ACC00, 0.5);
         border-bottom: 4px solid rgba(#6ACC00, 0.5);
         border-right: 4px solid rgba(#6ACC00, 0.5);
+      }
+    }
+    &.orange {
+      border-color: $orangeLight;
+      .story.tracked { border-color: rgba($orangeLight, 0.5); }
+      .story.linked {
+        border-top: 4px solid rgba($orangeLight, 0.5);
+        border-bottom: 4px solid rgba($orangeLight, 0.5);
+        border-right: 4px solid rgba($orangeLight, 0.5);
       }
     }
     &.blue {
