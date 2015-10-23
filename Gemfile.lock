@@ -73,7 +73,7 @@ GEM
       tzinfo (~> 1.1)
     acts_as_follower (0.2.1)
     addressable (2.3.8)
-    airbrake (4.3.0)
+    airbrake (4.3.3)
       builder
       multi_json
     arbre (1.0.3)
