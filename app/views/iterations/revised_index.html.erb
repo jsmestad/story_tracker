@@ -1,9 +1,11 @@
-<% @iterations.each do |iteration| %>
+<% colors = %w(green blue orange) %>
+<% @iterations.each_with_index do |iteration, index| %>
+  <% color = colors[index % colors.length] %>
   <section class="iterations-list">
     <aside>
       <div class="iteration">
         <div>
-          <span class="st-icons-map-pin green"></span>
+          <span class="st-icons-map-pin <%= color %>"></span>
           <div class="name">
             <h2>Iteration <%= iteration.number %></h2>
             <small>Team Strength <%= (iteration.team_strength * 100).to_i %>%</small>
@@ -11,7 +13,7 @@
         </div>
       </div>
     </aside>
-    <div class="stories green">
+    <div class="stories <%= color %>">
       <% iteration.stories.each do |story| %>
         <% local_story = Story.find_by_external_ref(story.to_param) %>
         <div id="<%= local_story.to_param %>" class="story <%= "tracked" if local_story && current_user.following?(local_story) %>" data-local="<%= local_story ? 'true' : 'false' %>">
