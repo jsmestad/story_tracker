@@ -1,12 +1,13 @@
-%h1 Search Results for &ldquo;#{params[:q]}&rdquo;
+.fixed
+  .padded.borderless
+    = link_to 'Back to story list', iterations_path
+    %h1 Search Results for &ldquo;#{params[:q]}&rdquo;
 
-- if @stories.empty?
-  %p No results found.
-- else
-  %ul
-    - @stories.each do |story|
-      %li
-        = link_to story.name, story_path(story)
+    - if @stories.empty?
+      %p No results found.
+    - else
+      %ul
+        - @stories.each do |story|
+          %li
+            = link_to story.name, story_path(story)
 
-%hr
-= link_to 'Back to story list', iterations_path

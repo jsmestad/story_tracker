@@ -1,4 +1,5 @@
-= form_tag search_stories_path, method: 'get', class: 'search-bar', role: 'search', data: {intro: 'Find what your looking for by searching all submissions.', step: '3', position: 'left'} do
-  = text_field_tag :q, params[:q], placeholder: 'Search Stories'
-  %button{type: "submit"}
-    %img{alt: "Search Icon", src: "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png"}
+.header-search
+  = form_tag search_stories_path, method: 'get', class: 'search-bar', role: 'search', data: {intro: 'Find what your looking for by searching all submissions.', step: '3', position: 'left'} do
+    = search_field_tag :q, params[:q], placeholder: 'Search Stories'
+    %button{type: "submit"}
+      %i.fa.fa-search.fa-fw{alt: 'Search Icon'}
