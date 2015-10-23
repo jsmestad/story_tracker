@@ -3,15 +3,20 @@ module StoryStateConcern
 
   included do
     include AASM
-    enum state: {submitted: 0, approved: 1, rejected: 2}
+    enum state: {submitted: 0, approved: 1, rejected: 2, completed: 3}
 
     aasm column: :state, enum: true do
       state :submitted, initial: true
       state :approved
       state :rejected
+      state :completed
 
       event :approve, guard: :send_to_tracker!, after: :send_approved_notification! do
         transitions from: :submitted, to: :approved
+      end
+
+      event :complete do
+        transitions from: :approved, to: :completed
       end
 
       event :reject, after: [:remove_external_ref!, :send_reject_notification!] do
@@ -27,12 +32,11 @@ module StoryStateConcern
   end
 
   def send_to_tracker!
-    pt_story = user.connection.create_story(tracker_params_hash)
-    if pt_story.id.present?
-      self.update_attribute(:external_ref, pt_story.id)
+    if result = story_service.create
+      update_attribute(:external_ref, result.id)
+    else
+      return false
     end
-  rescue TrackerApi::Error
-    false
   end
 
   def send_approved_notification!
@@ -47,11 +51,4 @@ module StoryStateConcern
     end
   end
 
-private
-
-  def tracker_params_hash
-    h = { name: name, description: description, story_type: story_type }
-    h.merge!(after_id: after_id) if after_id.present?
-    h
-  end
 end

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get '/users', to: redirect('/admin/users')
+  get '/stories', to: redirect('/admin/stories')
+  ActiveAdmin.routes(self)
   resources :iterations, only: [:index] do
     resources :stories, only: [:new, :create], controller: 'iteration_stories'
   end
 
-  resources :stories, except: [:edit, :destroy] do
+  resources :stories, except: [:index, :destroy] do
     collection do
       get 'search'
     end
@@ -15,7 +18,7 @@ Rails.application.routes.draw do
   # resource :user, only: [:show, :edit, :update]
   get '/account', to: 'users#show'
 
-  resources :users
+  resources :users, except: [:index]
 
   root to: 'vistors#index'
 

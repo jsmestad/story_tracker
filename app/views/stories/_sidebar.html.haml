@@ -1,0 +1,27 @@
+.item.watch
+  - if story.present?
+    - if current_user.following?(story)
+      %a.unfollow{:href => story_follow_path(story)}
+        %span.fa.fa-eye-slash.fa-fw
+        %span.name Unfollow
+    - else
+      %a.follow{:href => story_follow_path(story)}
+        %span.fa.fa-eye.fa-fw
+        %span.name Follow
+  - else
+    %span.fa.fa-lock.fa-fw
+    %span.name Private
+.item.type
+  = story_type_icon(story.story_type)
+.item.risk
+  %span.fa.fa-signal
+  = calculate_risk(story.estimate).titleize
+.item.updated
+  %span.fa.fa-clock-o
+  = time_ago_in_words(story.updated_at)
+.item.author
+  %span.fa.fa-user
+  - if story.user == current_user
+    %strong= story.user.username
+  - else
+    = story.user.username

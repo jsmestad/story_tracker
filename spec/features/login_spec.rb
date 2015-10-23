@@ -13,7 +13,8 @@ feature 'Log in', :omniauth, :vcr do
   #   Then I see a success message
   scenario "user can log in with valid account" do
     signin
-    expect(page).to have_content("Log Out")
+    main_menu.click
+    expect(page).to have_content("Log out")
   end
 
   # Scenario: User cannot log in with invalid account
@@ -24,8 +25,9 @@ feature 'Log in', :omniauth, :vcr do
   scenario 'user cannot sign in with invalid account' do
     OmniAuth.config.mock_auth[:github] = :invalid_credentials
     visit root_path
-    expect(page).to have_content("Log In")
-    click_link "Log In"
+    main_menu.click
+    expect(page).to have_content("Log in")
+    click_link "Log in"
     expect(page).to have_content('Authentication error')
   end
 

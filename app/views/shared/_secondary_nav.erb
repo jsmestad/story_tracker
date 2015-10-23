@@ -3,6 +3,20 @@
   <nav>
     <ul>
       <% if user_signed_in? %>
+        <% if current_user.admin? %>
+
+          <li>
+            <a href="<%= admin_root_path %>">
+              <strong>Admin</strong>
+            </a>
+          </li>
+
+        <% end %>
+        <li>
+          <a href="<%= iterations_path %>">
+            <strong>Upcoming Iterations</strong>
+          </a>
+        </li>
         <li>
           <a href="<%= new_story_path %>">
             Request Feature
@@ -11,6 +25,11 @@
         <li>
           <a href="<%= new_defect_path %>">
             Report Defect
+          </a>
+        </li>
+        <li>
+          <a href="<%= account_path %>">
+            Your Requests
           </a>
         </li>
         <li>

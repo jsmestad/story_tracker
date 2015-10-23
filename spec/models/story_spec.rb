@@ -13,7 +13,8 @@ RSpec.describe Story do
   describe '#story_type' do
     it { is_expected.to allow_value('bug').for(:story_type) }
     it { is_expected.to allow_value('feature').for(:story_type) }
-    it { is_expected.to_not allow_value('chore').for(:story_type) }
+    it { is_expected.to allow_value('chore').for(:story_type) }
+    it { is_expected.to_not allow_value('release').for(:story_type) }
   end
 
   describe 'subscriptions' do
@@ -47,9 +48,15 @@ RSpec.describe Story do
       end
     end
 
-    describe ':approved', :vcr do
+    describe ':approved' do
       it 'can be transitioned from :submitted' do
+        expect(subject).to receive(:send_to_tracker!).and_return(true)
         expect { subject.approve }.to change(subject, :approved?).from(false).to(true)
+      end
+
+      it 'cannot be transitioned from :submitted if PT is unavailable' do
+        expect(subject).to receive(:send_to_tracker!).and_return(false)
+        expect { subject.approve }.to raise_error(AASM::InvalidTransition)
       end
 
       it 'cannot be transitioned from :rejected' do
@@ -61,6 +68,32 @@ RSpec.describe Story do
     describe ':rejected' do
       it 'can be transitioned from :submitted' do
         expect { subject.reject }.to change(subject, :rejected?).from(false).to(true)
+      end
+    end
+
+    describe ':completed' do
+      it 'can be transitioned from :approved' do
+        subject.state = :approved
+        expect { subject.complete }.to change(subject, :completed?).from(false).to(true)
+      end
+
+      it 'cannot be transitioned from :rejected' do
+        subject.state = :submitted
+        expect { subject.complete }.to raise_error(AASM::InvalidTransition)
+      end
+
+      it 'cannot be transitioned from :rejected' do
+        subject.state = :rejected
+        expect { subject.complete }.to raise_error(AASM::InvalidTransition)
+      end
+    end
+
+    describe '#additional_description' do
+      let(:existing_story) { FactoryGirl.build_stubbed(:story, description: 'foo') }
+
+      it 'appends to existing description' do
+        existing_story.additional_description = 'bar'
+        expect(existing_story.description).to eql("foo\nbar")
       end
     end
 

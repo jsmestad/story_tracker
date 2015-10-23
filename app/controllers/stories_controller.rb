@@ -16,7 +16,8 @@ class StoriesController < ApplicationController
       flash[:notice] = 'Search term must be at least 3 characters.'
       redirect_to iterations_path
     else
-      @stories = Story.approved.search(params[:q]).order('created_at DESC')
+      @stories = PgSearch.multisearch(params[:q]).collect(&:searchable)
+      # @stories = Story.approved.search(params[:q]).order('created_at DESC')
       respond_with @stories
     end
   end
@@ -60,32 +61,26 @@ class StoriesController < ApplicationController
     end
   end
 
+  def edit
+    @story = Story.find_by_guid(params[:id])
+    authorize @story, :update?
+  end
+
   def update
     @story = Story.find_by_guid(params[:id])
     authorize @story
-    if handle_state_change(@story, story_update_params[:state])
-      flash[:success] = "Story has been #{@story.state}."
+    if @story.update_attributes(story_update_params)
+      flash[:success] = "Story revision has been submitted successfully."
     else
       flash[:notice] = "Cannot update story."
     end
-    redirect_to stories_path
+    redirect_to account_path
   end
 
 private
 
-  def handle_state_change(story, change)
-    case change
-    when 'approve'
-      story.approve!
-    when 'reject'
-      story.reject!
-    else
-      false
-    end
-  end
-
   def story_update_params
-    params.require(:story).permit(:state)
+    params.require(:story).permit(:name, :additional_description, :comment)
   end
 
   def story_params

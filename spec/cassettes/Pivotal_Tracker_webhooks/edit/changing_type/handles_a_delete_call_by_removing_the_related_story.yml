@@ -1,0 +1,118 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/2.2.3 (x86_64-darwin15; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - "<TRACKERAPITOKEN>"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Tue, 13 Oct 2015 19:50:03 GMT
+      X-Tracker-Project-Version:
+      - '79'
+      X-Request-Id:
+      - d544deaf723389469f6ca2181cf5ffaf
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"775c3b36cb93fc12c0248607a219a13b"'
+      X-Runtime:
+      - '0.053060'
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger Enterprise
+      Server:
+      - nginx + Phusion Passenger
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
+      X-Tracker-Client-Pinger-Interval:
+      - '12'
+    body:
+      encoding: UTF-8
+      string: '{"id":<TRACKERPROJECT>,"kind":"project","name":"My Sample Project","version":79,"iteration_length":1,"week_start_day":"Monday","point_scale":"0,1,2,3","point_scale_is_custom":false,"bugs_and_chores_are_estimatable":false,"automatic_planning":true,"enable_tasks":true,"time_zone":{"kind":"time_zone","olson_name":"Etc/UTC","offset":"+00:00"},"velocity_averaged_over":3,"number_of_done_iterations_to_show":12,"has_google_domain":false,"profile_content":"This
+        is a demo project, created by Tracker, with example stories for a simple shopping
+        web site.","enable_incoming_emails":true,"initial_velocity":10,"public":false,"atom_enabled":false,"project_type":"demo","start_time":"2015-06-22T00:00:00Z","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T19:01:19Z","account_id":774272,"current_iteration_number":17,"enable_following":true}'
+    http_version: 
+  recorded_at: Tue, 13 Oct 2015 19:50:02 GMT
+- request:
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/<TRACKERPROJECT>/stories/98677112
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/2.2.3 (x86_64-darwin15; ruby) TrackerApi/0.2.10 Faraday/0.9.1
+      X-Trackertoken:
+      - "<TRACKERAPITOKEN>"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Tue, 13 Oct 2015 19:50:03 GMT
+      X-Tracker-Project-Version:
+      - '79'
+      X-Request-Id:
+      - 902103d1d295346d39d9a7cb08650afc
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"b2c082554197ec5e84bd156fe1734e09"'
+      X-Runtime:
+      - '0.051709'
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger Enterprise
+      Server:
+      - nginx + Phusion Passenger
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
+      X-Tracker-Client-Pinger-Interval:
+      - '12'
+    body:
+      encoding: UTF-8
+      string: '{"kind":"story","id":98677112,"created_at":"2015-06-29T00:00:00Z","updated_at":"2015-10-13T19:34:28Z","story_type":"bug","name":"Shopper
+        should be able to recommend a product to a friend","description":"Prompt for
+        email address and personalized message, send email with product details and
+        message","current_state":"started","requested_by_id":379075,"project_id":<TRACKERPROJECT>,"url":"https://www.pivotaltracker.com/story/show/98677112","owner_ids":[379075],"labels":[{"id":12166936,"project_id":<TRACKERPROJECT>,"kind":"label","name":"shopping","created_at":"2015-07-08T18:57:11Z","updated_at":"2015-07-08T18:57:11Z"}],"owned_by_id":379075}'
+    http_version: 
+  recorded_at: Tue, 13 Oct 2015 19:50:02 GMT
+recorded_with: VCR 2.9.3
