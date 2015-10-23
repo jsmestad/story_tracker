@@ -104,10 +104,87 @@ h1, h2, h3, h4, h5, h6 {
   .padded {
     @include columns(9);
     margin: 0 auto;
-    border-left: 5px solid darken(#F1F1F1, 5%);
+    &:not(.borderless) {
+      border-left: 5px solid darken(#F1F1F1, 5%);
+    }
   }
 
 }
+
+.story {
+  /* @extend %row; */
+  /* @include columns(9); */
+  @extend %row;
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  .body {
+      @include columns(12);
+      >div {
+        flex-direction: column;
+        display: flex;
+      }
+    }
+
+}
+.stats {
+  @include column;
+  background-color: rgba(255,255,255,0.1);
+  /* border: 1px solid red; */
+  margin-top: 1.2rem;
+  padding: 0.4em;
+  margin-bottom: 0;
+
+  a { cursor: pointer; }
+  .row {
+    @extend %row;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-bottom: 0;
+  }
+  .item .fa { opacity: 0.9; padding-right: 0.4rem; }
+
+  .item a {
+    text-decoration: none;
+    border-bottom: 1px dotted $base-font-color;
+    color: $base-font-color;
+    padding-bottom: 0.1em;
+    &:hover {
+      border-bottom: 1px solid $base-font-color;
+    }
+  }
+
+  .watch {
+    flex: 0 1 110px;
+    /* @media only screen and (max-width: 1000px) { */
+      /* flex: 0 1 25px; */
+      /* .fa { padding-right: 0; } */
+      /* .name { display: none; } */
+      /* a { border-bottom: none; } */
+    /* } */
+    span.fa {
+      padding-right: 0.4rem;
+    }
+  }
+  .updated { flex: 1 1 150px;}
+  .risk { flex: 0 1 90px; }
+  .type {  flex: 0 1 110px; }
+  .author { flex: 1 1 100px; text-align: right;}
+  .external-link {
+    flex: 0 1 100px;
+    text-align: right;
+    /* @media only screen and (max-width: 1000px) { */
+      /* flex: 0 1 25px; */
+      /* .fa { padding-right: 0; } */
+      /* .name { display: none; } */
+      /* a { border-bottom: none; } */
+    /* } */
+  }
+}
+
 
 header.page a{
   text-decoration: none;
@@ -202,6 +279,9 @@ section.iterations-list, section.story-group {
       padding-top: 0;
       border-left: 1px dotted #aaa;
     }
+    .stats {
+      box-shadow: inset 0px 1px 1px darken(#F1F1F1, 8%);
+    }
     .story {
       /* margin-left: 0.8rem; */
       border-left: 0.8rem solid #FAFBFC;
@@ -229,69 +309,14 @@ section.iterations-list, section.story-group {
           font-weight: 300;
         }
       }
-      .stats {
-        @include column;
-        box-shadow: inset 0px 1px 1px darken(#F1F1F1, 8%);
-        background-color: rgba(255,255,255,0.1);
-        /* border: 1px solid red; */
-        margin-top: 1.2rem;
-        padding: 0.4em;
-        margin-bottom: 0;
-
-        a { cursor: pointer; }
-        .row {
-          @extend %row;
-          justify-content: flex-start;
-          align-items: baseline;
-          margin-bottom: 0;
-        }
-        .item .fa { opacity: 0.9; padding-right: 0.4rem; }
-
-        .item a {
-          text-decoration: none;
-          border-bottom: 1px dotted $base-font-color;
-          color: $base-font-color;
-          padding-bottom: 0.1em;
-          &:hover {
-            border-bottom: 1px solid $base-font-color;
-          }
-        }
-
-        .watch {
-          flex: 0 1 110px;
-          /* @media only screen and (max-width: 1000px) { */
-            /* flex: 0 1 25px; */
-            /* .fa { padding-right: 0; } */
-            /* .name { display: none; } */
-            /* a { border-bottom: none; } */
-          /* } */
-          span.fa {
-            padding-right: 0.4rem;
-          }
-        }
-        .updated { flex: 1 1 150px;}
-        .risk { flex: 0 1 90px; }
-        .type {  flex: 0 1 110px; }
-        .author { flex: 1 1 100px; text-align: right;}
-        .external-link {
-          flex: 0 1 100px;
-          text-align: right;
-          /* @media only screen and (max-width: 1000px) { */
-            /* flex: 0 1 25px; */
-            /* .fa { padding-right: 0; } */
-            /* .name { display: none; } */
-            /* a { border-bottom: none; } */
-          /* } */
-        }
-      }
-      figure{
+      figure {
         display: inline-block;
         text-align: left;
         margin: 0;
         &.type {
           font-weight: 200;
         }
-              }
+      }
       .body {
         @include columns(12);
         >div {

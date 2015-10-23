@@ -10,12 +10,12 @@ $L:     1170px;
 @mixin MQ($canvas) {
   @if $canvas == S {
    @media only screen and (min-width: $S) { @content; }
-  } @else if $canvas == M {
-   @media only screen and (min-width: $M) { @content; }
-  } @else if $canvas == L {
-   @media only screen and (min-width: $L) { @content; }
+    } @else if $canvas == M {
+     @media only screen and (min-width: $M) { @content; }
+    } @else if $canvas == L {
+     @media only screen and (min-width: $L) { @content; }
+    }
   }
-}
 
 
 *, *::after, *::before {
@@ -279,6 +279,9 @@ $color-4: #ffffff; // white
   /* smooth scrolling on touch devices */
   -webkit-overflow-scrolling: touch;
 
+}
+.cd-panel-content, .story {
+
   pre {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
     /* border-left: 5px solid darken(#F1F1F1, 5%); */
@@ -295,8 +298,8 @@ $color-4: #ffffff; // white
   p, h1, h2, h3, h4, h5, h6 {
     @include font-size(15px);
     color: #222;//$color-3;
-    line-height: 1.4;
-    margin: 2em 0;
+    line-height: 1.2;
+    margin: 1.6em 0;
     text-shadow: 0 0 1px transparent;
     font-weight: 300;
 
@@ -326,7 +329,7 @@ section.versions {
     font-weight: 500;
   }
 
-  table {
+  table.version-history {
     border-collapse: separate;
     border-spacing: 0;
     width: 100%;

@@ -1,54 +1,25 @@
-%article.type-system-sans
-  %section.header
-    %h1 #{@story.name}
-  %section
-    %aside
-      %div
-        %span Story Type
-        = @story.story_type.titleize
-      %div
-        %span State
-        - if @story.approved?
-          = @story.current_state.titleize
-        - elsif @story.submitted?
-          Pending Review
-        - else
-          \-
-      %div
-        %span Created
-        = @story.created_at.strftime('%B %m %Y')
-      %div
-        %span Updated
-        #{time_ago_in_words(@story.updated_at)} ago
-      %div
-        %span External ID
-        #{@story.external_ref || '-'}
-      %div
-        %span Reporter
-        %a{href: "https://github.com/#{@story.user.username}"}
-          #{@story.user.name || @story.user.username}
-      %div
-        %span Follow Story?
-        = render partial: 'follow'
+.fixed
+  .padded.borderless
+    %article.story{'data-story-url' => story_path(@story)}
 
-    .story-description
-      :markdown
-        #{@story.description}
+      .stats
+        .row
+          = render partial: 'sidebar', locals: {story: @story}
+        -# .item.external_ref
+          %span External ID
+          %span.name #{@story.external_ref || '-'}
 
-  %section.audit-log
-    %h3 Story History
-    - if @story.activities.count > 0
-      - @story.activities.order('created_at DESC').each do |activity|
-        .activity
-          .time
-            #{time_ago_in_words(activity.created_at)} ago
-          .message
-            Story has been <em>#{t("story.highlight.#{activity.highlight.underscore}")}</em>.
+      .body
+        %div
+          %h1 #{@story.name}
+          %p.story-description
+            &nbsp;
 
-    - else
-      .activity
-        .time
-          #{time_ago_in_words(Time.now)} ago
-        .message
-          No history to report for this story. Most likely this story is still pending review.
-
+        %section.versions
+          %h5 Version History
+          %table.version-history
+            %thead
+              %th Version
+              %th Comment
+              %th Changed
+            %tbody

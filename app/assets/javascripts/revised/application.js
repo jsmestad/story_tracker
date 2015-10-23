@@ -9,6 +9,28 @@ jQuery(document).ready(function() {
     $(hash).addClass('linked');
   }
 
+  var $story = $('article[data-story-url]');
+  if ($story.length > 0) {
+    $.ajax({
+      url: $story.data('story-url'),
+      method: 'GET',
+      success: function(data) {
+        $story.find('.story-description').html(md.render(data.data.attributes.latest_description));
+
+        $.each(data.data.attributes.versions, function(index, value) {
+          var name;
+          if(value.id == 0) {
+            name = 'Original';
+          } else {
+            name = value.id;
+          }
+          $story.find('.version-history tbody').html('').append('<tr><td>'+name+'</td><td>'+value.comment+'</td><td>'+value.created_at+'</td></tr>');
+        });
+      }
+    });
+  }
+
+
   $('a.follow, a.unfollow').on('click', function(e) {
     e.preventDefault();
 
@@ -76,6 +98,7 @@ jQuery(document).ready(function() {
         method: 'GET',
         success: function(data) {
 
+          $('.cd-panel a.seperate-window').attr('href', data.data.attributes.href);
           $('.cd-panel').addClass('is-visible');
           $('.cd-panel-content')
             .find('.name').html(data.data.attributes.name)
