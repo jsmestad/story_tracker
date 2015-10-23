@@ -106,7 +106,7 @@ jQuery(document).ready(function() {
             .find('.current-description').html(md.render(data.data.attributes.latest_description));
           $.each(data.data.attributes.versions, function(index, value) {
             var name;
-            if(value.id == 0) {
+            if(value.id === 0) {
               name = 'Original';
             } else {
               name = value.id;
