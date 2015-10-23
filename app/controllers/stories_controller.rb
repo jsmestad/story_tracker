@@ -16,7 +16,8 @@ class StoriesController < ApplicationController
       flash[:notice] = 'Search term must be at least 3 characters.'
       redirect_to iterations_path
     else
-      @stories = Story.approved.search(params[:q]).order('created_at DESC')
+      @stories = PgSearch.multisearch(params[:q]).collect(&:searchable)
+      # @stories = Story.approved.search(params[:q]).order('created_at DESC')
       respond_with @stories
     end
   end
