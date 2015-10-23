@@ -13,6 +13,7 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
+  permit_params :name, :email_address, :role
 
   controller do
     def find_resource
