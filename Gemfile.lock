@@ -266,6 +266,10 @@ GEM
       activesupport (>= 3.0, < 6.0)
       request_store (~> 1.1)
     pg (0.18.2)
+    pg_search (1.0.5)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     premailer (1.8.4)
@@ -451,6 +455,7 @@ DEPENDENCIES
   omniauth-github (~> 1.1.2)
   paper_trail (~> 4.0.0)
   pg (>= 0.18)
+  pg_search (>= 1.0.5)
   premailer-rails
   pry-rails
   pry-remote

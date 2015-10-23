@@ -63,6 +63,7 @@ $grid-settings: (
 @import 'secondary_nav';
 @import 'buttons';
 @import 'fill_in_form';
+@import 'search';
 
 @mixin antialiasing($type: antialiased) {
   /* antialiased, none, subpixel-antialiased*/
@@ -183,8 +184,13 @@ article.story h1 {
   }
 }
 
+header.page {
+  @extend %row;
+  align-items: flex-end;
+}
 
-header.page a{
+header.page a {
+  flex: 1;
   text-decoration: none;
   @extend %row;
   align-items: baseline;

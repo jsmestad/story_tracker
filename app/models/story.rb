@@ -1,4 +1,7 @@
 class Story < ActiveRecord::Base
+  include PgSearch
+  multisearchable :against => [:guid, :name, :description, :external_ref]
+
   has_paper_trail meta: { comment: :comment }
   attr_accessor :comment
 
