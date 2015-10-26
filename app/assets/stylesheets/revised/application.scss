@@ -119,8 +119,9 @@ h1, h2, h3, h4, h5, h6 {
   ul {
     list-style: none;
     li {
-      display: inline-block;
+      display: inline;
       padding: 0.3rem;
+      margin-right: 1rem;
       a {
         text-decoration: none;
         font-weight: 500;
