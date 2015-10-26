@@ -45,11 +45,11 @@ module StoryTracker
           :credentials => true,
           :max_age => 0
 
-        resource '/fonts/*', headers: :any, methods: :get
-        # resource '*',
-          # :headers => :any,
-          # :methods => [:get, :post, :delete, :put, :patch, :options, :head],
-          # :max_age => 0
+        # resource '/fonts/*', headers: :any, methods: :get
+        resource '*',
+          :headers => :any,
+          :methods => [:get, :post, :delete, :put, :patch, :options, :head],
+          :max_age => 0
       end
     end
   end
