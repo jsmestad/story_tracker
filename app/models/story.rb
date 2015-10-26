@@ -2,7 +2,7 @@ class Story < ActiveRecord::Base
   include PgSearch
   multisearchable :against => [:guid, :name, :description, :external_ref]
 
-  has_paper_trail meta: { comment: :comment }
+  has_paper_trail meta: { comment: :comment }, on: [:create, :update]
   attr_accessor :comment
 
   include StoryStateConcern
@@ -24,6 +24,10 @@ class Story < ActiveRecord::Base
   # validates_presence_of :external_ref, if: :submitted?
 
   # delegate :url, to: :external_story, allow_nil: true, if: :approved?
+
+  before_destroy do
+    self.versions.destroy_all
+  end
 
   def self.search(q)
     # where("name ILIKE ?", "%#{q}%")
