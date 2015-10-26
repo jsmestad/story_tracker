@@ -14,6 +14,36 @@ ActiveAdmin.register Story do
 #   permitted
 # end
 
+  config.sort_order = 'created_at_desc'
+  scope("Pending") {|scope| scope.status('submitted')}
+  scope("Approved") {|scope| scope.status('approved')}
+  scope("Completed") {|scope| scope.status('completed')}
+  scope("Rejected") {|scope| scope.status('rejected')}
+
+  scope("Feature") {|scope| scope.feature }
+  scope("Defect") {|scope| scope.defect }
+  index do
+    selectable_column
+    column :name
+    column :story_type
+    column :external_ref
+    column :guid, sortable: false
+    column :state, storable: false
+    column :created_at
+    column :updated_at
+    actions
+  end
+
+  filter :user
+  filter :external_ref
+  filter :guid
+  filter :state, as: :select, collection: proc { Story.states }
+  filter :name
+  filter :description
+  filter :estimate, as: :numeric
+  filter :created_at, as: :date_range
+  filter :updated_at, as: :date_range
+
   form do |f|
     semantic_errors(*f.object.errors.keys)
     tabs do
