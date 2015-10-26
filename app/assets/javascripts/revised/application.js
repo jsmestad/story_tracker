@@ -30,6 +30,10 @@ jQuery(document).ready(function() {
     });
   }
 
+  var $filters = $('.filters[data-active]');
+  if ($filters.length > 0 && $filters.data('active') !== 'all') {
+    $("a[href$='?status="+$filters.data('active')+"']").parent('li').addClass('active').siblings('.active').removeClass('active');
+  }
 
   $('a.follow, a.unfollow').on('click', function(e) {
     e.preventDefault();

@@ -1,4 +1,6 @@
 class Story < ActiveRecord::Base
+  include FilterableConcern
+
   include PgSearch
   multisearchable :against => [:guid, :name, :description, :external_ref]
 

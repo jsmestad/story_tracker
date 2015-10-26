@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/stories', to: redirect('/admin/stories')
   ActiveAdmin.routes(self)
   resources :iterations, only: [:index] do
-    resources :stories, only: [:new, :create], controller: 'iteration_stories'
+    # resources :stories, only: [:new, :create], controller: 'iteration_stories'
   end
 
   resources :stories, except: [:index, :destroy] do

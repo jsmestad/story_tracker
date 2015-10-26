@@ -1,10 +1,10 @@
 module Omniauth
 
   module Mock
-    def auth_mock
+    def auth_mock(uid='12345')
       OmniAuth.config.mock_auth[:github] = {
         'provider' => 'github',
-        'uid' => '12345',
+        'uid' => uid,
         'info' => {
           'nickname' => 'foo_mockuser'
         },
@@ -21,12 +21,12 @@ module Omniauth
       page.find(:xpath, "//a[@class='cd-secondary-nav-trigger']")
     end
 
-    def signin(as_new_user: true, role: 'regular_user')
+    def signin(as_new_user: true, role: 'regular_user', as_user: nil)
       visit root_path
-      unless as_new_user
-        FactoryGirl.create(:user, uid: '12345', provider: 'github', role: role)
+      if !!as_new_user and as_user.blank?
+        as_user = FactoryGirl.create(:user, role: role)
       end
-      auth_mock
+      auth_mock(as_user.uid)
       main_menu.click
       click_link "Log in"
     end

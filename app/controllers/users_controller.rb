@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 
   def show
     @user = params[:id] ? User.find_by_guid(params[:id]) : current_user
+    @stories = current_user.stories.filter(params.slice(:status))
+    @stories += current_user.following_stories.filter(params.slice(:status))
     authorize @user
   end
 
