@@ -2,11 +2,6 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
   after_action :verify_authorized
 
-  def index
-    @users = User.order(:role, :name).all
-    authorize @users
-  end
-
   def show
     @user = params[:id] ? User.find_by_guid(params[:id]) : current_user
     authorize @user
