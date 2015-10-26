@@ -61,6 +61,7 @@ Rails.application.configure do
   # config.action_controller.asset_host = 'http://assets.example.com'
   if ENV['CLOUDFRONT_URL']
     config.action_controller.asset_host = ENV['CLOUDFRONT_URL']
+    config.static_cache_control = "public, max-age=31536000"
   end
 
   # Ignore bad email addresses and do not raise email delivery errors.
