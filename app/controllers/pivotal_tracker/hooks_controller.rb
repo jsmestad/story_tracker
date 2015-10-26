@@ -61,6 +61,7 @@ module PivotalTracker
       %w(name story_type description).each do |field|
         story.send(:"#{field}=", changes[field]) if changes.has_key?(field)
       end
+      story.comment = "PT submitted an #{payload['change_type']} callback"
 
       if changes.has_key?('current_state')
         if changes['current_state'] == 'accepted'
