@@ -4,7 +4,7 @@ RSpec.describe "Report Defect", type: :feature, vcr: {record: :new_episodes} do
 
   context 'as a viewer user' do
     it "is restricted if your not a regular user" do
-      signin(as_new_user: true)
+      signin(as_new_user: true, role: 'viewer')
       visit '/defects/new'
       expect(page).to have_text('You do not have sufficient permissions to report defects.')
       expect(current_path).to eql('/iterations')
@@ -13,7 +13,7 @@ RSpec.describe "Report Defect", type: :feature, vcr: {record: :new_episodes} do
 
   context 'as a regular user' do
     before do
-      signin(as_new_user: false, role: 'regular_user')
+      signin(as_new_user: true, role: 'regular_user')
       visit '/defects/new'
     end
 

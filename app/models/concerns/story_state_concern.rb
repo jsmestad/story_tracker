@@ -25,6 +25,7 @@ module StoryStateConcern
     end
 
     scope :in_flight, -> { where('state != ?', self.states[:rejected]) }
+    scope :status, -> (status) { where state: self.states[status.to_sym] }
   end
 
   def remove_external_ref!
