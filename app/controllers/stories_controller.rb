@@ -4,12 +4,6 @@ class StoriesController < ApplicationController
 
   respond_to :json, :html
 
-  def index
-    @stories = Story.submitted.all
-    authorize @stories
-    render
-  end
-
   def search
     authorize :story, :search?
     if params[:q].present? and params[:q].length < 3

@@ -1,3 +1,18 @@
+.filters{data: {active: params[:status] || 'all'}}
+  %ul
+    %li
+      %span.fa.fa-filter.fa-fw{title: 'Filter By'}
+    %li.active
+      = link_to 'All', account_path
+    %li
+      = link_to 'Pending', account_path(status: 'submitted')
+    %li
+      = link_to 'Approved', account_path(status: 'approved')
+    %li
+      = link_to 'Rejected', account_path(status: 'rejected')
+    %li
+      = link_to 'Completed', account_path(status: 'completed')
+
 %section.story-group
   %aside
     .group
@@ -7,7 +22,7 @@
           %h2
             Requested Stories
   .stories.green
-    - (@user.stories + @user.following_stories).sort_by(&:created_at).each do |story|
+    - (@stories).sort_by(&:created_at).each do |story|
       %div{:class => "story tracked", "data-state" => story.state, "data-local" => 'true', "data-owned" => story.user == current_user ? 'true' : 'false', :id => story.to_param}
         .body
           %div

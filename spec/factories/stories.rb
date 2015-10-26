@@ -20,6 +20,14 @@ FactoryGirl.define do
       end
     end
 
+    trait :as_completed do
+      after(:create) do |obj|
+        obj.state = :completed
+        obj.external_ref ||= '100879128'
+        obj.save(validate: false)
+      end
+    end
+
     trait :with_user do
       user
     end
