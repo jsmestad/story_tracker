@@ -35,6 +35,11 @@ jQuery(document).ready(function() {
     $("a[href$='?status="+$filters.data('active')+"']").parent('li').addClass('active').siblings('.active').removeClass('active');
   }
 
+  var $filters = $('.filters[data-scope]');
+  if ($filters.length > 0 && $filters.data('scope') !== undefined) {
+    $("a[href$='?scope="+$filters.data('scope')+"']").parent('li').addClass('active').siblings('.active').removeClass('active');
+  }
+
   $('a.follow, a.unfollow').on('click', function(e) {
     e.preventDefault();
 

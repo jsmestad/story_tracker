@@ -25,6 +25,9 @@ class Story < ActiveRecord::Base
   # TODO validates_numericality_of :estimate, only_integer: true, allow_nil: true
   # validates_presence_of :external_ref, if: :submitted?
 
+  scope :feature, -> { where(story_type: 'feature') }
+  scope :defect, -> { where(story_type: 'bug') }
+
   # delegate :url, to: :external_story, allow_nil: true, if: :approved?
 
   before_destroy do

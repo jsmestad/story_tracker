@@ -1,3 +1,17 @@
+<div class='filters' data-scope="<%= params[:scope] %>">
+  <ul>
+    <li>
+      <span class='fa fa-calendar fa-fw' title="View Iterations By"></span>
+    </li>
+    <li class='active'>
+      <%= link_to 'Upcoming Iterations', iterations_path %>
+    </li>
+    <li>
+      <%= link_to 'Previous Iterations', iterations_path(scope: 'done') %>
+    </li>
+  </ul>
+</div>
+
 <% colors = %w(green blue orange) %>
 <% @iterations.each_with_index do |iteration, index| %>
   <% color = colors[index % colors.length] %>
@@ -8,7 +22,11 @@
           <span class="st-icons-map-pin <%= color %>"></span>
           <div class="name">
             <h2>Iteration <%= iteration.number %></h2>
-            <small>Team Strength <%= (iteration.team_strength * 100).to_i %>%</small>
+            <% if iteration.finish < DateTime.now %>
+              <small><strong>Iteration was completed <%= time_ago_in_words(iteration.finish) %> ago</strong></small>
+            <% else %>
+              <small>Team Strength <%= (iteration.team_strength * 100).to_i %>%</small>
+            <% end %>
           </div>
         </div>
       </div>
@@ -29,10 +47,15 @@
 
               <div class="item watch">
                 <% if local_story.present? %>
-                  <% if current_user.following?(local_story) %>
-                    <a class="unfollow" href="<%= story_follow_path(local_story) %>"> <span class="fa fa-eye-slash fa-fw"></span><span class="name">Unfollow</span></a>
+                  <% if local_story.completed? %>
+                    <span class="fa fa-thumbs-o-up fa-fw"></span>
+                    Completed
                   <% else %>
-                    <a class="follow" href="<%= story_follow_path(local_story) %>"><span class="fa fa-eye fa-fw"></span><span class="name">Follow</span></a>
+                    <% if current_user.following?(local_story) %>
+                      <a class="unfollow" href="<%= story_follow_path(local_story) %>"> <span class="fa fa-eye-slash fa-fw"></span><span class="name">Unfollow</span></a>
+                    <% else %>
+                      <a class="follow" href="<%= story_follow_path(local_story) %>"><span class="fa fa-eye fa-fw"></span><span class="name">Follow</span></a>
+                    <% end %>
                   <% end %>
                 <% else %>
                   <span class="fa fa-lock fa-fw"></span>
