@@ -1,14 +1,21 @@
-.item.watch
-  - if story.present?
-    - if current_user.following?(story)
-      %a.unfollow{:href => story_follow_path(story)}
-        %span.fa.fa-eye-slash.fa-fw
-        %span.name Unfollow
-    - else
-      %a.follow{:href => story_follow_path(story)}
-        %span.fa.fa-eye.fa-fw
-        %span.name Follow
+- if story.present?
+  - if policy(story).update?
+    .item.revise
+      %a{href: edit_story_path(story)}
+        %span.fa.fa-pencil.fa-fw{title: 'Modify Submission'}>
+        Modify
   - else
+    .item.watch
+      - if current_user.following?(story)
+        %a.unfollow{:href => story_follow_path(story)}
+          %span.fa.fa-eye-slash.fa-fw
+          %span.name Unfollow
+      - else
+        %a.follow{:href => story_follow_path(story)}
+          %span.fa.fa-eye.fa-fw
+          %span.link-name Follow
+- else
+  .item.watch
     %span.fa.fa-lock.fa-fw
     %span.name Private
 .item.state

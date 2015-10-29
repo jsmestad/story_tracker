@@ -1,5 +1,5 @@
 ActiveAdmin.register Story do
-  permit_params :name, :description, :comment
+  permit_params :name, :description, :comment, :user_id
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -51,6 +51,7 @@ ActiveAdmin.register Story do
         inputs 'Details' do
           input :name
           input :description
+          input :user
         end
 
         inputs 'Update Details' do
