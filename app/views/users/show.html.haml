@@ -30,32 +30,39 @@
               %h3= story.name
         .stats
           .row
-            .item.watch
-              - if story.user != current_user
-                %a.unfollow{:href => story_follow_path(story)}
+            - if story.user != current_user
+              .item.watch
+                %a.unfollow{href: story_follow_path(story)}
                   %span.fa.fa-eye-slash.fa-fw>
                   %span.name Unfollow
-              - elsif policy(story).update?
+            - elsif policy(story).update?
+              .item.revise
                 %a{href: edit_story_path(story)}
-                  %span.fa.fa-pencil.fa-fw>
-                  Revise
+                  %span.fa.fa-pencil.fa-fw{title: 'Modify Submission'}>
+                  Modify
+            - else
+              .item.watch
+                &nbsp;
+            .item.state
+              - if story.state == 'approved'
+                %span.fa.fa-check-circle-o.fa-fw>
+                = story.state.titleize
+              - elsif story.state == 'rejected'
+                %span.fa.fa-exclamation-circle.fa-fw>
+                = story.state.titleize
+              - elsif story.state == 'completed'
+                %span.fa.fa-thumbs-o-up.fa-fw>
+                Completed
               - else
-                - if story.state == 'approved'
-                  %span.fa.fa-check-circle-o.fa-fw>
-                  = story.state.titleize
-                - elsif story.state == 'rejected'
-                  %span.fa.fa-exclamation-circle.fa-fw>
-                  = story.state.titleize
-                - elsif story.state == 'completed'
-                  %span.fa.fa-thumbs-o-up.fa-fw>
-                  Completed
+                %span.fa.fa-paper-plane-o.fa-fw>
+                Submitted
             .item.type
               = story_type_icon(story.story_type)
             .item.risk
-              %span.fa.fa-signal
+              %span.fa.fa-signal{title: 'Story Risk Assessment'}>
               = calculate_risk(story.estimate).titleize
             .item.updated
-              %span.fa.fa-clock-o
+              %span.fa.fa-clock-o{title: 'Last Updated'}>
               = time_ago_in_words(story.updated_at)
             .item.author
               %span.fa.fa-user>
@@ -68,62 +75,5 @@
                 %span.fa.fa-external-link
                 %span.name Details
 
-
-
-
-
 = link_to 'Edit Account', edit_user_path(current_user)
-
--# - if policy(:story).create?
-  -# %h3 Requested Stories
-  -# %table.table-minimal
-    -# %thead
-      -# %tr
-        -# %th Name
-        -# %th State
-        -# %th Submitted
-        -# %th Last Update
-    -# %tbody
-      -# - @user.stories.order(created_at: :desc).each do |story|
-        -# %tr
-          -# -# %td #{story.external_ref || story.id}
-          -# %td #{link_to story.name, story_path(story)}
-          -# %td
-            -# - if story.approved?
-              -# #{story.current_state.try(:titleize) || 'N/A'}
-            -# - elsif story.rejected?
-              -# Closed
-            -# - else
-              -# Pending Review
-          -# %td #{time_ago_in_words(story.created_at)} ago
-          -# %td #{time_ago_in_words(story.updated_at)} ago
-    -# %tfoot
-      -# %tr
-        -# %td{colspan: 4} Total Requested: #{@user.stories.count}
-
-  -# %br
--# %h3 Stories you are watching
--# %table.table-minimal
-  -# %thead
-    -# %tr
-      -# %th Name
-      -# %th State
-      -# %th Submitted
-      -# %th Last Update
-  -# %tbody
-    -# - @user.following_stories.order(name: :asc).each do |story|
-      -# %tr
-        -# %td #{link_to story.name, story_path(story)}
-        -# %td
-          -# - if story.approved?
-            -# #{story.current_state.try(:titleize) || 'N/A'}
-          -# - elsif story.rejected?
-            -# Closed
-          -# - else
-            -# Pending Review
-        -# %td #{time_ago_in_words(story.created_at)} ago
-        -# %td #{time_ago_in_words(story.updated_at)} ago
-  -# %tfoot
-    -# %tr
-      -# %td{colspan: 4} Total Requested: #{@user.following_stories_count}
 

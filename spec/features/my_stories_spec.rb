@@ -6,9 +6,11 @@ RSpec.describe 'Viewing Stories', type: :feature do
   context 'filtering stories' do
     before do
       FactoryGirl.create(:story, user: my_user)
-      FactoryGirl.create(:story, :as_approved, user: my_user)
       FactoryGirl.create(:story, :as_rejected, user: my_user)
       FactoryGirl.create(:story, :as_completed, user: my_user)
+      followed_story = FactoryGirl.create(:full_story, :as_approved)
+      my_user.follow(followed_story)
+
       signin(as_user: my_user) #as_new_user: false)
     end
 
@@ -32,7 +34,7 @@ RSpec.describe 'Viewing Stories', type: :feature do
       click_on 'Pending'
       expect(page).to have_css('.story', count: 1)
       within('.story') do
-        expect(page).to have_link('Revise')
+        expect(page).to have_link('Modify')
       end
     end
 
