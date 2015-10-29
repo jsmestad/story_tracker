@@ -11,16 +11,29 @@
   - else
     %span.fa.fa-lock.fa-fw
     %span.name Private
+.item.state
+  - if story.state == 'approved'
+    %span.fa.fa-check-circle-o.fa-fw>
+    = story.state.titleize
+  - elsif story.state == 'rejected'
+    %span.fa.fa-exclamation-circle.fa-fw>
+    = story.state.titleize
+  - elsif story.state == 'completed'
+    %span.fa.fa-thumbs-o-up.fa-fw>
+    Completed
+  - else
+    %span.fa.fa-paper-plane-o.fa-fw>
+    Submitted
 .item.type
   = story_type_icon(story.story_type)
 .item.risk
-  %span.fa.fa-signal
+  %span.fa.fa-signal{title: 'Story Risk Assessment'}>
   = calculate_risk(story.estimate).titleize
 .item.updated
-  %span.fa.fa-clock-o
+  %span.fa.fa-clock-o{title: 'Last Updated'}
   = time_ago_in_words(story.updated_at)
 .item.author
-  %span.fa.fa-user
+  %span.fa.fa-user{title: 'Submitted By'}
   - if story.user == current_user
     %strong= story.user.username
   - else
