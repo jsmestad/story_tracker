@@ -94,6 +94,7 @@ ActiveAdmin.register Story do
       row :external_ref
       row :name
       row :story_type
+      row("Author") { |s| s.user.name }
       row :state
       row :created_at
       row :updated_at
@@ -112,11 +113,11 @@ ActiveAdmin.register Story do
       end
     end
 
-    panel "Original Description" do
-      attributes_table_for story do
-        text_node raw(RDiscount.new(story.description || '#### No External Reference').to_html)
-      end
-    end
+    # panel "Original Description" do
+      # attributes_table_for story do
+        # text_node raw(RDiscount.new(story.description || '#### No External Reference').to_html)
+      # end
+    # end
 
   end
 
