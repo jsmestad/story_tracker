@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     # resources :stories, only: [:new, :create], controller: 'iteration_stories'
   end
 
+  namespace :api do
+    jsonapi_resources :stories
+  end
+
   resources :stories, except: [:index, :destroy] do
     collection do
       get 'search'

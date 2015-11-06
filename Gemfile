@@ -39,6 +39,7 @@ gem 'skylight'
 gem 'faraday-http-cache'
 gem 'faraday_middleware'
 
+gem 'jsonapi-resources', '~> 0.6.1'
 gem 'active_model_serializers', '~> 0.10.0.rc2'
 gem 'responders', '~> 2.0'
 
