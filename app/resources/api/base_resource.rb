@@ -4,7 +4,7 @@ module Api
 
     key_type :uuid
 
-    def _primary_key
+    def self._primary_key
       :guid
     end
   end
