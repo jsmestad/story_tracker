@@ -69,6 +69,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'dotenv-rails'
   gem 'ffaker'
+  gem 'pry-remote'
 end
 
 group :test do

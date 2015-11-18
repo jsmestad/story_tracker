@@ -2,7 +2,7 @@ module Api
   class StoryResource < BaseResource
     attributes :title, :description, :story_type, :external_ref
 
-    has_one :user
+    relationship :user, to: :one, foreign_key_on: :related, foreign_key: :guid
 
     def title
       @model.name
