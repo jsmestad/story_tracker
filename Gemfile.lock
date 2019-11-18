@@ -108,6 +108,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    concurrent-ruby (1.1.5)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     css_parser (1.3.6)
@@ -292,7 +293,7 @@ GEM
       activesupport (>= 3.0.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
-    rack (1.6.4)
+    rack (1.6.11)
     rack-cors (1.0.6)
       rack (>= 1.6.0)
     rack-test (0.6.3)
@@ -386,8 +387,9 @@ GEM
     skylight (0.8.0)
       activesupport (>= 3.0.0)
     slop (3.6.0)
-    sprockets (3.3.1)
-      rack (~> 1.0)
+    sprockets (3.7.2)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
     sprockets-rails (2.3.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
